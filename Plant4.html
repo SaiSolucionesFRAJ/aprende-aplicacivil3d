@@ -1,0 +1,1737 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotogrametria</title>
+    <meta name="description" content="Licencias permanentes de Autodesk, instalaciones remotas y servicios profesionales para ingeniería civil, topografía y arquitectura.">
+    
+    <!-- Preconexiones para mejorar performance -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+    <!-- Animaciones -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    
+    <style>
+    /* Variables CSS */
+    :root {
+        --primary-color: #2c1c77;
+        --secondary-color: #3a2996;
+        --accent-color: #ff4d00;
+        --accent-light: #ff6b34;
+        --hotmart-color: #ff6d2e;
+        --paypal-color: #003087;
+        --whatsapp-color: #25d366;
+        --text-color: #333333;
+        --light-text: #ffffff;
+        --dark-bg: #1a1340;
+        --menu-bg: #1a1340;
+        --bg-gradient: linear-gradient(to bottom, #0b0742, #1a1340);
+        --card-gradient: linear-gradient(135deg, #1a1340 0%, #2c1c77 100%);
+        --border-color: rgba(255, 255, 255, 0.1);
+        --success-color: #4CAF50;
+        --warning-color: #ff9900;
+        --error-color: #f44336;
+        --info-color: #2196F3;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.1);
+        --shadow-xl: 0 15px 30px rgba(0, 0, 0, 0.3);
+        --radius-sm: 8px;
+        --radius-md: 15px;
+        --radius-lg: 25px;
+        --transition: all 0.3s ease;
+        --background-light: #f8f9fa;
+        --card-bg: #ffffff;
+        --primary-dark: #1a1340;
+        --text-muted: #6c757d;
+    }
+
+    /* Reset y estilos base */
+    *, *::before, *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: "DM Sans", sans-serif;
+        color: var(--text-color);
+        line-height: 1.6;
+        background-color: var(--background-light);
+        overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.75rem; }
+    h4 { font-size: 1.5rem; }
+
+    .anton-font {
+        font-family: "Anton", sans-serif;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+        transition: var(--transition);
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    ul, ol {
+        list-style: none;
+    }
+
+    button, input, textarea {
+        font-family: inherit;
+    }
+
+    button {
+        cursor: pointer;
+        border: none;
+        background: none;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 1500px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    .section {
+        padding: 5rem 0;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        color: var(--primary-dark);
+        margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+        font-size: 1.2rem;
+        color: var(--text-muted);
+        font-weight: normal;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .section-icon {
+        font-size: 3rem;
+        color: var(--accent-color);
+        margin-bottom: 1.5rem;
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        border-radius: var(--radius-sm);
+        font-weight: 500;
+        transition: var(--transition);
+        text-align: center;
+        cursor: pointer;
+        border: none;
+        color: white;
+    }
+
+    .btn-primary {
+        background-color: var(--accent-color);
+    }
+
+    .btn-primary:hover {
+        background-color: var(--accent-light);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(255, 77, 0, 0.3);
+    }
+
+    .btn-hotmart {
+        background-color: var(--hotmart-color);
+    }
+
+    .btn-hotmart:hover {
+        background-color: #e55c25;
+        transform: translateY(-3px);
+    }
+
+    .btn-paypal {
+        background-color: var(--paypal-color);
+    }
+
+    .btn-paypal:hover {
+        background-color: #00256e;
+        transform: translateY(-3px);
+    }
+
+    .btn-whatsapp {
+        background-color: var(--whatsapp-color);
+    }
+
+    .btn-whatsapp:hover {
+        background-color: #128C7E;
+        transform: translateY(-3px);
+    }
+
+    .btn-outline {
+        background-color: transparent;
+        border: 1px solid var(--accent-color);
+        color: var(--accent-color);
+    }
+
+    .btn-outline:hover {
+        background-color: var(--accent-color);
+        color: white;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .text-accent {
+        color: var(--accent-color);
+    }
+
+    .text-light {
+        color: var(--light-text);
+    }
+
+    .bg-dark {
+        background-color: var(--dark-bg);
+    }
+
+    .bg-gradient {
+        background: var(--bg-gradient);
+    }
+
+    /* Animaciones personalizadas */
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+
+    .float-animation {
+        animation: float 6s ease-in-out infinite;
+    }
+
+    .pulse-animation {
+        animation: pulse 2s infinite;
+    }
+
+    /* Header y navegación */
+    .top-bar {
+        background: var(--secondary-color);
+        color: var(--light-text);
+        padding: 0.5rem 0;
+        font-size: 0.875rem;
+    }
+
+    .top-bar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    .top-info {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .top-info i {
+        margin-right: 0.5rem;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 0.75rem;
+    }
+
+    .social-links a {
+        color: var(--light-text);
+        transition: var(--transition);
+    }
+
+    .social-links a:hover {
+        color: var(--accent-color);
+        transform: translateY(-2px);
+    }
+
+    .main-header {
+        background-color: var(--primary-color);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .logo img {
+        height: 60px;
+        width: auto;
+        transition: var(--transition);
+    }
+
+    .logo img:hover {
+        transform: scale(1.05);
+    }
+
+    .nav-menu {
+        display: flex;
+        list-style: none;
+    }
+
+    .nav-item {
+        position: relative;
+        margin: 0 0.5rem;
+    }
+
+    .nav-link {
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        color: var(--light-text);
+        font-size: 1rem;
+        transition: var(--transition);
+    }
+
+    .nav-link:hover {
+        color: var(--accent-color);
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 250px;
+        background: var(--secondary-color);
+        border-radius: var(--radius-sm);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: var(--transition);
+        z-index: 100;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .dropdown-menu .nav-link {
+        padding: 0.75rem 1.5rem;
+    }
+
+    .dropdown-menu .nav-link:hover {
+        background-color: var(--accent-color);
+        color: floralwhite;
+        padding-left: 1.75rem;
+    }
+
+    .hamburger {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--light-text);
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0.5rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        background: linear-gradient(to bottom, rgb(22, 14, 66), rgb(0, 52, 111));
+        padding: 4rem 0;
+        color: var(--light-text);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .hero-content {
+        flex: 1;
+        max-width: 600px;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+    }
+
+    .hero-subtitle {
+        font-size: 1.75rem;
+        color: var(--accent-color);
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-text {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+    }
+
+    .hero-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-img {
+        max-width: 60%;
+        animation: float 6s ease-in-out infinite;
+    }
+
+    /* Videos Section */
+    .videos-section {
+        background: var(--bg-gradient);
+        padding: 5rem 0;
+        color: white;
+    }
+
+    .videos-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .videos-title {
+        font-size: 2.5rem;
+        color: white;
+        margin-bottom: 1rem;
+    }
+
+    .videos-subtitle {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.8);
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .videos-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .video-card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border-color);
+    }
+
+    .video-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .video-thumbnail {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        overflow: hidden;
+    }
+
+    .video-thumbnail img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+    }
+
+    .video-card:hover .video-thumbnail img {
+        transform: scale(1.05);
+    }
+
+    .video-duration {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 0.25rem 0.5rem;
+        border-radius: var(--radius-sm);
+        font-size: 0.75rem;
+    }
+
+    .video-info {
+        padding: 1.5rem;
+    }
+
+    .video-card-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+        color: white;
+        font-weight: 500;
+        line-height: 1.4;
+    }
+
+    .video-meta {
+        display: flex;
+        justify-content: space-between;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.875rem;
+    }
+
+    .video-play-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        background: rgba(255, 77, 0, 0.8);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: var(--transition);
+    }
+
+    .video-card:hover .video-play-btn {
+        opacity: 1;
+    }
+
+    .video-play-btn i {
+        color: white;
+        font-size: 1.5rem;
+        margin-left: 5px;
+    }
+
+    .videos-cta {
+        text-align: center;
+        margin-top: 3rem;
+    }
+
+    /* Products Section */
+    .products-section {
+        padding: 5rem 0;
+        background-color: var(--background-light);
+    }
+
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+
+    .product-card {
+        background-color: var(--card-bg);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+        transition: var(--transition);
+        border: 1px solid var(--border-color);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-xl);
+    }
+
+    .product-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .product-badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background-color: var(--accent-color);
+        color: white;
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.25rem 0.75rem;
+        border-radius: 2rem;
+    }
+
+    .product-content {
+        padding: 1.5rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--primary-dark);
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .product-title i {
+        color: var(--accent-color);
+    }
+
+    .product-features {
+        list-style: none;
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+    }
+
+    .product-features li {
+        margin-bottom: 0.75rem;
+        padding-left: 1.75rem;
+        position: relative;
+    }
+
+    .product-features li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--accent-color);
+        font-weight: bold;
+    }
+
+    .product-price {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary-dark);
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .price-currency {
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--text-muted);
+    }
+
+    .product-actions {
+        display: flex;
+        gap: 1rem;
+        margin-top: auto;
+    }
+
+    /* About Section */
+    .about-section {
+        padding: 5rem 0;
+        background-color: var(--primary-color);
+        color: var(--light-text);
+    }
+
+    .about-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    .about-content h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .about-content h3 {
+        margin-bottom: 1.5rem;
+    }
+
+    .about-image {
+        display: flex;
+        justify-content: center;
+    }
+
+    .about-image img {
+        width: 55%;
+        height: auto;
+    }
+
+    /* Services Section */
+    .services-section {
+        padding: 5rem 0;
+        background: linear-gradient(to top, rgb(7, 1, 47), rgb(0, 85, 182));
+        color: white;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .service-column h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.75rem;
+        color: var(--accent-color);
+        border-bottom: 2px solid var(--accent-color);
+    }
+
+    .service-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .service-list a:hover {
+        color: var(--accent-color);
+        padding-left: 0.5rem;
+    }
+
+    /* Footer */
+    .main-footer {
+        background-color: #0f0230;
+        color: white;
+        padding: 2.5rem 0 1rem;
+    }
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer-column h3 {
+        font-size: 1.125rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid #1f005e;
+    }
+
+    .footer-contact span {
+        display: block;
+        margin-bottom: 0.75rem;
+    }
+
+    .footer-contact i {
+        margin-right: 0.75rem;
+    }
+
+    .copyright {
+        text-align: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--accent-color);
+        font-size: 0.875rem;
+    }
+
+    /* WhatsApp Button */
+    .whatsapp-btn {
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 3.75rem;
+        height: 3.75rem;
+        background-color: var(--whatsapp-color);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        transition: var(--transition);
+    }
+
+    /* Estilos para el modal de términos */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(5px);
+    }
+
+    .modal-content {
+        background-color: #1a1340;
+        margin: 5% auto;
+        padding: 2rem;
+        border: 1px solid var(--accent-color);
+        border-radius: var(--radius-md);
+        width: 90%;
+        max-width: 800px;
+        max-height: 80vh;
+        overflow-y: auto;
+        color: white;
+        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+        position: relative;
+    }
+
+    .close-modal {
+        position: absolute;
+        right: 1.5rem;
+        top: 1rem;
+        color: #aaa;
+        font-size: 2rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .close-modal:hover {
+        color: var(--accent-color);
+        transform: rotate(90deg);
+    }
+
+    .terms-content {
+        margin: 1.5rem 0;
+        line-height: 1.6;
+    }
+
+    .terms-content h4 {
+        color: var(--accent-color);
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+    }
+
+    .terms-section {
+        margin-bottom: 1.5rem;
+    }
+
+    .terms-section h5 {
+        color: #ff9d13;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+    }
+
+    .terms-section ul {
+        margin-left: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .terms-section li {
+        margin-bottom: 0.5rem;
+    }
+
+    .modal-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+    }
+
+    .btn-secondary:hover {
+        background-color: #5a6268;
+        transform: translateY(-3px);
+    }
+
+    .whatsapp-btn:hover {
+        transform: scale(1.1);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+        .hero-title {
+            font-size: 3rem;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .license-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .cases-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .about-container {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+        
+        .about-image img {
+            width: 40%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .top-bar {
+            display: none;
+        }
+
+        .hamburger {
+            display: block;
+        }
+
+        .nav-menu {
+            position: fixed;
+            top: 80px;
+            left: -100%;
+            width: 100%;
+            height: calc(100vh - 80px);
+            background-color: var(--menu-bg);
+            flex-direction: column;
+            transition: 0.3s ease-in-out;
+            overflow-y: auto;
+            padding: 1rem 0;
+        }
+
+        .nav-menu.active {
+            left: 0;
+        }
+
+        .nav-item {
+            width: 100%;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-link {
+            padding: 1rem;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .dropdown-menu {
+            position: static;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            opacity: 1;
+            visibility: visible;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .dropdown.active .dropdown-menu {
+            max-height: 500px;
+            transition: max-height 0.5s ease-in;
+        }
+
+        .dropdown-menu .nav-link {
+            padding: 0.75rem 2.5rem;
+            opacity: 0.9;
+        }
+
+        .dropdown-menu .nav-link:hover {
+            background-color: var(--accent-color);
+            padding-left: 2.75rem;
+        }
+
+        .hero-container {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 100%;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+        }
+
+        .hero-img {
+            max-width: 80%;
+        }
+
+        .service-intro {
+            grid-template-columns: 1fr;
+        }
+        
+        .license-actions, .cta-buttons, .product-actions {
+            flex-direction: column;
+        }
+        
+        .cases-grid {
+            grid-template-columns: 1fr;
+        }
+        .modal-content {
+        width: 95%;
+        margin: 2% auto;
+        padding: 1.5rem;
+        }
+        
+        .modal-actions {
+            flex-direction: column;
+        }
+        
+        .modal-actions .btn {
+            width: 100%;
+        }
+
+        #ytPlayer {
+            height: 300px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .hero-title {
+            font-size: 2rem;
+        }
+        
+        .section-title {
+            font-size: 1.75rem;
+        }
+        
+        .section {
+            padding: 3rem 0;
+        }
+        
+        .about-image img {
+            width: 60%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <header class="top-bar">
+        <div class="top-bar-container">
+            <div class="top-info">
+                <span><i class="fas fa-phone"></i> 73324084</span>
+                <span><i class="fas fa-envelope"></i> 73324084saico@gmail.com</span>
+            </div>
+            <div class="top-info">
+                <span><i class="fas fa-book"></i> TUTORIALES</span>
+                <span><i class="fas fa-edit"></i> CONTACTO</span>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Navigation -->
+    <header class="main-header">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="img/LOGO2.png" alt="Sai Soluciones Logo" height="80"></a>
+            </div>
+            <button class="hamburger" aria-label="Menú" aria-expanded="false">☰</button>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+                <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Servicios <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a href="index.html#software-section" class="nav-link">Catalogo de programas</a></li>
+                        <li class="nav-item"><a href="licencia.html#licencias" class="nav-link">Activación de licencias</a></li>
+                        <li class="nav-item"><a href="update.html" class="nav-link">Materiales de Topografia</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#cursos" class="nav-link">Plantillas Civil 3D<i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a href="plant1.html" class="nav-link">Diseño Geométrico</a></li>
+                        <li class="nav-item"><a href="plant2.html" class="nav-link">Obras hidráulicas</a></li>
+                        <li class="nav-item"><a href="plant3.html" class="nav-link">Lotizaciones</a></li>
+                        <li class="nav-item"><a href="Plant4.html" class="nav-link">Fotogrametria</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-content animate__animated animate__fadeIn">
+                <h1 class="hero-title anton-font">FOTOGRAMETRIA INTENSIVO<span class="hero-subtitle anton-font">Aprende a procesar como un profesional</span></h1>
+                <p class="hero-text">
+                    Tenemos preparado un curso muy intensivo para generar modelos digitales de tu levantamientos fotogramétricos. <span>y lleva los datos directamente a <STRong>Civil 3D.</STRong></span> Ademas optimiza tu tiempo con nuestra aplicación LISP para eliminar curvas de nicel diminutos. 
+                </p>
+                <h1 class="hero-subtitle anton-font">$ 5.00 USD</h1>
+                <a href="https://pay.hotmart.com/C99145785J" class="btn btn-primary">Comprar Agisoft</a>
+            </div>
+            <div class="hero-image">
+                <img src="img/fotog.fw.png" alt="#" class="hero-img float-animation">
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section class="videos-section section">
+        <div class="container">
+            <div class="videos-header animate__animated animate__fadeIn">
+                <h2 class="videos-title anton-font">Tutoriales para Fotogrametria</h2>
+                <p class="videos-subtitle">Aprende a realizar trabajos de fotogrametria desde cero hasta llevar los resultados a Civil 3D</p>
+            </div>
+            
+            <div class="videos-grid">
+                <!-- Video 1 -->
+                <div class="video-card animate__animated animate__fadeInUp">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/7O1trd36uzE/hqdefault.jpg" alt="1 PLAN DE VUELO" onerror="this.src='https://img.youtube.com/vi/7O1trd36uzE/mqdefault.jpg'">
+                        <div class="video-duration">12:03</div>
+                        <div class="video-play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-card-title">1 PLAN DE VUELO (Fotogrametría con Dron)</h3>
+                        <div class="video-meta">
+                            <span>120 vistas</span>
+                            <span>hace 1 mes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="video-card animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/V4VQEAXNz48/hqdefault.jpg" alt="Resultados de AgiSoft a Civil 3D" onerror="this.src='https://img.youtube.com/vi/V4VQEAXNz48/mqdefault.jpg'">
+                        <div class="video-duration">9:45</div>
+                        <div class="video-play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-card-title">Fotogrametría con Drone. Resultados de AgiSoft a Civil 3D</h3>
+                        <div class="video-meta">
+                            <span>98 vistas</span>
+                            <span>hace 1 mes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="video-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/Ar5qygbJuZ8/hqdefault.jpg" alt="Eliminar contornos pequeños" onerror="this.src='https://img.youtube.com/vi/Ar5qygbJuZ8/mqdefault.jpg'">
+                        <div class="video-duration">4:32</div>
+                        <div class="video-play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-card-title">LISP PARA ELIMINAR CONTORNOS PEQUEÑOS NO DESEADOS</h3>
+                        <div class="video-meta">
+                            <span>115 vistas</span>
+                            <span>hace 3 semanas</span>
+                        </div>
+                    </div>
+                </div>
+                
+
+            
+            <div class="videos-cta animate__animated animate__fadeIn">
+                <a href="https://paypal.me/invierteatuconocimie/5" 
+                target="_blank" 
+                class="btn btn-primary">
+                Comprar Software
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="plantillas" class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nuestras Plantillas Premium</h2>
+                <p class="section-subtitle">Soluciones profesionales para optimizar tu flujo de trabajo en Civil 3D</p>
+            </div>
+
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card animate__animated animate__fadeInUp">
+                    <img src="img2/carretera.jpg" alt="Plantilla para Carreteras" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">
+                            <i class="fas fa-road"></i>
+                            Plantilla para Carreteras
+                        </h3>
+                        <ul class="product-features">
+                            <li>Estilos de etiquetado de perfil y sección</li>
+                            <li>Configuración de ejes personalizados</li>
+                            <li>25+ criterios de diseño precargados</li>
+                            <li>Conjunto de hojas de planos automatizadas</li>
+                            <li>Tablas de cantidades preconfiguradas</li>
+                        </ul>
+                        <div class="product-price">
+                            <span class="price-currency">$/</span> 7.99 USD
+                        </div>
+                        <div class="product-actions">
+                            <a href="https://paypal.me/invierteatuconocimie/7.99" class="btn btn-hotmart">
+                                <i class="fas fa-shopping-cart"></i> Comprar Ahora
+                            </a>
+                            <a href="https://wa.link/up4sls" class="btn btn-outline">
+                                <i class="fas fa-info-circle"></i> Más Información
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
+                    <img src="img2/canales.png" alt="Plantilla para Canales" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">
+                            <i class="fas fa-water"></i>
+                            Plantilla para Canales
+                        </h3>
+                        <ul class="product-features">
+                            <li>Estilos de etiquetado hidráulico</li>
+                            <li>Configuración de superficies de canal</li>
+                            <li>Calculadoras de caudal integradas</li>
+                            <li>Secciones transversales predefinidas</li>
+                            <li>Análisis hidráulico automatizado</li>
+                        </ul>
+                        <div class="product-price">
+                            <span class="price-currency">$/</span> 7.99 USD
+                        </div>
+                        <div class="product-actions">
+                            <a href="https://paypal.me/invierteatuconocimie/7.99" class="btn btn-hotmart">
+                                <i class="fas fa-shopping-cart"></i> Comprar Ahora
+                            </a>
+                            <a href="https://wa.link/wyx741" class="btn btn-outline">
+                                <i class="fas fa-info-circle"></i> Más Información
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                    <img src="img2/lotizacion.jpg" alt="Plantilla para Lotizaciones" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">
+                            <i class="fas fa-th-large"></i>
+                            Plantilla para Lotizaciones
+                        </h3>
+                        <ul class="product-features">
+                            <li>Estilos de parcela personalizados</li>
+                            <li>Tablas de áreas y perímetros</li>
+                            <li>Configuración de manzanas y lotes</li>
+                            <li>Herramientas de análisis de terreno</li>
+                            <li>Exportación automática a Excel</li>
+                        </ul>
+                        <div class="product-price">
+                            <span class="price-currency">$/</span> 5.89 USD
+                        </div>
+                        <div class="product-actions">
+                            <a href="https://paypal.me/invierteatuconocimie/5.89" class="btn btn-hotmart">
+                                <i class="fas fa-shopping-cart"></i> Comprar Ahora
+                            </a>
+                            <a href="https://wa.link/vuooyl" class="btn btn-outline">
+                                <i class="fas fa-info-circle"></i> Más Información
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section section">
+        <div class="container about-container">
+            <div class="about-content animate__animated animate__fadeInLeft">
+                <h2 class="anton-font">Sai Soluciones</h2>
+                <h3>Software y Servicios Profesionales</h3>
+                <p>
+                    Con más de 8 años de experiencia, en <strong>S.A.I. Soluciones</strong> nos especializamos en resolver problemas de instalación de programas de Autodesk e ingeniería. No importa desde dónde nos contactes: ya sea en tu casa, oficina o incluso en tu tiempo de descanso, estamos disponibles para ayudarte de forma remota, sin que tengas que buscar a un técnico o perder tiempo valioso. 
+                    <br><br>
+                    Nuestro equipo trabaja las 24 horas, los 7 días de la semana, para brindarte una solución rápida y eficiente. Si no sabes cómo instalar algún programa de ingeniería, nuestros profesionales están listos para hacerlo por ti.
+                  </p>
+                <h3>Contáctanos</h3>
+                <p><i class="fas fa-envelope"></i> 73324084saico@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +59173324084</p>
+                <a href="#contacto" class="btn btn-primary">Hablamos?</a>
+            </div>
+            <div class="about-image animate__animated animate__fadeInRight">
+                <img src="img/LOGO2.png" alt="Logo Sai Soluciones" style="max-width: 80%; height: auto;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="services-section section">
+        <div class="container">
+            <h2 class="section-title">Servicios Profesionales</h2>
+            <div class="services-grid">
+                <div class="service-column animate__animated animate__fadeInLeft">
+                    <h3>Diseño y Supervisión</h3>
+                    <ul class="service-list">
+                        <li><a href="#">Diseño Geométrico de Carreteras</a></li>
+                        <li><a href="#">Supervisión de Obras (Canales, Carreteras, Muros)</a></li>
+                        <li><a href="#">Cálculo de Presupuestos y Volúmenes</a></li>
+                        <li><a href="#">Estudios Hidrológicos</a></li>
+                    </ul>
+                </div>
+                <div class="service-column animate__animated animate__fadeIn">
+                    <h3>Topografía y Fotogrametría</h3>
+                    <ul class="service-list">
+                        <li><a href="#">Levantamientos Topográficos con Drones</a></li>
+                        <li><a href="#">Procesamiento Fotogramétrico (Curvas de Nivel)</a></li>
+                        <li><a href="#">Replanteo Topográfico</a></li>
+                    </ul>
+                </div>
+                <div class="service-column animate__animated animate__fadeInRight">
+                    <h3>Automatización y Capacitación</h3>
+                    <ul class="service-list">
+                        <li><a href="#">Macros en Visual Basic para Excel</a></li>
+                        <li><a href="#">Cursos de Civil 3D (Carreteras, Canales)</a></li>
+                        <li><a href="#">Plantillas Profesionales para Civil 3D</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Sai Soluciones</h3>
+                    <p>Software y Servicios Profesionales para ingeniería, topografía y arquitectura.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <div class="footer-contact">
+                        <span><i class="fas fa-envelope"></i> 73324084saico@gmail.com</span>
+                        <span><i class="fas fa-phone"></i> +591 73324084</span>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="service-list">
+                        <li><a href="inicio.html">Inicio</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#plantillas">Plantillas</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                Copyright © 2025 | Software y Servicio de Instalación Remota
+                <br><br>
+                <img src="img/LOGO2.png" alt="Logo Sai Soluciones" style="max-width: 25%; height: auto; display: block; margin: 0 auto;">
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/59173324084" class="whatsapp-btn pulse-animation" target="_blank" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Modal de Términos -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3><i class="fas fa-file-contract"></i> Términos de Servicio</h3>
+            <div class="terms-content">
+                <h4>Instalación y Activación de Software Autodesk</h4>
+                
+                <div class="terms-section">
+                    <h5>1. Servicio ofrecido:</h5>
+                    <p>Nos especializamos en la instalación remota y activación de software técnico para ingeniería, arquitectura y topografía, incluyendo toda la gama de productos de Autodesk. Nuestro servicio garantiza la entrega de licencias 100% funcionales en equipos con sistemas operativos nuevos o recientemente reinstalados.</p>
+                </div>
+                
+                <div class="terms-section">
+                    <h5>2. Garantía de funcionamiento:</h5>
+                    <p>Garantizamos que todas las licencias proporcionadas son plenamente funcionales y operativas, siempre que se instalen en sistemas que no hayan sido alterados o modificados con configuraciones anteriores de licencias, especialmente aquellas gestionadas mediante terminales de Windows.</p>
+                </div>
+                
+                <div class="terms-section">
+                    <h5>3. Política de reembolsos:</h5>
+                    <p>La realización del reembolso se aprueba únicamente cuando:</p>
+                    <ul>
+                        <li>No se pudo lograr activar la licencia en un equipo nuevo o con sistema operativo recién instalado</li>
+                        <li>El reclamo se realiza dentro de los 7 días posteriores a la compra del servicio o producto</li>
+                        <li>Se proporciona evidencia del problema mediante el registro del equipo que realizamos durante la instalación</li>
+                    </ul>
+                    <p>No se aceptarán reembolsos por intentos de instalación en equipos diferentes al registrado inicialmente. Tampoco procederán reembolsos por modificaciones realizadas por el cliente a las licencias proporcionadas.</p>
+                </div>
+                
+                <div class="terms-section">
+                    <h5>4. Limitación de responsabilidad:</h5>
+                    <p>No nos hacemos responsables por:</p>
+                    <ul>
+                        <li>Errores de activación o funcionamiento incorrecto en equipos con instalaciones previas de productos Autodesk</li>
+                        <li>Archivos residuales de licencias anteriores (originales, modificadas o vencidas)</li>
+                        <li>Configuraciones del sistema alteradas, claves de registro corruptas, servicios detenidos o bloqueos en el sistema operativo</li>
+                        <li>Modificaciones realizadas por el cliente a las licencias proporcionadas</li>
+                        <li>Problemas derivados de intentar instalar las licencias en equipos no registrados</li>
+                    </ul>
+                </div>
+                
+                <div class="terms-section">
+                    <h5>5. Acceso a descargas:</h5>
+                    <p>Los accesos a las descargas de nuestros productos tienen las siguientes condiciones:</p>
+                    <ul>
+                        <li>Vigencia de 30 días desde el momento de la compra</li>
+                        <li>Acceso limitado a un solo correo electrónico registrado</li>
+                        <li>No se permiten transferencias ni compartir credenciales de acceso</li>
+                    </ul>
+                </div>
+                
+                <div class="terms-section">
+                    <h5>6. Recomendaciones previas a la instalación:</h5>
+                    <p>Para garantizar el correcto funcionamiento de los productos Autodesk:</p>
+                    <ul>
+                        <li>Se recomienda realizar la instalación en equipos con sistema operativo limpio o recientemente reinstalado</li>
+                        <li>En caso de instalaciones fallidas anteriores, se sugiere desinstalar todos los productos Autodesk, eliminar archivos residuales y limpiar entradas de registro relacionadas</li>
+                        <li>Evitar realizar modificaciones a los archivos de licencia proporcionados</li>
+                    </ul>
+                </div>
+                
+                <div class="terms-section">
+                    <h5>7. Sobre problemas recurrentes:</h5>
+                    <p>Algunos de los errores más comunes que pueden surgir en equipos con antecedentes de instalaciones incluyen:</p>
+                    <ul>
+                        <li>Fallos al abrir programas por conflictos de licencia</li>
+                        <li>Instalaciones que no se inician o que se cancelan automáticamente</li>
+                        <li>Mensajes de reinicio continuo durante la instalación</li>
+                        <li>Persistencia de archivos de licencias corruptas que interfieren con nuevas activaciones</li>
+                    </ul>
+                    <p>Nuestro equipo está capacitado para identificar estos problemas y aplicar las soluciones necesarias, incluyendo limpieza profunda del sistema, eliminación de registros, y en casos extremos, la reinstalación del sistema operativo.</p>
+                </div>
+                
+                <div class="terms-section">
+                    <h5>8. Aceptación de términos:</h5>
+                    <p>Al solicitar nuestro servicio, el cliente declara estar informado de las condiciones aquí descritas y acepta que:</p>
+                    <ul>
+                        <li>El correcto funcionamiento del software depende en gran medida del estado del sistema operativo del equipo</li>
+                        <li>Conoce y acepta la política de reembolsos descrita</li>
+                        <li>Reconoce las limitaciones de acceso a las descargas</li>
+                        <li>Acepta que no compartirá ni transferirá las credenciales de acceso</li>
+                        <li>Entiende que cualquier modificación a las licencias anula la garantía</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button id="acceptTerms" class="btn btn-primary">
+                    <i class="fas fa-check-circle"></i> Acepto los términos y condiciones
+                </button>
+                <button id="declineTerms" class="btn btn-secondary">
+                    <i class="fas fa-times-circle"></i> No acepto
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Videos -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content" style="max-width: 800px;">
+            <span class="close-modal">&times;</span>
+            <h3 id="videoModalTitle"></h3>
+            <div class="video-wrapper">
+                <iframe id="ytPlayer" width="100%" height="450" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Navigation
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            function isMobile() {
+                return window.innerWidth <= 768;
+            }
+            
+            // Toggle mobile menu
+            if (hamburger) {
+                hamburger.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                    this.setAttribute('aria-expanded', this.classList.contains('active'));
+                });
+            }
+            
+            // Handle dropdowns on mobile
+            dropdowns.forEach(dropdown => {
+                const link = dropdown.querySelector('.nav-link');
+                const menu = dropdown.querySelector('.dropdown-menu');
+                
+                if (link && menu) {
+                    link.addEventListener('click', function(e) {
+                        if (isMobile()) {
+                            e.preventDefault();
+                            dropdown.classList.toggle('active');
+                            
+                            // Close other dropdowns
+                            dropdowns.forEach(other => {
+                                if (other !== dropdown) {
+                                    other.classList.remove('active');
+                                }
+                            });
+                        }
+                    });
+                }
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                    
+                    if (isMobile()) {
+                        dropdowns.forEach(dropdown => {
+                            dropdown.classList.remove('active');
+                        });
+                    }
+                }
+            });
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                if (!isMobile()) {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                    
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
+                }
+            });
+            
+            // Animation on scroll
+            const animateElements = document.querySelectorAll('.animate__animated');
+            
+            function checkAnimation() {
+                animateElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementTop < windowHeight - 100) {
+                        element.style.opacity = '1';
+                        element.style.visibility = 'visible';
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', checkAnimation);
+            checkAnimation(); // Run once on load
+            
+            // =================================================================
+            // TÉRMINOS Y CONDICIONES - MODAL (solo para compras)
+            // =================================================================
+            let currentAction = null;
+
+            // Función para mostrar el modal de términos
+            function showTermsModal(action) {
+                currentAction = action;
+                document.getElementById('termsModal').style.display = 'block';
+                document.body.style.overflow = 'hidden'; // Deshabilitar scroll
+            }
+
+            // Cerrar modal al hacer clic en la X
+            const closeModalBtn = document.querySelector('.close-modal');
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', function() {
+                    document.getElementById('termsModal').style.display = 'none';
+                    document.getElementById('videoModal').style.display = 'none';
+                    document.getElementById('ytPlayer').src = '';
+                    document.body.style.overflow = 'auto';
+                    currentAction = null;
+                });
+            }
+
+            // Cerrar modal al hacer clic fuera del contenido
+            window.addEventListener('click', function(event) {
+                if (event.target === document.getElementById('termsModal') || event.target === document.getElementById('videoModal')) {
+                    document.getElementById('termsModal').style.display = 'none';
+                    document.getElementById('videoModal').style.display = 'none';
+                    document.getElementById('ytPlayer').src = '';
+                    document.body.style.overflow = 'auto';
+                    currentAction = null;
+                }
+            });
+
+            // Botón No Acepto
+            const declineBtn = document.getElementById('declineTerms');
+            if (declineBtn) {
+                declineBtn.addEventListener('click', function() {
+                    document.getElementById('termsModal').style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                    currentAction = null;
+                    alert('Para continuar con la compra es necesario aceptar los términos y condiciones.');
+                });
+            }
+
+            // Botón Acepto
+            const acceptBtn = document.getElementById('acceptTerms');
+            if (acceptBtn) {
+                acceptBtn.addEventListener('click', function() {
+                    document.getElementById('termsModal').style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                    
+                    if (currentAction) {
+                        // Ejecutar la acción correspondiente
+                        switch(currentAction.type) {
+                            case 'hotmart':
+                                window.open(`https://hotmart.com/es/marketplace/productos/${currentAction.id}`, '_blank');
+                                break;
+                            case 'paypal':
+                                window.open('https://www.paypal.com/checkout?item=licencia-autodesk', '_blank');
+                                break;
+                            // El caso de whatsapp ya no es necesario aquí
+                        }
+                    }
+                    
+                    currentAction = null;
+                });
+            }
+
+            // =================================================================
+            // FUNCIONES DE COMPRA ACTUALIZADAS
+            // =================================================================
+            window.comprarHotmart = function(productId) {
+                showTermsModal({ type: 'hotmart', id: productId });
+            };
+
+            window.comprarPayPal = function() {
+                showTermsModal({ type: 'paypal' });
+            };
+
+            // Nueva función para WhatsApp sin mostrar términos
+            window.smswhasapp = function() {
+                const phone = '59173324084';
+                const message = encodeURIComponent('Hola, estoy interesado en las licencias de Autodesk, ¿podrían brindarme más información?');
+                window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+            };
+
+            // =================================================================
+            // MANEJO DE VIDEOS
+            // =================================================================
+            const videos = [
+                {
+                    id: '7O1trd36uzE',
+                    title: '1 PLAN DE VUELO (Fotogrametría con Dron)',
+                    duration: '12:03',
+                    views: '120 vistas',
+                    date: 'hace 1 mes'
+                },
+                {
+                    id: 'V4VQEAXNz48',
+                    title: 'Fotogrametría con Drone. Resultados de AgiSoft a Civil 3D',
+                    duration: '9:45',
+                    views: '98 vistas',
+                    date: 'hace 1 mes'
+                },
+                {
+                    id: 'Ar5qygbJuZ8',
+                    title: 'LISP PARA ELIMINAR CONTORNOS PEQUEÑOS NO DESEADOS',
+                    duration: '4:32',
+                    views: '115 vistas',
+                    date: 'hace 3 semanas'
+                },
+            ];
+
+            // Asignar eventos a las tarjetas de video
+            document.querySelectorAll('.video-card').forEach((card, index) => {
+                card.addEventListener('click', function(e) {
+                    // Evitar que se active si se hace clic en un enlace dentro del card
+                    if (e.target.tagName === 'A' || e.target.closest('a')) {
+                        return;
+                    }
+                    
+                    const video = videos[index];
+                    document.getElementById('ytPlayer').src = `https://www.youtube.com/embed/${video.id}?autoplay=1`;
+                    document.getElementById('videoModalTitle').textContent = video.title;
+                    document.getElementById('videoModal').style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // Cerrar modal de video
+            document.querySelector('#videoModal .close-modal').addEventListener('click', function() {
+                document.getElementById('ytPlayer').src = '';
+                document.getElementById('videoModal').style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        });
+    </script>
+</body>
+</html>

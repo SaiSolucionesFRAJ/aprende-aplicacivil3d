@@ -1,0 +1,2681 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sai Soluciones ofrece licencias permanentes de Autodesk, cursos de Civil 3D y servicios profesionales de ingeniería." />
+    <meta name="keywords" content="Autodesk, Civil 3D, ingeniería, licencias, cursos" />
+    <title>Sai Soluciones a la Ingeniería</title>
+    <!-- Solo una versión de Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-kit.js" crossorigin="anonymous"></script>
+    <style>
+      :root {
+        --primary-color: #2c1c77;
+        --secondary-color: #3a2996;
+        --accent-color: #ff4d00;
+        --text-color: #333333;
+        --light-text: #ffffff;
+        --menu-bg: #1a1340;
+        --hover-color: #ff6b34;
+        --bg-light: #f8f9fa;
+        --border-color: rgba(255, 255, 255, 0.1);
+      }
+
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'DM Sans', sans-serif;
+      }
+
+      body {
+          color: var(--text-color);
+          line-height: 1.6;
+      }
+
+      .container {
+          width: 100%;
+          max-width: 1500px;
+          margin: 0 auto;
+          padding: 0 15px;
+      }
+
+      /* Top Bar Styles */
+      .top-bar {
+          background: var(--secondary-color);
+          color: var(--light-text);
+          padding: 8px 0;
+          font-size: 14px;
+      }
+
+
+
+
+
+
+
+
+      header {
+          background-color: var(--primary-color);
+          color: #2d3408;
+          padding: 10px 0;
+      }
+
+      .container-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+      .left-info, .right-info {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+      }
+
+      /* Información de la derecha */
+      .right-info {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+      }
+
+      /* Estilos para los iconos */
+      .fas, .fab {
+          margin-right: 5px;
+      }
+
+      .social-icons {
+          display: flex;
+          gap: 10px;
+      }
+
+      .social-icons i {
+          cursor: pointer;
+          transition: color 0.3s;
+      }
+
+      .social-icons i:hover {
+          color: var(--accent-color);
+      }
+
+
+      .contact-info {
+          display: flex;
+          align-items: center;
+
+      }
+
+      .contact-info i {
+          margin-right: 5px;
+
+      }
+
+      .contact-info span {
+          margin-right: 20px;
+          font-size: 15px;
+      }
+
+      .main-nav {
+          background-color: var(--menu-bg);
+          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+          position: relative;
+          z-index: 1000;
+      }
+
+
+      .nav-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px 20px;
+          max-width: 1200px;
+          margin: 0 auto;
+      }
+
+      .logo img {
+          height: 60px;
+      }
+
+
+      .menu {
+        display: flex;
+        list-style: none;
+      }
+      .menu > li {
+          position: relative;
+          margin: 0 5px;
+      }
+
+      .menu > li > a {
+          display: flex;
+          align-items: center;
+          padding: 15px 20px;
+          color: var(--light-text);
+          text-decoration: none;
+          font-size: 16px;
+          transition: all 0.3s;
+      }
+
+      .menu > li > a:hover {
+          color: var(--hover-color);
+      }
+
+
+      .dropdown > a::after {
+          content: '▾';
+          margin-left: 8px;
+          transition: transform 0.3s;
+      }
+
+
+      .dropdown-menu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          min-width: 250px;
+          background: var(--secondary-color);
+          border-radius: 8px;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(-10px);
+          transition: all 0.3s;
+          z-index: 100;
+      }
+
+      .dropdown:hover .dropdown-menu {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+      }
+
+
+
+      .dropdown-menu a {
+          display: block;
+          padding: 12px 24px;
+          color: var(--light-text);
+          text-decoration: none;
+          transition: all 0.3s;
+      }
+
+      .dropdown-menu a:hover {
+          background-color: var(--hover-color);
+          padding-left: 30px;
+      }
+
+      .hamburger {
+          display: none;
+          background: none;
+          border: none;
+          color: var(--light-text);
+          font-size: 24px;
+          cursor: pointer;
+          padding: 10px;
+      }
+
+
+      .hero {
+          background: linear-gradient(to bottom, rgb(22, 14, 66), rgb(0, 52, 111));
+          padding: 60px 0;
+          color: var(--light-text);
+      }
+
+      .hero-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 40px;
+      }
+      .hero-container2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 5%;
+        margin-bottom: 10px;
+      }
+
+      .hero-container2 .content-box {
+          max-width: 100%; /* Ajusta el ancho máximo del contenido */
+      }
+
+      .hero-container2 h1 {
+        font-size: 2rem;
+        font-family: 'Anton', sans-serif;
+        line-height: 39px;
+        font-weight: normal;
+        color: #ff9d13;
+      }
+
+      .hero-container2 h1 span {
+        color: #ffffff;
+        font-size: 1.5rem;
+      }
+
+      .container-left {
+          flex: 1;
+          max-width: 600px;
+      }
+
+      .container-left h1 {
+          font-family: 'Anton', sans-serif;
+          font-size: 76px;
+          margin-bottom: 20px;
+          font-weight: normal;
+          line-height: 1.1;
+      }
+
+      .container-left h1 span {
+          color: var(--accent-color);
+          font-family: 'Anton', sans-serif;
+          font-size: 55px;
+          display: block;
+      }
+
+      .container-left p {
+          font-size: 19px;
+          margin-bottom: 30px;
+          font-family: 'DM sans', sans-serif;
+      }
+      .container-right {
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center; /* Cambiado de flex-end a center */
+      }
+
+      .animated-image {
+          max-width: 60%;
+          height: auto;
+          animation: float 6s ease-in-out infinite;
+          display: none; /* Las imágenes están ocultas por defecto */
+          margin: 0 auto; /* Esto ayuda a centrar la imagen cuando es display: block */
+      }
+
+      .animated-image.active {
+          display: block; /* Solo la imagen activa se muestra */
+      }
+      @keyframes float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-20px); }
+      }
+
+      .contact-btn {
+          display: inline-block;
+          background-color: var(--accent-color);
+          color: var(--light-text);
+          padding: 12px 30px;
+          border-radius: 25px;
+          text-decoration: none;
+          font-weight: 500;
+          transition: all 0.3s;
+      }
+
+      .contact-btn:hover {
+          background-color: var(--hover-color);
+          transform: translateY(-2px);
+      }
+
+      /* Estilos para el slider */
+      .slider-container {
+          position: relative;
+          margin-bottom: 30px;
+          min-height: 200px;
+      }
+
+      .slide {
+          opacity: 0;
+          visibility: hidden;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          transition: opacity 0.5s ease, visibility 0.5s ease;
+      }
+
+      .slide.active {
+          opacity: 1;
+          visibility: visible;
+          position: relative;
+      }
+
+      /* Controles de navegación */
+      .slider-navigation {
+          display: flex;
+          justify-content: center;
+          margin-top: 20px;
+          gap: 10px;
+      }
+
+      .nav-dot {
+          width: 12px;
+          height: 12px;
+          background-color: rgba(255, 255, 255, 0.5);
+          border-radius: 50%;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+      }
+
+      .nav-dot.active {
+          background-color: var(--accent-color);
+      }
+
+
+
+
+
+
+
+      .features {
+          padding: 50px 0;
+          background-color: #0B0742;  /* Azul oscuro */
+          color: #ffffff;
+      }
+
+      .features .container {
+          max-width: 1200px;
+          margin-top: 30px;
+          padding: 0 20px; /* Margen interno para pantallas pequeñas */
+      }
+
+      .section-title {
+          text-align: center;
+          font-size: 2rem;
+          margin-bottom: 50px;
+          color: #FF7F00; /* Naranja para el título */
+      }
+
+      .feature-container {
+          display: flex;
+          flex-wrap: wrap; /* Para que se acomoden en varias filas si no caben en una sola */
+          justify-content: center; /* Centra las tarjetas horizontalmente */
+          gap: 30px; /* Espacio entre tarjetas */
+      }
+
+      .feature-card {
+          background: transparent; /* Fondo transparente */
+          border: none;
+          display: flex;
+          flex-direction: row; /* Regresamos a disposición en columna */
+          align-items: center; /* Alineación centrada */
+          max-width: 31%; /* Ancho máximo de cada tarjeta */
+          text-align: left; /* Texto centrado */
+          gap: 10px; /* Espacio entre icono y texto */
+          transition: all 0.3s;
+      }
+
+      .feature-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .feature-icon {
+          font-size: 2rem;
+          color: #FF7F00; /* Naranja para íconos */
+          margin-bottom: 20px;
+      }
+
+      .feature-title {
+          font-size: 1rem;
+          font-weight: normal;
+          margin: 0;
+      }
+
+
+
+
+
+
+
+
+
+
+
+      .benefits {
+          padding: 60px 0;
+          background: linear-gradient(to bottom, rgb(10, 0, 65), rgb(0, 52, 111));
+
+      }
+
+      .benefits-container {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 30px;
+          color: #ffffff;
+      }
+
+      .benefit-item {
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 20px;
+      }
+
+      .benefit-icon {
+          font-size: 20px;
+          margin-right: 15px;
+          flex-shrink: 0;
+          color: #fcff30;
+      }
+
+
+      .benefit-content h3 {
+          font-size: 18px;
+          font-family: 'Elegant Lux Mager';
+          margin-bottom: 5px;
+
+      }
+
+
+
+
+
+
+
+
+      .about-section {
+          padding: 60px 0;
+          background-color: var(--primary-color);
+          color: var(--light-text);
+      }
+
+      .about-container {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 40px;
+          align-items: center;
+      }
+
+      .about-content h2 {
+          font-size: 32px;
+          margin-bottom: 20px;
+      }
+
+
+      .testimonials {
+    padding: 60px 0;
+    background: linear-gradient(to bottom, var(--secondary-color), #1e1671);
+    color: var(--light-text);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: 'Anton', sans-serif;
+    color: #ff9100;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .testimonial-slider {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .testimonial {
+    display: none;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .testimonial.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .testimonial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .conversation p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #333;
+  }
+
+  .conversation strong {
+    color: #1a73e8;
+    font-weight: 600;
+  }
+
+  blockquote {
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 20px;
+    border-left: 4px solid var(--accent-color);
+  }
+
+  .client-info {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .client-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+    border: 3px solid #ff9100;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .client-avatar:hover {
+    transform: scale(1.05);
+  }
+
+  .client-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .client-details h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #222;
+    margin: 0;
+  }
+
+  .client-details p {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 4px 0 0;
+  }
+
+  .testimonial-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .nav-arrow {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--light-text);
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .nav-arrow:hover {
+    color: var(--accent-color);
+  }
+
+  .nav-dots {
+    display: flex;
+    gap: 10px;
+  }
+
+  .nav-dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .nav-dot.active {
+    background-color: var(--accent-color);
+  }
+
+  @media (max-width: 768px) {
+    .testimonials {
+      padding: 40px 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .testimonial {
+      padding: 20px;
+    }
+
+    .client-avatar {
+      width: 60px;
+      height: 60px;
+    }
+
+    .client-details h4 {
+      font-size: 1.1rem;
+    }
+
+    .client-details p {
+      font-size: 0.9rem;
+    }
+
+    .nav-arrow {
+      font-size: 1.5rem;
+    }
+  }
+
+      .portfolio {
+          padding: 60px 0;
+      }
+
+      .portfolio-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 20px;
+      }
+
+      .portfolio-item {
+          position: relative;
+          height: 200px;
+          background-color: #ddd;
+          border-radius: 5px;
+          overflow: hidden;
+          cursor: pointer;
+      }
+
+      .portfolio-item:hover .portfolio-overlay {
+          opacity: 1;
+      }
+
+      .portfolio-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 86, 179, 0.8);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          opacity: 0;
+          transition: opacity 0.3s;
+      }
+
+      .portfolio-overlay h3 {
+          color: white;
+          text-align: center;
+          padding: 0 10px;
+      }
+
+      .services {
+          padding: 60px 0;
+          background-color: var(--primary-color);
+          color: var(--light-text);
+      }
+
+      .services-container {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 30px;
+      }
+
+      .service-column h3 {
+          font-size: 23px;
+          margin-bottom: 20px;
+          padding-bottom: 10px;
+          color: #ff7300;
+          border-bottom: 2px solid var(--accent-color);
+      }
+
+      .service-list {
+          list-style: none;
+      }
+
+      .service-list li {
+          margin-bottom: 10px;
+      }
+
+      .service-list a {
+          color: var(--light-text);
+          text-decoration: none;
+          transition: color 0.3s;
+      }
+
+      .service-list a:hover {
+          color: var(--accent-color);
+      }
+
+      footer {
+          background-color: #0f0230;
+          color: white;
+          padding: 40px 0 20px;
+      }
+
+      .footer-container {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 30px;
+          margin-bottom: 30px;
+      }
+
+      .footer-column h3 {
+          font-size: 18px;
+          margin-bottom: 20px;
+          padding-bottom: 10px;
+          border-bottom: 1px solid #1f005e;
+      }
+
+      .footer-contact span {
+          display: block;
+          margin-bottom: 10px;
+      }
+
+      .footer-contact i {
+          margin-right: 10px;
+      }
+
+      .copyright {
+          text-align: center;
+          padding-top: 20px;
+          border-top: 1px solid #ff9500;
+          font-size: 14px;
+      }
+
+      .whatsapp-button {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          width: 60px;
+          height: 60px;
+          background-color: #25d366;
+          color: white;
+          border-radius: 50%;
+          text-align: center;
+          line-height: 60px;
+          font-size: 30px;
+          box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+          z-index: 1000;
+          animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+          0% {
+              transform: scale(1);
+          }
+          50% {
+              transform: scale(1.1);
+          }
+          100% {
+              transform: scale(1);
+          }
+      }
+
+      /* Animaciones adicionales */
+      .animate-fadeIn {
+          animation: fadeIn 1s;
+      }
+
+      .animate-slideUp {
+          animation: slideUp 1s;
+      }
+
+
+      .animate-slideLeft {
+          animation: slideLeft 1s;
+
+      }
+
+      .animate-slideRight {
+          animation: slideRight 1s;
+      }
+
+
+      @keyframes fadeIn {
+          from {
+              opacity: 0;
+          }
+          to {
+              opacity: 1;
+          }
+      }
+
+      @keyframes slideUp {
+          from {
+              opacity: 0;
+              transform: translateY(50px);
+          }
+          to {
+              opacity: 1;
+              transform: translateY(0);
+          }
+      }
+
+      @keyframes slideLeft {
+          from {
+              opacity: 0;
+              transform: translateX(50px);
+          }
+          to {
+              opacity: 1;
+              transform: translateX(0);
+          }
+      }
+
+      @keyframes slideRight {
+          from {
+              opacity: 0;
+              transform: translateX(-50px);
+          }
+          to {
+              opacity: 1;
+              transform: translateX(0);
+          }
+      }
+
+      /* Mobile Styles */
+      @media (max-width: 768px) {
+          .top-bar {
+              display: none;
+          }
+          .hamburger {
+              display: block;
+          }
+
+          .menu {
+              position: fixed;
+              top: 80px;
+              left: -100%;
+              width: 100%;
+              height: calc(100vh - 80px);
+              background-color: var(--menu-bg);
+              flex-direction: column;
+              transition: 0.3s ease-in-out;
+              overflow-y: auto;
+              padding: 20px 0;
+          }
+
+          .menu.active {
+              left: 0;
+          }
+
+
+          .menu > li {
+              width: 100%;
+              border-bottom: 1px solid var(--border-color);
+          }
+
+          .menu > li > a {
+              padding: 15px 20px;
+              width: 100%;
+              justify-content: space-between;
+          }
+
+          .dropdown-menu {
+              position: static;
+              width: 100%;
+              background-color: rgba(255,255,255,0.05);
+              padding: 0;
+              max-height: 0;
+              overflow: hidden;
+              transition: max-height 0.3s ease-out;
+              opacity: 1;
+              visibility: visible;
+              transform: none;
+              box-shadow: none;
+          }
+
+          .dropdown.active .dropdown-menu {
+              max-height: 500px;
+              transition: max-height 0.5s ease-in;
+          }
+
+          .dropdown-menu a {
+              padding: 12px 40px;
+              color: var(--light-text);
+              opacity: 0.9;
+          }
+
+          .dropdown-menu a:hover {
+              background-color: var(--hover-color);
+              padding-left: 45px;
+          }
+
+          .dropdown.active > a::after {
+              transform: rotate(180deg);
+          }
+
+          .hero-container {
+              flex-direction: column;
+              text-align: center;
+          }
+
+          .container-left h1 {
+              font-size: 48px;
+          }
+
+          .container-left h1 span {
+              font-size: 36px;
+          }
+
+          .slider-container {
+              min-height: 300px; /* Aumentado para móviles */
+          }
+
+          /* Ajustes de las características */
+          .feature-container {
+              grid-template-columns: 1fr;
+              gap: 20px;
+          }
+
+          .feature-card {
+              background: transparent; /* Fondo transparente */
+              border: none;
+              display: flex;
+              flex-direction: row; /* Regresamos a disposición en columna */
+              align-items: center; /* Alineación centrada */
+              max-width: 100%; /* Ancho máximo de cada tarjeta */
+              text-align: left; /* Texto centrado */
+              gap: 10px; /* Espacio entre icono y texto */
+              transition: all 0.3s;
+          }
+
+          /* Ajustes de los beneficios */
+          .benefits-container {
+              grid-template-columns: 1fr;
+          }
+
+          /* Ajustes de la sección about */
+          .about-container {
+              grid-template-columns: 1fr;
+              text-align: center;
+          }
+
+          /* Ajustes del portfolio */
+          .portfolio-grid {
+              grid-template-columns: 1fr;
+          }
+
+          /* Ajustes de los servicios */
+          .services-container {
+              grid-template-columns: 1fr;
+              gap: 40px;
+          }
+
+          /* Ajustes del contenedor de la barra de navegación */
+          .nav-container {
+              padding: 10px 15px;
+          }
+
+          .logo img {
+              height: 60px;
+          }
+
+
+      }
+
+
+
+      /* Animations */
+      .animate-fadeIn {
+          animation: fadeIn 1s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+      }
+
+      /* WhatsApp Button */
+      .whatsapp-button {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          width: 60px;
+          height: 60px;
+          background-color: #25d366;
+          color: white;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 30px;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+          z-index: 1000;
+          transition: transform 0.3s;
+      }
+
+      .whatsapp-button:hover {
+          transform: scale(1.1);
+      }
+
+
+    /* Estilos Generales */
+    .software-section {
+      padding: 80px 0;
+      background: #ffffff;
+      font-family: 'Roboto', sans-serif;
+      position: relative;
+    }
+    .container {
+      max-width: auto;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    .software-section h3 {
+      text-align: center;
+      margin-bottom: 60px;
+      color: #1a2b49;
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-bottom: 4px solid #ff6b00;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .tabs > div {
+      flex: 1;
+      min-width: 300px;
+      background: #f5f7fa;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+    .tabs > div:hover {
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+    .tabs h4 {
+      background: #1a2b49;
+      color: #fff;
+      padding: 20px;
+      margin: 0;
+      font-size: 1.6rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+    }
+    .tabs ul {
+      list-style: none;
+      padding: 20px;
+      margin: 0;
+      color: #333;
+      display: none;
+      background: #fff;
+    }
+    .tabs li {
+      margin-bottom: 15px;
+    }
+    .tabs a {
+      text-decoration: none;
+      color: #1a2b49;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .tabs a:hover {
+      color: #ff6b00;
+    }
+
+    /* Estilos del Modal Mejorados */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 16px;
+      max-width: 480px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .modal-content img {
+      max-width: 60%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+    .modal-content img:hover {
+      transform: scale(1.02);
+    }
+    .modal-content h4 {
+      color: #2d3748; /* Gris oscuro elegante */
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .modal-content p {
+      color: #4a5568; /* Gris medio suave */
+      font-size: 0.95rem;
+      font-weight: 400;
+      margin-bottom: 18px;
+      line-height: 1.5;
+    }
+    .modal-content .price {
+      color: #ff6b00; /* Naranja vibrante */
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+    .modal-content .paypal-btn {
+      background: linear-gradient(135deg, #0070ba, #00a1d6); /* Gradiente PayPal moderno */
+      color: #fff;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 112, 186, 0.3);
+    }
+    .modal-content .paypal-btn:hover {
+      background: linear-gradient(135deg, #005ea6, #0087b8);
+      box-shadow: 0 6px 20px rgba(0, 112, 186, 0.4);
+      transform: translateY(-2px);
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      font-size: 1.4rem;
+      color: #a0aec0; /* Gris claro */
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+    .close-modal:hover {
+      color: #2d3748;
+    }
+
+    /* Media Queries para Responsividad */
+    @media (max-width: 768px) {
+      h3 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+      }
+      .tabs > div {
+        min-width: 100%;
+      }
+      .tabs h4 {
+        font-size: 1.4rem;
+        padding: 15px;
+      }
+      .modal-content {
+        padding: 20px;
+        width: 85%;
+      }
+      .modal-content h4 {
+        font-size: 1.5rem;
+      }
+      .modal-content p {
+        font-size: 0.9rem;
+      }
+      .modal-content .price {
+        font-size: 1.4rem;
+      }
+      .modal-content .paypal-btn {
+        padding: 10px 25px;
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 10px;
+      }
+      h3 {
+        font-size: 1.8rem;
+        padding-bottom: 8px;
+        border-bottom-width: 3px;
+      }
+      .tabs {
+        gap: 15px;
+      }
+      .tabs ul {
+        padding: 15px;
+      }
+      .tabs li {
+        margin-bottom: 10px;
+      }
+      .modal-content {
+        padding: 15px;
+        width: 90%;
+      }
+      .modal-content img {
+        max-width: 80%;
+      }
+      .modal-content h4 {
+        font-size: 1.3rem;
+      }
+      .modal-content p {
+        font-size: 0.85rem;
+      }
+      .modal-content .price {
+        font-size: 1.2rem;
+      }
+      .modal-content .paypal-btn {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+      }
+      .close-modal {
+        font-size: 1.2rem;
+        top: 10px;
+        right: 10px;
+      }
+    }
+
+    </style>
+  </head>
+  <body>
+    <header class="top-bar">
+      <div class="container-bar">
+        <div class="left-info">
+          <span><i class="fas fa-phone"></i> 73324084</span>
+          <span><i class="fas fa-envelope"></i> 73324084saico@gmail.com</span>
+        </div>
+        <div class="right-info">
+          <span><i class="fas fa-book"></i> TUTORIALES</span>
+          <span><i class="fas fa-edit"></i> CONTACTO</span>
+          <div class="social-icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="main-nav">
+      <div class="nav-container">
+        <div class="logo animate-fadeIn">
+          <img src="img/LOGO2.png" alt="TradeWeb Logo" height="80" />
+        </div>
+        <button class="hamburger" aria-label="Menú">☰</button>
+        <ul class="menu">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+
+          <li class="dropdown">
+            <a href="#">Servicios</a>
+            <ul class="dropdown-menu">
+              <li><a href="#software-section">Catalogo de Programas</a></li>
+              <li><a href="licencia.html#licencias">Activación de licencias autodesk</a></li>
+              <li><a href="update.html">Materiales de topografia</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">Plantillas Civil 3D</a>
+            <ul class="dropdown-menu">
+              <li><a href="plant1.html">Diseño Geométrico de Carreteras</a></li>
+              <li><a href="plant2.html">Obras hidráulicas</a></li>
+              <li><a href="plant3.html">Lotizaciones</a></li>
+              <li><a href="Plant4.html">Fotogrametria</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="container hero-container">
+        <div class="container-left animate-fadeIn">
+          <div class="slider-container">
+            <!-- Slide 1 -->
+            <div class="slide active">
+              <h1 class="animate-fadeIn">
+                Licencias <br /><span>Permanentes Autodesk</span>
+              </h1>
+              <p class="animate-fadeIn">
+                Tenemos las licencias modificadas de Autodesk a una sola compra
+                y una sola instalación, y quedan activados automaticamente todos
+                los programas de autodesk en tu equipo.
+                <strong><br />(Valido para versiones 2020 - 2025)</strong>
+              </p>
+              <a href="licencia.html#licencias" class="contact-btn animate-fadeIn"
+                >Mas Información</a
+              >
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide">
+              <h1 class="animate-fadeIn">
+                Aprende<br /><span>Fotogrametria con Agisoft</span>
+              </h1>
+              <p class="animate-fadeIn">
+                Compra Agisoft y accede a videos exclusivos donde aprenderás
+                desde la instalación hasta la exportación de superficies a Civil
+                3D. Domina el procesamiento de imágenes de dron de forma rápida
+                y sencilla.
+              </p>
+              <a href="Plant4.html" class="contact-btn animate-fadeIn"
+                >Ver Producto</a
+              >
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide">
+              <h1 class="animate-fadeIn">
+                Plantillas<br /><span>Profesionales Civil 3D</span>
+              </h1>
+              <p class="animate-fadeIn">
+                Nuestros cursos estan diseñados para llevarte de principiante a
+                experto, ya sea que estes trabajando en diseño de carreteras,
+                canales, explanaciones, lotizaciones. Con nuestras plantillas
+                profesionales ahorraras tiempo y aumentaras la eficiencia
+              </p>
+              <a href="plant1.html" class="contact-btn animate-fadeIn"
+                >Ver Materiales</a
+              >
+            </div>
+
+            <!-- Controles de navegación -->
+            <div class="slider-navigation">
+              <span class="nav-dot active" data-index="0"></span>
+              <span class="nav-dot" data-index="1"></span>
+              <span class="nav-dot" data-index="2"></span>
+            </div>
+          </div>
+        </div>
+        <div class="container-right">
+          <div class="image-slider">
+            <img src="img/lic.png" alt="aprende" class="animated-image active" />
+            <img
+              src="img/agi.png"
+              alt="Hosting Premium"
+              class="animated-image active"
+            />
+            <img
+              src="img/cursos2.png"
+              alt="Soporte 24/7"
+              class="animated-image active"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="software-section" class="software-section">
+      <div class="container">
+        <h3>Catálogo de programas actualizados y compras Rápidas</h3>
+        <div class="tabs">
+          <!-- Pestaña Autodesk -->
+          <div>
+            <h4 onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+              <i class="fas fa-drafting-compass"></i> Autodesk
+            </h4>
+            <ul>
+            <li><a href="#" data-product="Módulos1">Módulos CivilCAD para AutoCAD (2017-2025)</a></li>
+            <li><a href="#" data-product="AutoCAD2">AutoCAD Inglés 2019 (Activado por xforce)</a></li>
+            <li><a href="#" data-product="Civil3">Civil 3D Inglés 2019 (Activado por xforce)</a></li>
+            <li><a href="#" data-product="Revit4">Revit Inglés 2019 (Activado por xforce)</a></li>
+            <li><a href="#" data-product="AutoCAD5">AutoCAD  Esp 2020 (Activado por xforce)</a></li>
+            <li><a href="#" data-product="Civil6">Civil 3D Esp 2020 (Activado por xforce)</a></li>
+            <li><a href="#" data-product="Revit7">Revit Esp 2020 (Activado por xforce)</a></li>
+            <li><a href="#" data-product="AutoCAD8">AutoCAD  Esp-Ing 2023 (Activado con Parche)</a></li>
+            <li><a href="#" data-product="Civil9">Civil 3D Inglés 2023 (Activado con Parche)</a></li>
+            <li><a href="#" data-product="Civil10">Civil 3D Esp 2023 (Activado con Lmtools)</a></li>
+            <li><a href="#" data-product="Revit11">Revit Esp-Ing 2023 (Activado con Lmtools)</a></li>
+            <li><a href="#" data-product="Inventor12">Inventor Pro Esp-Ing 2023 (Activado con Lmtools)</a></li>
+            <li><a href="#" data-product="AutoCAD13">AutoCAD  Esp-Ing 2024 (Activado con Lmtools)</a></li>
+            <li><a href="#" data-product="Civil14">Civil 3D Esp-Ing 2024 (Activado con Lmtools)</a></li>
+            <li><a href="#" data-product="Inventor15">Inventor Pro Esp-Ing 2024 (Activado con Lmtools)</a></li>
+            <li><a href="#" data-product="NavisWork16">NavisWork MN  Inglés 2024 (Activado con Lmtools)</a></li>
+            <li><a href="#" data-product="Recap17">Recap Pro Multilingue 2024 (Activado con Lmtools)</a></li>
+            <li><a href="#" data-product="Revit18">Revit Multilingue 2024 (Activado con Lmtools)</a></li>
+            <li><a href="#" data-product="Robot19">Robot Structural Esp-Ing 2024 (Activado con Lmtools)</a></li>
+            <li><a href="#" data-product="AutoCAD20">AutoCAD  Esp-Ing 2025 (Activado con Lmtools)</a></li>
+            <li><a href="#" data-product="Civil21">Civil 3D Esp-Ing 2025 (Activado con Lmtools)</a></li>
+            <li><a href="#" data-product="Civil22">Civil 3D Esp-Ing 2026 (Activado con Lmtools)</a></li>
+            <li><a href="#" data-product="InfraWorks23">InfraWorks Esp-Ing 2025 (Activado con Lmtools)</a></li>
+            <li><a href="#" data-product="Inventor24">Inventor Pro Esp-Ing 2025 (Activado con Lmtools)</a></li>
+            <li><a href="#" data-product="NavisWork25">NavisWork MN  Inglés 2025 (Activado con Lmtools)</a></li>
+            <li><a href="#" data-product="Recap26">Recap Pro Esp-Ing 2025 (Activado con Lmtools)</a></li>
+            <li><a href="#" data-product="Revit27">Revit Multilingue 2025 (Activado con Lmtools)</a></li>
+            <li><a href="#" data-product="Robot28">Robot Structural Esp-Ing 2025 (Activado con Lmtools)</a></li>
+  
+            </ul>
+          </div>
+  
+          <!-- Pestaña Ingeniería y Más -->
+          <div>
+            <h4 onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+              <i class="fas fa-ruler-combined"></i> Ingeniería y Más
+            </h4>
+            <ul>
+            <li><a href="#" data-product="Producto2929">3DF Zephyr 7.531 Multilingüe (Activado con Crack)</a></li>
+            <li><a href="#" data-product="Adobe30">Adobe After Effects v2024 (solo con Firewall)</a></li>
+            <li><a href="#" data-product="Adobe31">Adobe Photoshop v2024 (solo con Firewall)</a></li>
+            <li><a href="#" data-product="Adobe32">Adobe Premiere Pro 2023 v23.1.0 (solo con Firewall)</a></li>
+            <li><a href="#" data-product="Agisoft33">Agisoft Metashape Pro v2.2.0 Multilingue (Activado con parche)</a></li>
+            <li><a href="#" data-product="ARCGIS34">ARCGIS 2021 V10.8 (Activado con Crack)</a></li>
+            <li><a href="#" data-product="ArcGIS35">ArcGIS Desktop 10.5 (Activado con Crack)</a></li>
+            <li><a href="#" data-product="ArcGIS36">ArcGIS Pro 3.0.1 (Activado con Crack)</a></li>
+            <li><a href="#" data-product="Archicad37">Archicad 26 Build 3001 INGLÉS (Activado con Crack)</a></li>
+            <li><a href="#" data-product="Archicad38">Archicad 26 Build 5002 SPANISH (Activado con Crack)</a></li>
+            <li><a href="#" data-product="CHC39">CHC.Geomatics.Office.2.v2.3.1 (Activado con Crack)</a></li>
+            <li><a href="#" data-product="Corel40">Corel Draw 2023 (Activado con Crack)</a></li>
+            <li><a href="#" data-product="Dassault41">Dassault Systemes DraftSight Enterprise Plus 2024 SP4 (Activado con Crack)</a></li>
+            <li><a href="#" data-product="ETABS42">Pograma de cálculo ETABS 21.1.0. (Activado con Crack)</a></li>
+            <li><a href="#" data-product="GEOSETTER44">Pograma de cálculo SAFE 21.1.0. (Activado con Crack)</a></li>
+            <li><a href="#" data-product="Google46">Pograma de cálculo SAP2000 25.0.0. (Activado con Crack)</a></li>
+            <li><a href="#" data-product="SAS56">Pograma de cálculo CS. BRIDGE (Activado con Crack)</a></li>
+            <li><a href="#" data-product="GEO_SLOPE_GeoStudio_202243">GEO_SLOPE_GeoStudio_2022 Multilanguage (Activado con Crack)</a></li>
+            
+            <li><a href="#" data-product="Global45">Global Mapper Pro v26 Inglés (Activado con Parche)</a></li>
+            
+            <li><a href="#" data-product="INSTALADOR47">INSTALADOR S10 ILIMITADO-2023 (Activado con Crack)</a></li>
+            <li><a href="#" data-product="INSTRAM48">INSTRAM ISPOL V2023 MULTILINGUE (Activado con Crack)</a></li>
+            <li><a href="#" data-product="Lector49">Lector Adobe Acrobat Pro DC2024 (Activado con Crack)</a></li>
+            <li><a href="#" data-product="Lector50">Lector de PDF ABBY FineReader 14 (Activado con parche)</a></li>
+            <li><a href="#" data-product="Lector51"> Lector de PDF Nitro Pro 13 (Activado con Crack)</a></li>
+            <li><a href="#" data-product="OBSStudio2724Full52">OBS-Studio-27.2.4-Full INGLÉS-ESPAÑOL (Activado con Crack)</a></li>
+            <li><a href="#" data-product="Pix4D53">Pix4D Mapper v4,5,6 Multilingue (Activado con Crack)</a></li>
+            <li><a href="#" data-product="PTC54">PTC MathCad Prime v8,0 Multilingue (Activado con Crack)</a></li>           
+            <li><a href="#" data-product="Sketch57">Sketch Up Pro 2023 - V-RAY 6 (Activado con Parche)</a></li>
+            <li><a href="#" data-product="Wondershare58">Wondershare Filmora 12 INGLÉS-ESPAÑOL (Activado con Parche)</a></li>
+  
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container hero-container2">
+        <div class="content-box animate-slideRight">
+          <h1 class="animate-fadeIn">
+            <img src="img/lumiere-005.gif" alt="" height="40" /> 
+            Información importante antes de comprar<br />
+            <span>Lee estas recomendaciones para una mejor experiencia</span>
+          </h1>
+        </div>
+      </div>
+    
+      <div class="container">
+        <div class="feature-container">
+          <div class="feature-card animate-slideUp" style="animation-delay: 0.2s">
+            <div class="feature-icon"><i class="fas fa-money-check-alt"></i></div>
+            <h3 class="feature-title">Si pagas con PayPal, indica el nombre del programa en la descripción de la compra.</h3>
+          </div>
+    
+          <div class="feature-card animate-slideUp" style="animation-delay: 0.4s">
+            <div class="feature-icon"><i class="fas fa-info-circle"></i></div>
+            <h3 class="feature-title">Asegúrate de revisar las especificaciones del software antes de comprar.</h3>
+          </div>
+    
+          <div class="feature-card animate-slideUp" style="animation-delay: 0.6s">
+            <div class="feature-icon"><i class="fas fa-headset"></i></div>
+            <h3 class="feature-title">El soporte técnico se brinda mediante <strong>Asistencia Rápida</strong> de Windows.</h3>
+          </div>
+    
+          <div class="feature-card animate-slideUp" style="animation-delay: 0.8s">
+            <div class="feature-icon"><i class="fas fa-calendar-alt"></i></div>
+            <h3 class="feature-title">El acceso a los programas tiene una vigencia de <strong>90 días</strong>.</h3>
+          </div>
+    
+          <div class="feature-card animate-slideUp" style="animation-delay: 1s">
+            <div class="feature-icon"><i class="fas fa-key"></i></div>
+            <h3 class="feature-title">Todas las licencias son <strong>permanentes</strong> y de un solo pago.</h3>
+          </div>
+    
+          <div class="feature-card animate-slideUp" style="animation-delay: 1.2s">
+            <div class="feature-icon"><i class="fas fa-tools"></i></div>
+            <h3 class="feature-title">Si nuestro equipo realiza la instalación, cualquier ajuste en la licencia de Autodesk será gratuito.</h3>
+          </div>
+    
+          <div class="feature-card animate-slideUp" style="animation-delay: 1.4s">
+            <div class="feature-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <h3 class="feature-title">Las licencias de Autodesk pueden ser inestables si se activan con un activador automático (CMD).</h3>
+          </div>
+    
+          <div class="feature-card animate-slideUp" style="animation-delay: 1.6s">
+            <div class="feature-icon"><i class="fas fa-envelope"></i></div>
+            <h3 class="feature-title">Los archivos se envían a tu correo. Asegúrate de tener espacio disponible para recibirlos.</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div class="container">
+        <h2 class="section-title animate-slideUp">
+          Métodos de Compra<br />Hotmart y PayPal
+        </h2>
+        <div class="benefits-container">
+          <div class="benefits-column animate-slideLeft">
+            <h2>Beneficios de comprar con Hotmart</h2>
+
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-money-bill-wave"></i>
+              </div>
+              <div class="benefit-content">
+                <h3>Precios en tu moneda local</h3>
+                <p>
+                  Hotmart convierte automáticamente los precios a tu moneda
+                  nacional, evitando costos adicionales por conversión.
+                </p>
+              </div>
+            </div>
+
+            <div class="benefit-item">
+              <div class="benefit-icon"><i class="fas fa-credit-card"></i></div>
+              <div class="benefit-content">
+                <h3>Variedad de métodos de pago</h3>
+                <p>
+                  Dependiendo de tu país, puedes pagar con tarjetas de crédito,
+                  débito, PayPal, transferencias y métodos locales.
+                </p>
+              </div>
+            </div>
+
+            <div class="benefit-item">
+              <div class="benefit-icon"><i class="fas fa-shield-alt"></i></div>
+              <div class="benefit-content">
+                <h3>Garantía de 7 días</h3>
+                <p>
+                  Si el producto no cumple tus expectativas, Hotmart te ofrece
+                  un reembolso dentro de los primeros 7 días.
+                </p>
+              </div>
+            </div>
+
+            <div class="benefit-item">
+              <div class="benefit-icon"><i class="fas fa-download"></i></div>
+              <div class="benefit-content">
+                <h3>Acceso inmediato</h3>
+                <p>
+                  Una vez confirmada tu compra, podrás acceder al producto de
+                  inmediato y descargarlo sin demoras.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="benefits-column animate-slideRight">
+            <h2>Beneficios de comprar con PayPal</h2>
+
+            <div class="benefit-item">
+              <div class="benefit-icon"><i class="fas fa-receipt"></i></div>
+              <div class="benefit-content">
+                <h3>Especifica el producto</h3>
+                <p>
+                  Al comprar con PayPal, recuerda incluir el nombre del producto
+                  en la descripción de tu pago.
+                </p>
+              </div>
+            </div>
+
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="benefit-content">
+                <h3>Compra varios productos juntos</h3>
+                <p>
+                  A diferencia de Hotmart, con PayPal puedes pagar varios
+                  productos en una sola transacción.
+                </p>
+              </div>
+            </div>
+
+            <div class="benefit-item">
+              <div class="benefit-icon"><i class="fas fa-box-open"></i></div>
+              <div class="benefit-content">
+                <h3>Accede a productos exclusivos</h3>
+                <p>
+                  PayPal te permite adquirir productos que no están disponibles
+                  en Hotmart, brindándote más opciones.
+                </p>
+              </div>
+            </div>
+
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-envelope-open-text"></i>
+              </div>
+              <div class="benefit-content">
+                <h3>Entrega directa en tu correo</h3>
+                <p>
+                  Una vez confirmado tu pago, recibirás un correo con los
+                  enlaces de descarga del producto.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  
+    <!-- Modal -->
+    <div id="productModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()">x</span>
+        <img id="modalImage" src="" alt="Producto">
+        <h4 id="modalTitle"></h4>
+        <p id="modalDescription"></p>
+        <div class="price" id="modalPrice"></div>
+        <button class="paypal-btn" id="modalPaypal">Comprar con PayPal</button>
+      </div>
+    </div>
+  
+
+
+
+    <section class="about-section">
+      <div class="container about-container">
+        <div class="about-content animate-slideLeft">
+          <h2>SaiSoluciones</h2>
+          <h3 style="margin-bottom: 20px">
+            Software y Servicios Profesionales
+          </h3>
+          <p>
+            Con más de 8 años de experiencia, en <strong>S.A.I. Soluciones</strong> nos especializamos en resolver problemas de instalación de programas de Autodesk e ingeniería. No importa desde dónde nos contactes: ya sea en tu casa, oficina o incluso en tu tiempo de descanso, estamos disponibles para ayudarte de forma remota, sin que tengas que buscar a un técnico o perder tiempo valioso. 
+            <br><br>
+            Nuestro equipo trabaja las 24 horas, los 7 días de la semana, para brindarte una solución rápida y eficiente. Si no sabes cómo instalar algún programa de ingeniería, nuestros profesionales están listos para hacerlo por ti.
+          </p>
+          
+          <h3 style="margin-top: 30px">Contáctanos</h3>
+          <p><i class="fas fa-envelope"></i> 73324084saico@gmail.com</p>
+          <p><i class="fas fa-phone"></i> +59173324084</p>
+          <a href="https://wa.link/kkoe4h" class="contact-btn">Hablamos?</a>
+        </div>
+        <div class="animate-slideRight">
+          <img src="img/LOGO2.png" width="55%" ; alt="Sai equipo" />
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container">
+        <h2 class="section-title animate-slideUp">Respuestas de nuestros Clientes</h2>
+        <div class="testimonial-slider">
+          <div class="testimonial" data-index="0">
+            <div class="conversation">
+              <p><strong>S.A.I. Soluciones:</strong> Me avisa cualquier problema de licencia... suele actualizarse automáticamente y generar error.</p>
+              <p><strong>Cliente:</strong> Ok! Solo tenía cierta incertidumbre, yo tenía AutoCAD 2021 pero era crackeada y ya se desactivó, pero sigue en el escritorio. ¿No hay problema si la desinstalo?</p>
+              <p><strong>S.A.I. Soluciones:</strong> Claro, no hay problema al desinstalar.</p>
+              <p><strong>Cliente:</strong> ¡Muchísimas gracias por su ayuda! Le aviso cualquier cosa.</p>
+              <p><strong>S.A.I. Soluciones:</strong> ¡Muchos éxitos!</p>
+            </div>
+            <div class="client-info">
+              <div class="client-avatar">
+                <img src="reseña/p1.png" alt="Foto de Katherin Velásquez" loading="lazy" />
+              </div>
+              <div class="client-details">
+                <h4>Katherin Velásquez</h4>
+                <p>Cursos de Apoyo Universitario (Honduras)</p>
+              </div>
+            </div>
+          </div>
+    
+          <div class="testimonial" data-index="1">
+            <div class="conversation">
+              <p><strong>S.A.I. Soluciones:</strong> Mi estimado, ahi lo tiene perfectamente instalado y activado la licencia permanente</p>
+              <p><strong>Cliente:</strong> Perfecto, Gracias por el servicio, guardaré su número por si necesito en un futuro otro programa o para cualquier asistencia técnica</p>
+              <p><strong>S.A.I. Soluciones:</strong> de acuerdo mi estimado, estaremos atentos para cualquier consulta</p>
+              <p><strong>Cliente:</strong> Super, saludos.</p>
+              <p><strong>S.A.I. Soluciones:</strong> ¡Exitos...!</p>
+            </div>
+            <div class="client-info">
+              <div class="client-avatar">
+                <img src="reseña/p2.png" alt="" loading="lazy" />
+              </div>
+              <div class="client-details">
+                <h4>Jorge Martinez Sánchez</h4>
+                <p>Ingeniero Civil (Republica Dominicana)</p>
+              </div>
+            </div>
+          </div>
+    
+          <div class="testimonial" data-index="2">
+            <div class="conversation">
+              <p><strong>Cliente:</strong> hola, disculpe tengo problemas de licencia de autodesk, Cada rato se va, Quiero realizar mí informe, Hay algún solución?</p>
+              <p><strong>S.A.I. Soluciones:</strong> Ya mismo revisamos el equipo, usaremos la herramienta de Asistencia Rápida de Windows</p>
+              <p><strong>Cliente:</strong> me pide el codigo de acceso......</p>
+              <p><strong>S.A.I. Soluciones:</strong> Ahora sí ya esta mi estimado, solucionado!!. éxitos mi hermano..</p>
+              <p><strong>Cliente:</strong> Mil gracias!, Te debo un montón me salvaste. Estaba apunto de ir a prestarme otro PC</p>
+            </div>
+            <div class="client-info">
+              <div class="client-avatar">
+                <img src="reseña/p3.png" alt="" loading="lazy" />
+              </div>
+              <div class="client-details">
+                <h4>Frans Wilber</h4>
+                <p>Ingeniero Civil (Perú)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial" data-index="3">
+            <div class="conversation">
+              <p><strong>Cliente:</strong> Buenas tardes estoy interesado en activar autocad 2022, ya tengo el programa instalado</p>
+              <p><strong>S.A.I. Soluciones:</strong> tenemos los archivos de licencias modificados y Se puede activar sin problema</p>
+              <p><strong>Cliente:</strong> yo tengo paypal, ya entro al vinculo y le hago el pago</p>
+              <p><strong>S.A.I. Soluciones:</strong> Recibido correctamente, ya se envió los archivos a su correo. Muchos Éxitos.</p>
+              <p><strong>Cliente:</strong> gracias ya pude activarlo sin problema muchas gracias, excelente tutorial y contenido</p>
+            </div>
+            <div class="client-info">
+              <div class="client-avatar">
+                <img src="reseña/p4.png" alt="" loading="lazy" />
+              </div>
+              <div class="client-details">
+                <h4>Ludwin Canizalez Hernández</h4>
+                <p>INFOTECH (San Salvador)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial" data-index="4">
+            <div class="conversation">
+              <p><strong>Cliente:</strong> Buenas noches señores Saico, Les quería preguntar si ustedes tienen los activadores de los programas de Autodesk 2025 y Archicad 28</p>
+              <p><strong>S.A.I. Soluciones:</strong> Muy buen día, tenemos activadores para Autodesk y adjunto el link de compra de los archivos. tambien tenermos servicio de instalación remota</p>
+              <p><strong>Cliente:</strong> Ya realizo el pago para que su técnico haga la instalacion.</p>
+              <p><strong>S.A.I. Soluciones:</strong> Recibido correctamente, empezamos entonces con la activación</p>
+              <p><strong>Cliente:</strong> Listo amigo muchas gracias, Ya quedó todo</p>
+            </div>
+            <div class="client-info">
+              <div class="client-avatar">
+                <img src="reseña/p5.png" alt="" loading="lazy" />
+              </div>
+              <div class="client-details">
+                <h4>Juan David Ardila Bermudez</h4>
+                <p> Emprendedor (Colombia)</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial" data-index="5">
+            <div class="conversation">
+              <p><strong>Cliente:</strong> Saludos como estas. Te escribe Kevin desde Vzla, te envie unos correos, para que me ayudes con la instalación del revit, como seria el pago?</p>
+              <p><strong>S.A.I. Soluciones:</strong> Buenos días, El servicio tiene un costo de 8usd, Para solucionar el problema de instalación. Se realiza vía Asistencia Rápida de Windows</p>
+              <p><strong>Cliente:</strong> Ok de acuerdo, Ya voy a hacer el pago Ojalá puedas resolverme el problema</p>
+              <p><strong>S.A.I. Soluciones:</strong> muy ya hemos recibido correctamente, envio los links de descarga y empezamos</p>
+              <p><strong>Cliente:</strong> Oye amigo agradecido, Excelente. 100 recomendado</p>
+              <p><strong>S.A.I. Soluciones:</strong> Éxitos mi estimado, intentamos siempre de llegar una solución y ahora ya quedó bien... SOMOS SAI SOLUCIONES!</p>
+            </div>
+            <div class="client-info">
+              <div class="client-avatar">
+                <img src="reseña/p6.png" alt="" loading="lazy" />
+              </div>
+              <div class="client-details">
+                <h4>Kevin F. Alvarado N.</h4>
+                <p> Universitario, Ing. Civil (Venezuela)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-navigation">
+          <button class="nav-arrow prev" aria-label="Testimonio anterior">&#10094;</button>
+          <div class="nav-dots">
+            <span class="nav-dot active" data-index="0"></span>
+            <span class="nav-dot" data-index="1"></span>
+            <span class="nav-dot" data-index="2"></span>
+            <span class="nav-dot" data-index="3"></span>
+            <span class="nav-dot" data-index="4"></span>
+            <span class="nav-dot" data-index="5"></span>
+          </div>
+          <button class="nav-arrow next" aria-label="Testimonio siguiente">&#10095;</button>
+        </div>
+      </div>
+    </section>
+
+    <section
+      style="
+        background-color: #004085;
+        color: white;
+        padding: 50px 0;
+        text-align: center;
+      "
+    >
+      <div class="container">
+        <h2
+          class="animate-slideUp"
+          style="
+            font-size: 28px;
+            font-family: 'Arial Narrow', sans-serif;
+            color: #ff9500;
+            margin-bottom: 20px;
+          "
+        >
+          Software y Soporte
+        </h2>
+        <p
+          class="animate-fadeIn"
+          style="max-width: 800px; margin: 0 auto 30px; font-size: 18px"
+        >
+          Ofrecemos software con licencia de por vida para ingeniería,
+          topografía, arquitectura y edición. Además, brindamos servicios de
+          instalación Remota, garantizando el buen funcionamiento de las
+          Licencias.
+        </p>
+        <div
+          class="animate-fadeIn"
+          style="font-size: 24px; color: #d4d0fb; font-weight: bold"
+        >
+          Contáctanos: +59173324084
+        </div>
+      </div>
+    </section>
+
+    <section
+      style="
+        padding: 60px 0;
+        background: linear-gradient(to top, rgb(7, 1, 47), rgb(0, 85, 182));
+      "
+    >
+      <div class="container">
+        <p
+        class="animate-slideUp"
+        style="text-align: center; font-size: 20px; color: white; font-family: Arial, Helvetica, sans-serif; max-width: 800px; margin: 0 auto 50px;"
+      >
+        Además, brindamos servicios profesionales como estudios topográficos
+        con drones, estudios hidrológicos, cálculo de volúmenes, presupuestos
+        de obras y automatización en Excel con Visual Basic. También
+        realizamos capacitación y consultoría en software técnico,
+        optimización de procesos y modelado en Civil 3D, con materiales
+        exclusivos para diseño de carreteras, canales, explanaciones y
+        lotizaciones.
+      </p>
+        <div class="services-container">
+          <div class="service-column animate-slideLeft">
+            <h3>Servicios Profesionales</h3>
+            <ul class="service-list">
+              <li><a href="#">Diseño Geométrico de Carreteras</a></li>
+              <li>
+                <a href="#"
+                  >Diseño de Obras Hidraulicas Canales abiertos o Bóvedas</a
+                >
+              </li>
+              <li><a href="#">Lotizaciones</a></li>
+              <li><a href="#">Levantamiento Topográfico</a></li>
+              <li><a href="#">Replanteo y seguimiento de niveles</a></li>
+              <li>
+                <a href="#">Control de Volúmenes de Movimiento de tierras</a>
+              </li>
+            </ul>
+          </div>
+          <div class="service-column animate-fadeIn">
+            <h3>Plantillas Profesionales Civil 3D</h3>
+            <ul class="service-list">
+              <li><a href="#">Diseño de Carreteras</a></li>
+              <li><a href="#">Obras Hidraulicas</a></li>
+              <li><a href="#">Explanaciones</a></li>
+              <li><a href="#">Parcelas y Lotizaciones</a></li>
+            </ul>
+          </div>
+          <div class="service-column animate-slideRight">
+            <h3>Cursos Intensivos Aplica & Aprende Civl 3D</h3>
+            <ul class="service-list">
+              <li>
+                <a href="#"
+                  >Diseño geometrico de Carreteras con Norma AASHTO DG2018</a
+                >
+              </li>
+              <li><a href="#">Canales Abiertos con Intersecciones</a></li>
+              <li><a href="#">Parcelamiento y explanación</a></li>
+              <li><a href="#">Fotogrametria con drone completo</a></li>
+            </ul>
+            <h3 style="margin-top: 40px; color: #c5c0ff">Contacto</h3>
+            <ul class="service-list">
+              <li style="color: #ffbb00">
+                <i class="fas fa-envelope"></i> 73324084saico@gmail.com
+              </li>
+              <li style="color: #ffbb00">
+                <i class="fas fa-phone"></i> +59173324084
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="copyright">
+          Copyright © 2024 | Software y Servicio de Instalación Remota
+          <br /><br /><span
+            ><img src="img/LOGO2.png" alt="logo" height="50"
+          /></span>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#" class="whatsapp-button">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // === Funciones Compartidas ===
+        function isInViewport(element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top < window.innerHeight && rect.bottom > 0;
+        }
+
+        function animateOnScroll() {
+          const animatedElements = document.querySelectorAll(
+            ".animate-slideUp, .animate-slideLeft, .animate-slideRight, .animate-fadeIn"
+          );
+          animatedElements.forEach((element) => {
+            if (isInViewport(element) && !element.classList.contains("animated")) {
+              element.classList.add("animated");
+            }
+          });
+        }
+
+        // === Animaciones al Scroll ===
+        const animatedElements = document.querySelectorAll(
+          ".animate-slideUp, .animate-slideLeft, .animate-slideRight, .animate-fadeIn"
+        );
+        animatedElements.forEach((element) => element.classList.add("hidden")); // Ocultar inicialmente
+        window.addEventListener("scroll", animateOnScroll);
+        animateOnScroll(); // Ejecutar al cargar
+
+        // === Menú Hamburguesa y Dropdowns ===
+        const hamburger = document.querySelector(".hamburger");
+        const menu = document.querySelector(".menu");
+        const dropdowns = document.querySelectorAll(".dropdown");
+
+        function isMobile() {
+          return window.innerWidth <= 768;
+        }
+
+        if (hamburger && menu) {
+          hamburger.addEventListener("click", (e) => {
+            e.stopPropagation();
+            menu.classList.toggle("active");
+            hamburger.classList.toggle("active");
+          });
+
+          dropdowns.forEach((dropdown) => {
+            const link = dropdown.querySelector("a");
+            const dropdownMenu = dropdown.querySelector(".dropdown-menu");
+
+            if (link) {
+              link.addEventListener("click", (e) => {
+                if (isMobile()) {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  dropdowns.forEach((other) => {
+                    if (other !== dropdown) other.classList.remove("active");
+                  });
+                  dropdown.classList.toggle("active");
+                }
+              });
+            }
+
+            if (dropdownMenu) {
+              dropdownMenu.addEventListener("click", (e) => e.stopPropagation());
+            }
+          });
+
+          document.addEventListener("click", (e) => {
+            if (
+              !menu.contains(e.target) &&
+              !hamburger.contains(e.target) &&
+              menu.classList.contains("active")
+            ) {
+              menu.classList.remove("active");
+              hamburger.classList.remove("active");
+              if (isMobile()) {
+                dropdowns.forEach((dropdown) => dropdown.classList.remove("active"));
+              }
+            }
+          });
+
+          window.addEventListener("resize", () => {
+            if (!isMobile() && menu.classList.contains("active")) {
+              menu.classList.remove("active");
+              hamburger.classList.remove("active");
+              dropdowns.forEach((dropdown) => dropdown.classList.remove("active"));
+            }
+          });
+        }
+
+        // === Slider Hero ===
+        const heroSlides = document.querySelectorAll(".slide");
+        const heroImages = document.querySelectorAll(".animated-image");
+        const heroDots = document.querySelectorAll(".nav-dot");
+        const totalHeroSlides = heroSlides.length;
+        let currentHeroIndex = 0;
+        let heroInterval;
+
+        function showHeroSlide(index) {
+          if (totalHeroSlides === 0) return;
+          heroSlides.forEach((slide) => slide.classList.remove("active"));
+          heroImages.forEach((img) => img.classList.remove("active"));
+          heroDots.forEach((dot) => dot.classList.remove("active"));
+          heroSlides[index].classList.add("active");
+          if (heroImages[index]) heroImages[index].classList.add("active");
+          if (heroDots[index]) heroDots[index].classList.add("active");
+          currentHeroIndex = index;
+        }
+
+        function nextHeroSlide() {
+          currentHeroIndex = (currentHeroIndex + 1) % totalHeroSlides;
+          showHeroSlide(currentHeroIndex);
+        }
+
+        function startHeroSlider() {
+          if (totalHeroSlides <= 1) return;
+          heroInterval = setInterval(nextHeroSlide, 15000); // 15 segundos
+        }
+
+        function stopHeroSlider() {
+          clearInterval(heroInterval);
+        }
+
+        heroDots.forEach((dot) => {
+          dot.addEventListener("click", () => {
+            const index = parseInt(dot.getAttribute("data-index"));
+            showHeroSlide(index);
+            stopHeroSlider();
+            startHeroSlider();
+          });
+        });
+
+        if (totalHeroSlides > 0) {
+          showHeroSlide(0);
+          startHeroSlider();
+        }
+
+        // === Slider Testimonios ===
+        const testimonials = document.querySelectorAll(".testimonial");
+        const testimonialDots = document.querySelectorAll(".testimonial-navigation .nav-dot");
+        const prevBtn = document.querySelector(".nav-arrow.prev");
+        const nextBtn = document.querySelector(".nav-arrow.next");
+        const totalTestimonials = testimonials.length;
+        let currentTestimonialIndex = 0;
+        let testimonialInterval;
+
+        function showTestimonial(index) {
+          if (totalTestimonials === 0) return;
+          testimonials.forEach((t) => t.classList.remove("active"));
+          testimonialDots.forEach((d) => d.classList.remove("active"));
+          testimonials[index].classList.add("active");
+          testimonialDots[index].classList.add("active");
+          currentTestimonialIndex = index;
+        }
+
+        function nextTestimonial() {
+          currentTestimonialIndex = (currentTestimonialIndex + 1) % totalTestimonials;
+          showTestimonial(currentTestimonialIndex);
+        }
+
+        function prevTestimonial() {
+          currentTestimonialIndex = (currentTestimonialIndex - 1 + totalTestimonials) % totalTestimonials;
+          showTestimonial(currentTestimonialIndex);
+        }
+
+        function startTestimonialSlider() {
+          if (totalTestimonials <= 1) return;
+          testimonialInterval = setInterval(nextTestimonial, 15000); // 15 segundos
+        }
+
+        function stopTestimonialSlider() {
+          clearInterval(testimonialInterval);
+        }
+
+        testimonialDots.forEach((dot) => {
+          dot.addEventListener("click", () => {
+            const index = parseInt(dot.getAttribute("data-index"));
+            showTestimonial(index);
+            stopTestimonialSlider();
+            startTestimonialSlider();
+          });
+        });
+
+        if (prevBtn && nextBtn) {
+          prevBtn.addEventListener("click", () => {
+            prevTestimonial();
+            stopTestimonialSlider();
+            startTestimonialSlider();
+          });
+
+          nextBtn.addEventListener("click", () => {
+            nextTestimonial();
+            stopTestimonialSlider();
+            startTestimonialSlider();
+          });
+        }
+
+        if (totalTestimonials > 0) {
+          showTestimonial(0);
+          startTestimonialSlider();
+
+          const slider = document.querySelector(".testimonial-slider");
+          if (slider) {
+            slider.addEventListener("mouseenter", stopTestimonialSlider);
+            slider.addEventListener("mouseleave", startTestimonialSlider);
+          }
+        }
+      });
+      const products = {
+      Módulos1: {
+        image: "./productos/14.png",
+        title: "Módulos CivilCAD para AutoCAD (2017-2025)",
+        description: "Herramienta avanzada para diseño civil compatible con AutoCAD de 2017 a 2025.",
+        price: "$5.00",
+        paypalLink: "./Checkout/CivilCAD.html"
+      },
+
+      AutoCAD2: {
+        image: "./productos/3.png",
+        title: "AutoCAD Inglés 2019 (Activado por xforce)",
+        description: "Es una de las versiones que aun mantiene la activacion segura mediante xforce",
+        price: "$4.00",
+        paypalLink: "./Checkout/Autocad2019.html"
+      },
+
+      Civil3: {
+        image: "./productos/4.png",
+        title: "Civil 3D Inglés 2019 (Activado por xforce)",
+        description: "Es una de las versiones que aun mantiene la activacion segura mediante xforce",
+        price: "$4.00",
+        paypalLink: "./Checkout/Civil3D2019.html"
+      },
+
+      Revit4: {
+        image: "./productos/5.png",
+        title: "Revit Inglés 2019 (Activado por xforce)",
+        description: "Es una de las versiones que aun mantiene la activacion segura mediante xforce",
+        price: "$4.00",
+        paypalLink: "./Checkout/Revit2019.html"
+      },
+
+      AutoCAD5: {
+        image: "./productos/6.png",
+        title: "AutoCAD Esp 2020 (Activado por xforce)",
+        description: "Es una de las versiones que aun mantiene la activacion segura mediante xforce",
+        price: "$4.00",
+        paypalLink: "./Checkout/Autocad2020.html"
+      },
+
+      Civil6: {
+        image: "./productos/7.png",
+        title: "Civil 3D Esp 2020 (Activado por xforce)",
+        description: "Es una de las versiones que aun mantiene la activacion segura mediante xforce",
+        price: "$4.00",
+        paypalLink: "./Checkout/Civil3D2020.html"
+      },
+
+      Revit7: {
+        image: "./productos/8.png",
+        title: "Revit Esp 2020 (Activado por xforce)",
+        description: "Es una de las versiones que aun mantiene la activacion segura mediante xforce",
+        price: "$4.00",
+        paypalLink: "./Checkout/Revit2020.html"
+      },
+
+      AutoCAD8: {
+        image: "./productos/10.png",
+        title: "AutoCAD Esp-Ing 2023 (Activado con Parche)",
+        description: "Instalación Simple y licencia Segura, Usa parche de ejecutable crackeado",
+        price: "$5.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/5"
+      },
+
+      Civil9: {
+        image: "./productos/9.png",
+        title: "Civil 3D Inglés 2023 (Activado con Parche)",
+        description: "Instalación Simple y licencia Segura, Usa parche de ejecutable crackeado.",
+        price: "$5.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/5"
+      },
+
+      Civil10: {
+        image: "./productos/9.png",
+        title: "Civil 3D Esp 2023 (Activado con Lmtools)",
+        description: "La instalación podria ser Compleja, ya que se activa con LMTOOLs, Puede solicitar Soporte.",
+        price: "$5.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/5"
+      },
+
+      Revit11: {
+        image: "./productos/12.jpg",
+        title: "Revit Esp-Ing 2023 (Activado con Lmtools)",
+        description: "La instalación podria ser Compleja, ya que se activa con LMTOOLs, Puede solicitar Soporte.",
+        price: "$5.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/5"
+      },
+
+      Inventor12: {
+        image: "./productos/11.jpg",
+        title: "Inventor Pro Esp-Ing 2023 (Activado con Lmtools)",
+        description: "La instalación podria ser Compleja, ya que se activa con LMTOOLs, Puede solicitar Soporte.",
+        price: "$5.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/5"
+      },
+
+      AutoCAD13: {
+        image: "./productos/1.jpg",
+        title: "AutoCAD Esp-Ing 2024 (Activado con Lmtools)",
+        description: "La instalación podria ser Compleja, ya que se activa con LMTOOLs, a la vez tiene muchas ventajas de instalar este tipo de licencia. Escribenos para mas detalles.",
+        price: "$5.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/5"
+      },
+
+      Civil14: {
+        image: "./productos/2.jpg",
+        title: "Civil 3D Esp-Ing 2024 (Activado con Lmtools)",
+        description: "La instalación podria ser Compleja, ya que se activa con LMTOOLs, a la vez tiene muchas ventajas de instalar este tipo de licencia. Escribenos para mas detalles.",
+        price: "$5.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/5"
+      },
+
+      Inventor15: {
+        image: "./productos/4.jpg",
+        title: "Inventor Pro Esp-Ing 2024 (Activado con Lmtools)",
+        description: "La instalación podria ser Compleja, ya que se activa con LMTOOLs, a la vez tiene muchas ventajas de instalar este tipo de licencia. Escribenos para mas detalles.",
+        price: "$5.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/5"
+      },
+
+      NavisWork16: {
+        image: "./productos/5.jpg",
+        title: "NavisWork MN Inglés 2024 (Activado con Lmtools)",
+        description: "La instalación podria ser Compleja, ya que se activa con LMTOOLs, a la vez tiene muchas ventajas de instalar este tipo de licencia. Escribenos para mas detalles.",
+        price: "$5.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/5"
+      },
+
+      Recap17: {
+        image: "./productos/6.jpg",
+        title: "Recap Pro Multilingue 2024 (Activado con Lmtools)",
+        description: "La instalación podria ser Compleja, ya que se activa con LMTOOLs, a la vez tiene muchas ventajas de instalar este tipo de licencia. Escribenos para mas detalles.",
+        price: "$5.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/5"
+      },
+
+      Revit18: {
+        image: "./productos/7.jpg",
+        title: "Revit Multilingue 2024 (Activado con Lmtools)",
+        description: "La instalación podria ser Compleja, ya que se activa con LMTOOLs, a la vez tiene muchas ventajas de instalar este tipo de licencia. Escribenos para mas detalles.",
+        price: "$6.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/6"
+      },
+
+      Robot19: {
+        image: "./productos/8.jpg",
+        title: "Robot Structural Esp-Ing 2024 (Activado con Lmtools)",
+        description: "La instalación podria ser Compleja, ya que se activa con LMTOOLs, a la vez tiene muchas ventajas de instalar este tipo de licencia. Escribenos para mas detalles.",
+        price: "$5.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/5"
+      },
+
+      AutoCAD20: {
+        image: "./productos/1.jpg",
+        title: "AutoCAD Esp-Ing 2025 (Activado con Lmtools)",
+        description: "La instalación podria ser Compleja, ya que se activa con LMTOOLs, a la vez tiene muchas ventajas de instalar este tipo de licencia. Escribenos para mas detalles.",
+        price: "$5.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/5"
+      },
+
+      Civil21: {
+        image: "./productos/2.jpg",
+        title: "Civil 3D Esp-Ing 2025 (Activado con Lmtools)",
+        description: "La instalación podria ser Compleja, ya que se activa con LMTOOLs, a la vez tiene muchas ventajas de instalar este tipo de licencia. Escribenos para mas detalles.",
+        price: "$5.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/5"
+      },
+
+      Civil22: {
+        image: "./productos/2.1.jpg",
+        title: "Civil 3D Esp-Ing 2026 (Activado con Lmtools)",
+        description: "La instalación podria ser Compleja, ya que se activa con LMTOOLs, a la vez tiene muchas ventajas de instalar este tipo de licencia. Escribenos para mas detalles.",
+        price: "$5.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/5"
+      },
+
+      InfraWorks23: {
+        image: "./productos/3.jpg",
+        title: "InfraWorks Esp-Ing 2025 (Activado con Lmtools)",
+        description: "La instalación podria ser Compleja, ya que se activa con LMTOOLs, a la vez tiene muchas ventajas de instalar este tipo de licencia. Escribenos para mas detalles.",
+        price: "$5.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/5"
+      },
+
+      Inventor24: {
+        image: "./productos/4.jpg",
+        title: "Inventor Pro Esp-Ing 2025 (Activado con Lmtools)",
+        description: "La instalación podria ser Compleja, ya que se activa con LMTOOLs, a la vez tiene muchas ventajas de instalar este tipo de licencia. Escribenos para mas detalles.",
+        price: "$5.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/5"
+      },
+
+      NavisWork25: {
+        image: "./productos/5.jpg",
+        title: "NavisWork MN Inglés 2025 (Activado con Lmtools)",
+        description: "La instalación podria ser Compleja, ya que se activa con LMTOOLs, a la vez tiene muchas ventajas de instalar este tipo de licencia. Escribenos para mas detalles.",
+        price: "$5.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/5"
+      },
+
+      Recap26: {
+        image: "./productos/6.jpg",
+        title: "Recap Pro Esp-Ing 2025 (Activado con Lmtools)",
+        description: "La instalación podria ser Compleja, ya que se activa con LMTOOLs, a la vez tiene muchas ventajas de instalar este tipo de licencia. Escribenos para mas detalles.",
+        price: "$5.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/5"
+      },
+
+      Revit27: {
+        image: "./productos/7.jpg",
+        title: "Revit Multilingue 2025 (Activado con Lmtools)",
+        description: "La instalación podria ser Compleja, ya que se activa con LMTOOLs, a la vez tiene muchas ventajas de instalar este tipo de licencia. Escribenos para mas detalles.",
+        price: "$6.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/6"
+      },
+
+      Robot28: {
+        image: "./productos/8.jpg",
+        title: "Robot Structural Esp-Ing 2025 (Activado con Lmtools)",
+        description: "La instalación podria ser Compleja, ya que se activa con LMTOOLs, a la vez tiene muchas ventajas de instalar este tipo de licencia. Escribenos para mas detalles.",
+        price: "$5.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/5"
+      },
+
+      Producto2929: {
+        image: "./productos/ED6.png",
+        title: "3DF Zephyr 7.531 Multilingüe (Activado con Crack)",
+        description: "es una versión del software 3DF Zephyr, desarrollado por 3Dflow, que sirve para fotogrametría automatizada. Es decir, permite reconstruir modelos 3D a partir de fotografías 2D.",
+        price: "$5.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/5"
+      },
+
+      Adobe30: {
+        image: "./productos/ED3.png",
+        title: "Adobe After Effects v2024 (Act. solo con Firewall)",
+        description: "Adobe After Effects v2024 es la última versión del potente software de composición, animación y efectos visuales en video de Adobe. Es ampliamente utilizado en producción de video profesional, cine, motion graphics y contenido digital para redes sociales.",
+        price: "$4.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/4"
+      },
+
+      Adobe31: {
+        image: "./productos/ED1.png",
+        title: "Adobe Photoshop v2024 (solo con Firewall)",
+        description: "es una herramienta para la edición y creación de imágenes digitales. Se utiliza para retocar fotografías, crear diseños gráficos, editar videos y generar efectos visuales.",
+        price: "$4.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/4"
+      },
+
+      Adobe32: {
+        image: "./productos/ED2.png",
+        title: "Adobe Premiere Pro 2023 v23.1.0 (solo con Firewall)",
+        description: "Edita y recorta vídeos, añade efectos, mezcla audio, anima títulos o equilibra los colores y deja que la IA revolucione tu flujo de trabajo. Cuenta tu historia como nunca antes con Premiere Pro.",
+        price: "$4.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/4"
+      },
+
+      Agisoft33: {
+        image: "./productos/A1.png",
+        title: "Agisoft Metashape Pro v2.2.0 Multilingue (Activado con parche)",
+        description: "Es una versión Exclusiva de SAI SOLUCIONES, al adquirir el programa tambien te compartimos un curso intensivo completo y mas un LISP para Civil 3D desarrollado especificcamente para los clientes",
+        price: "$5.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/5"
+      },
+
+      ARCGIS34: {
+        image: "./productos/A3.png",
+        title: "ARCGIS 2021 V10.8 (Activado con Crack)",
+        description: "ArcGIS es un completo sistema que permite recopilar, organizar, administrar, analizar, compartir y distribuir información geográfica.",
+        price: "$4.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/4"
+      },
+
+      ArcGIS35: {
+        image: "./productos/A3.png",
+        title: "ArcGIS Desktop 10.5 (Activado con Crack)",
+        description: "ArcGIS es un completo sistema que permite recopilar, organizar, administrar, analizar, compartir y distribuir información geográfica.",
+        price: "$4.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/4"
+      },
+
+      ArcGIS36: {
+        image: "./productos/A4.png",
+        title: "ArcGIS Pro 3.0.1 (Activado con Crack)",
+        description: "Una potente herramienta geoespacial creada para usted. Con un sólido conjunto de capacidades, ArcGIS Pro le permite visualizar, analizar y compartir proyectos con su equipo o cualquier persona en todo el mundo.",
+        price: "$4.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/4"
+      },
+
+      Archicad37: {
+        image: "./productos/A11.jpg",
+        title: "Archicad 26 Build 3001 INGLÉS (Activado con Crack)",
+        description: "Con potentes mejoras en los flujos de trabajo automatizados de diseño, documentación y colaboración, y con soluciones profesionales de visualización incluidas, Archicad 26 te permite estar concentrado en lo que mejor sabes hacer: diseñar grandes edificios.",
+        price: "$4.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/4"
+      },
+
+      Archicad38: {
+        image: "./productos/A12.jpg",
+        title: "Archicad 26 Build 5002 SPANISH (Activado con Crack)",
+        description: "Con potentes mejoras en los flujos de trabajo automatizados de diseño, documentación y colaboración, y con soluciones profesionales de visualización incluidas, Archicad 26 te permite estar concentrado en lo que mejor sabes hacer: diseñar grandes edificios.",
+        price: "$4.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/4"
+      },
+
+      CHC39: {
+        image: "./productos/A8.jpg",
+        title: "CHC.Geomatics.Office.2.v2.3.1 (Activado con Crack)",
+        description: "Es un potente software de oficina, diseñado para ingenieros como una plataforma integrada para establecer un vínculo entre el campo y el flujo de trabajo de la oficina desde múltiples sensores. y generando ricos entregables.",
+        price: "$4.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/4"
+      },
+
+      Corel40: {
+        image: "./productos/ED4.png",
+        title: "Corel Draw 2023 (Activado con Crack)",
+        description: "Es el software de diseño gráfico más fácil de usar del mercado para los profesionales del diseño gráfico. Lo he usado para crear letreros, anuncios, camisetas e incluso gráficos de más de 10 metros para autocaravanas.",
+        price: "$4.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/4"
+      },
+
+      Dassault41: {
+        image: "./productos/ED5.png",
+        title: "Dassault Systemes DraftSight Enterprise Plus 2024 SP4 (Activado con Crack)",
+        description: "Incluye video tutorial de instalacion",
+        price: "$4.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/4"
+      },
+
+      ETABS42: {
+        image: "./productos/14 - copia.png",
+        title: "ETABS 21.1.0. (Activado con Crack)",
+        description: "Paquetes de calculo, totalmente funcionales y con video de instalación bien explicado!!",
+        price: "$4.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/4"
+      },
+      GEOSETTER44: {
+        image: "./productos/15.png",
+        title: "SAFE 21.1.0. (Activado con Crack)",
+        description: "Paquetes de calculo, totalmente funcionales y con video de instalación bien explicado!!",
+        price: "$4.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/4"
+      },
+      Google46: {
+        image: "./productos/13 - copia.png",
+        title: "SAP2000 25.0.0. (Activado con Crack)",
+        description: "Paquetes de calculo, totalmente funcionales y con video de instalación bien explicado!!",
+        price: "$4.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/4"
+      },
+      SAS56: {
+        image: "./productos/16.png",
+        title: "CS. BRIDGE (Activado con Crack)",
+        description: "Paquetes de calculo, totalmente funcionales y con video de instalación bien explicado!!",
+        price: "$4.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/4"
+      },
+
+      GEO_SLOPE_GeoStudio_202243: {
+        image: "./productos/A5.png",
+        title: "GEO_SLOPE_GeoStudio_2022 Multilanguage (Activado con Crack)",
+        description: "La mejor herramienta para calculo de mecanica de suelos, presiones ejercidas en el suelo y completamente activada con licencia permanente y con video de instalación",
+        price: "$5.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/5"
+      },
+
+
+
+      Global45: {
+        image: "./productos/A6.jpg",
+        title: "Global Mapper Pro v26 Inglés (Activado con Parche)",
+        description: "Herramienta super completa que es parte de Sistemas de información Geográfica",
+        price: "$4.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/4"
+      },
+
+      INSTALADOR47: {
+        image: "./productos/A10.jpg",
+        title: "INSTALADOR S10 ILIMITADO-2023 (Activado con Crack)",
+        description: "Programa de Analisis de precios unitarios y Costos Perú",
+        price: "$4.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/4"
+      },
+
+      INSTRAM48: {
+        image: "./productos/A10.jpg",
+        title: "INSTRAM ISPOL V2023 MULTILINGUE (Activado con Crack)",
+        description: "Aplicación informática desarrollada para ser utilizada en el diseño de proyectos y obras que requieran cálculos geométricos y volumétricos aplicados a cualquier variante de obra lineal.",
+        price: "$4.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/4"
+      },
+
+      Lector49: {
+        image: "./productos/ADO.jpg",
+        title: "Lector Adobe Acrobat Pro DC2024 (Activado con Crack)",
+        description: "Lector y editor de PDFs, con licencia activada y funciones habilitadas, Incluye video de instalación",
+        price: "$4.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/4"
+      },
+
+      Lector50: {
+        image: "./productos/abby.jpg",
+        title: "Lector de PDF ABBY FineReader 14 (Activado con parche)",
+        description: "Lector y editor de PDFs, con licencia activada y funciones habilitadas, Incluye video de instalación",
+        price: "$4.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/4"
+      },
+
+      Lector51: {
+        image: "./productos/nitr.jpg",
+        title: "Lector de PDF Nitro Pro 13 (Activado con Crack)",
+        description: "Lector y editor de PDFs, es el mas completo, mejor que cualquier otros lectores y con licencia activada y funciones habilitadas, Incluye video de instalación",
+        price: "$4.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/4"
+      },
+
+      OBSStudio2724Full52: {
+        image: "./productos/ED7.png",
+        title: "OBS-Studio-27.2.4-Full INGLÉS-ESPAÑOL (Activado con Crack)",
+        description: "Personalmente es el mejor grabador de video, con buenas configuraciones",
+        price: "$4.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/4"
+      },
+
+      Pix4D53: {
+        image: "./productos/A2.jpg",
+        title: "Pix4D Mapper v4,5,6 Multilingue (Activado con Crack)",
+        description: "Es multilingue, con licencia permanente, con funciones automatizadas y con video de instalación. como plus viene con un LISP para Civil 3D",
+        price: "$5.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/5"
+      },
+
+      PTC54: {
+        image: "./productos/A9.jpg",
+        title: "PTC MathCad Prime v8,0 Multilingue (Activado con Crack)",
+        description: "La mejor herramienta para realizar los cálculos matematicos, matriciales y completamente programable",
+        price: "$4.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/4"
+      },
+
+      Sketch57: {
+        image: "./productos/A13.jpg",
+        title: "Sketch Up Pro 2023 - V-RAY 6 (Activado con Parche)",
+        description: "Programa de arquitectura, con licencia activada y con modulo VRAY",
+        price: "$4.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/4"
+      },
+
+      Wondershare58: {
+        image: "./productos/ED8.png",
+        title: "Wondershare Filmora 12 INGLÉS-ESPAÑOL (Activado con Parche)",
+        description: "La mejor herramienta para realizar la edición de tus videos",
+        price: "$4.00",
+        paypalLink: "https://paypal.me/invierteatuconocimie/4"
+      },
+    };
+
+    document.querySelectorAll('.tabs a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const productId = this.getAttribute('data-product');
+        const product = products[productId];
+
+        if (product) {
+          document.getElementById('modalImage').src = product.image;
+          document.getElementById('modalTitle').textContent = product.title;
+          document.getElementById('modalDescription').textContent = product.description;
+          document.getElementById('modalPrice').textContent = product.price;
+          document.getElementById('modalPaypal').onclick = () => window.location.href = product.paypalLink;
+
+          document.getElementById('productModal').style.display = 'flex';
+        }
+      });
+    });
+
+    function closeModal() {
+      document.getElementById('productModal').style.display = 'none';
+    }
+
+    document.getElementById('productModal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+
+    </script>
+  </body>
+</html>
