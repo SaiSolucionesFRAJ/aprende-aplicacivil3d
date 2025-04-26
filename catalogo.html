@@ -1,0 +1,2733 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Programas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azul-oscuro: #0a2463;
+            --azul-lila: #3e5c76;
+            --celeste: #a2d6f9;
+            --blanco: #ffffff;
+            --naranja: #fb8500;
+            --gris-claro: #f8f9fa;
+            --gris-medio: #e9ecef;
+            --gris-oscuro: #495057;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--gris-oscuro);
+            line-height: 1.6;
+            background-color: var(--gris-claro);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--azul-oscuro);
+        }
+        
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--azul-oscuro);
+            color: var(--blanco);
+            padding: 8px 0;
+            font-size: 14px;
+        }
+        
+        .top-bar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .contact-info a {
+            color: var(--blanco);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-info a:hover {
+            color: var(--celeste);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icons a {
+            color: var(--blanco);
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--naranja);
+        }
+        
+        /* Navbar */
+        .navbar {
+            background-color: var(--blanco);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--azul-oscuro);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--naranja);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--azul-oscuro);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--naranja);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--naranja);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--azul-oscuro);
+            cursor: pointer;
+        }
+        
+        /* Hero Section - Versión Refinada */
+        .hero {
+            background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-lila) 100%);
+            color: var(--blanco);
+            padding: 90px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.1) 100%);
+        }
+
+        .hero-container {
+            max-width: 850px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--blanco);
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin: 0 auto 2.5rem;
+            color: var(--celeste);
+            max-width: 780px;
+        }
+
+        .highlight-block {
+            display: block;
+            margin: 1rem 0;
+            color: var(--blanco);
+            font-weight: 500;
+        }
+
+        .price {
+            color: var(--naranja);
+            font-weight: 700;
+        }
+
+        .cta-wrapper {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--naranja);
+            color: var(--blanco);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--naranja);
+            min-width: 180px;
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--naranja);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(251, 133, 0, 0.2);
+        }
+
+        .cta-button.secondary {
+            background-color: transparent;
+            border-color: rgba(255,255,255,0.4);
+            color: var(--blanco);
+        }
+
+        .cta-button.secondary:hover {
+            background-color: rgba(255,255,255,0.1);
+            border-color: var(--blanco);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 70px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-description {
+                font-size: 1.1rem;
+            }
+            
+            .cta-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-button {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--naranja);
+            margin: 15px auto 0;
+        }
+        
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .product-card {
+            background-color: var(--blanco);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--naranja);
+            color: var(--blanco);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 1;
+        }
+        
+        .product-image {
+            height: 180px;
+            background-color: var(--gris-medio);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-category {
+            color: var(--azul-lila);
+            font-size: 14px;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .product-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--azul-oscuro);
+        }
+        
+        .product-description {
+            font-size: 12px;
+            color: var(--gris-oscuro);
+            margin-bottom: 15px;
+            height: 60px;
+            overflow: hidden;
+        }
+        
+        .product-price {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--azul-oscuro);
+            margin-bottom: 15px;
+        }
+        
+        .product-rating {
+            color: var(--naranja);
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        .product-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .buy-button {
+            flex: 1;
+            background-color: var(--azul-oscuro);
+            color: var(--blanco);
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .buy-button:hover {
+            background-color: var(--azul-lila);
+        }
+        
+        .info-button {
+            background-color: var(--gris-medio);
+            color: var(--azul-oscuro);
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .info-button:hover {
+            background-color: var(--celeste);
+        }
+        
+        /* Featured Products */
+        .featured-products {
+            margin-bottom: 60px;
+        }
+        
+        /* Categories */
+        .categories {
+            margin-bottom: 60px;
+        }
+        
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .category-tab {
+            padding: 10px 20px;
+            background-color: var(--gris-medio);
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .category-tab.active, .category-tab:hover {
+            background-color: var(--azul-oscuro);
+            color: var(--blanco);
+        }
+        
+        /* Checkout Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background-color: var(--blanco);
+            margin: 50px auto;
+            max-width: 600px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+            animation: modalFadeIn 0.3s;
+        }
+        
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .modal-header {
+            background-color: var(--azul-oscuro);
+            color: var(--blanco);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-header h3 {
+            margin: 0;
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            color: var(--blanco);
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .modal-body {
+            padding: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--gris-medio);
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .payment-methods {
+            margin: 20px 0;
+        }
+        
+        .payment-method {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 1px solid var(--gris-medio);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .payment-method:hover {
+            border-color: var(--azul-lila);
+        }
+        
+        .payment-method.selected {
+            border-color: var(--naranja);
+            background-color: rgba(251, 133, 0, 0.05);
+        }
+        
+        .payment-method input {
+            margin-right: 15px;
+        }
+        
+        .payment-method-icon {
+            margin-right: 15px;
+            font-size: 24px;
+            color: var(--azul-oscuro);
+        }
+        
+        .payment-method-info h4 {
+            margin: 0 0 5px;
+        }
+        
+        .payment-method-info p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--gris-oscuro);
+        }
+        
+        .modal-footer {
+            padding: 20px;
+            background-color: var(--gris-claro);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .total-price {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--azul-oscuro);
+        }
+        
+        .confirm-button {
+            background-color: var(--naranja);
+            color: var(--blanco);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .confirm-button:hover {
+            background-color: #e07700;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--azul-oscuro);
+            color: var(--blanco);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-column h4 {
+            color: var(--blanco);
+            margin-bottom: 20px;
+            font-size: 18px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--naranja);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--celeste);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--naranja);
+        }
+        
+        .footer-contact p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .footer-contact i {
+            margin-top: 3px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            color: var(--celeste);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .top-bar {
+                display: none;
+            }
+            
+            .navbar-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 20px;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 15px;
+                right: 20px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="contact-info">
+                <a href="mailto:ventas@ingenieriadigital.com"><i class="fas fa-envelope"></i> tuacademiaprofesional@gmail.com</a>
+                <a href="tel:+51987654321"><i class="fas fa-phone"></i> +59173324084</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">SAI<span>SOLUCIONES</span></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#destacados">Destacados</a></li>
+                <li><a href="https://wa.link/syysji">Soporte</a></li>
+                <li><a href="#"><i class="fas fa-shopping-cart"></i> (0)</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section - Versión Refinada -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Adquiere Licencia Permanente de Autodesk</h1>
+            <p class="hero-description">
+                Si tienes instalado los programas de Autodesk y tienes problemas de licencia, 
+                <strong>la mejor solución</strong> es adquirir en nuestra tienda los archivos modificados 
+                de licencia permanente por solo <strong class="price">$4.00 USD</strong>.
+                <span class="highlight-block">Incluye video tutorial de instalación y activación super explicado.</span>
+                ¿Necesitas ayuda adicional? También ofrecemos <strong>servicio de instalación remota</strong>.
+            </p>
+            <div class="cta-wrapper">
+                <a href="licencia.html#licencias" class="cta-button">Más Detalles</a>
+                <a href="https://wa.link/syysji" class="cta-button secondary">Contactar Soporte</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Featured Products -->
+        <section class="featured-products" id="destacados">
+            <h2 class="section-title">Productos Destacados</h2>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-badge">Recomendado</div>
+                    <div class="product-image">
+                        <img src="productos/1.jpg" alt="AutoCAD 2025">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Autodesk 2025</div>
+                        <h3 class="product-title">AutoCAD (Inglés - Español)</h3>
+                        <p class="product-description">La compra del producto incluye un video tutorial de instalación. Sin embargo, tambien ofrecemos servicio de instalación remota.</p>
+                        <div class="product-price">$5.00</div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            (24)
+                        </div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="AutoCAD 2025">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/syysji">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-badge">Popular</div>
+                    <div class="product-image">
+                        <img src="productos/7.jpg" alt="Revit 2025">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Autodesk 2025</div>
+                        <h3 class="product-title">Revit (Multilingual)</h3>
+                        <p class="product-description">La compra del producto incluye un video tutorial de instalación. Sin embargo, tambien ofrecemos servicio de instalación remota.</p>
+                        <div class="product-price">$6.00</div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            (18)
+                        </div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Revit 2025">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/syysji">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="productos/2.jpg" alt="Civil 3D 2025">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Autodesk 2025</div>
+                        <h3 class="product-title">Civil 3D (Inglés - Español)</h3>
+                        <p class="product-description">La compra del producto incluye un video tutorial de instalación. Sin embargo, tambien ofrecemos servicio de instalación remota.</p>
+                        <div class="product-price">$5.00</div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            (12)
+                        </div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Civil 3D 2025">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/syysji">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- All Products -->
+        <section class="categories" id="productos">
+            <h2 class="section-title">Nuestros Productos</h2>
+            <div class="category-tabs">
+                <div class="category-tab active" data-category="all">Todos</div>
+                <div class="category-tab" data-category="autodesk">Autodesk</div>
+                <div class="category-tab" data-category="topografia">Topografia</div>
+                <div class="category-tab" data-category="gis">Programas GIS</div>
+                <div class="category-tab" data-category="calculos">Cálculos</div>
+                <div class="category-tab" data-category="otros">Otros</div>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card" data-category="topografia">
+                    <div class="product-image">
+                        <img src="/productos/14.png" alt="Módulos CivilCAD para AutoCAD">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Topografía</div>
+                        <h3 class="product-title">Módulos CivilCAD para AutoCAD (2017-2025)</h3>
+                        <p class="product-description">Este módulo se puede instalar como un complemento para AUTOCAD, desde las versiones 2017 hasta 2025, y tambien viene para arquitecturas x32 y x64. y no solo se puede intalar a los programas de Autocad, Sino que tambien a CIVIL 3D de las mismas versiones y funciona bien. El programa viene con videos tutoriales de intalación.</p>
+                        <div class="product-price">$5.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="CivilCAD para AutoCAD">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="autodesk">
+                    <div class="product-image">
+                        <img src="/productos/3.png" alt="AutoCAD 2019 Inglés">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Autodesk</div>
+                        <h3 class="product-title">AutoCAD Inglés 2019 (Activado por xforce)</h3>
+                        <p class="product-description">Versión estable con activación segura mediante xforce. Incluye solución para error de licencia y video tutorial.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="AutoCAD 2019">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="topografia">
+                    <div class="product-image">
+                        <img src="/productos/4.png" alt="Civil 3D 2019 Inglés">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Topografía</div>
+                        <h3 class="product-title">Civil 3D Inglés 2019 (Activado por xforce)</h3>
+                        <p class="product-description">Versión con activación xforce que permite iniciar sesión en Autodesk y cargar imágenes satelitales para proyectos.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Civil 3D 2019">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="autodesk">
+                    <div class="product-image">
+                        <img src="/productos/5.png" alt="Revit 2019 Inglés">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Autodesk</div>
+                        <h3 class="product-title">Revit Inglés 2019 (Activado por xforce)</h3>
+                        <p class="product-description">Versión estable con activación segura mediante xforce, sin errores de licencia.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Revit 2019">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="autodesk">
+                    <div class="product-image">
+                        <img src="/productos/6.png" alt="AutoCAD 2020 Español">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Autodesk</div>
+                        <h3 class="product-title">AutoCAD Español 2020 (Activado por xforce)</h3>
+                        <p class="product-description">Versión en español con activación segura mediante xforce.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="AutoCAD 2020 Español">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="topografia">
+                    <div class="product-image">
+                        <img src="/productos/7.png" alt="Civil 3D 2020 Español">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Topografía</div>
+                        <h3 class="product-title">Civil 3D Español 2020 (Activado por xforce)</h3>
+                        <p class="product-description">Versión en español con activación segura mediante xforce.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Civil 3D 2020 Español">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="autodesk">
+                    <div class="product-image">
+                        <img src="/productos/8.png" alt="Revit 2020 Español">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Autodesk</div>
+                        <h3 class="product-title">Revit Español 2020 (Activado por xforce)</h3>
+                        <p class="product-description">Versión en español con activación segura mediante xforce.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Revit 2020 Español">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="autodesk">
+                    <div class="product-image">
+                        <img src="/productos/10.png" alt="AutoCAD 2023 Español-Inglés">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Autodesk</div>
+                        <h3 class="product-title">AutoCAD Esp-Ing 2023 (Activado con Parche)</h3>
+                        <p class="product-description">Instalación simple con activación permanente. Sin errores de licencia ni actualizaciones.</p>
+                        <div class="product-price">$5.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="AutoCAD 2023">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="topografia">
+                    <div class="product-image">
+                        <img src="/productos/9.png" alt="Civil 3D 2023 Inglés">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Topografía</div>
+                        <h3 class="product-title">Civil 3D Inglés 2023 (Activado con Parche)</h3>
+                        <p class="product-description">Activación permanente con parche crackeado o licencia LMTOOLs. Incluye video tutorial de instalación.</p>
+                        <div class="product-price">$5.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Civil 3D 2023">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="topografia">
+                    <div class="product-image">
+                        <img src="/productos/9.png" alt="Civil 3D 2023 Español">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Topografía</div>
+                        <h3 class="product-title">Civil 3D Español 2023 (Activado con Lmtools)</h3>
+                        <p class="product-description">Versión en español con licencia comercial permanente. Soporte de instalación remota disponible.</p>
+                        <div class="product-price">$5.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Civil 3D Español 2023">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="autodesk">
+                    <div class="product-image">
+                        <img src="/productos/12.jpg" alt="Revit 2023 Español-Inglés">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Autodesk</div>
+                        <h3 class="product-title">Revit Esp-Ing 2023 (Activado con Lmtools)</h3>
+                        <p class="product-description">Licencia profesional con soporte de instalación remota disponible (servicio adicional).</p>
+                        <div class="product-price">$5.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Revit 2023">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="autodesk">
+                    <div class="product-image">
+                        <img src="/productos/11.jpg" alt="Inventor Pro 2023">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Autodesk</div>
+                        <h3 class="product-title">Inventor Pro Esp-Ing 2023 (Activado con Lmtools)</h3>
+                        <p class="product-description">Incluye video tutorial y opción de instalación remota asistida (servicio adicional).</p>
+                        <div class="product-price">$5.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Inventor Pro 2023">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="autodesk">
+                    <div class="product-image">
+                        <img src="/productos/1.jpg" alt="AutoCAD 2024 Español-Inglés">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Autodesk</div>
+                        <h3 class="product-title">AutoCAD Esp-Ing 2024 (Activado con Lmtools)</h3>
+                        <p class="product-description">Licencia permanente con LMTOOLs (instalación avanzada). Contactanos para asistencia.</p>
+                        <div class="product-price">$5.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="AutoCAD 2024">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="topografia">
+                    <div class="product-image">
+                        <img src="/productos/2.jpg" alt="Civil 3D 2024 Español-Inglés">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Topografía</div>
+                        <h3 class="product-title">Civil 3D Esp-Ing 2024 (Activado con Lmtools)</h3>
+                        <p class="product-description">Versión bilingüe para ingeniería civil. Licencia LMTOOLS permanente con asistencia.</p>
+                        <div class="product-price">$5.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Civil 3D 2024">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="autodesk">
+                    <div class="product-image">
+                        <img src="/productos/4.jpg" alt="Inventor Pro 2024">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Autodesk</div>
+                        <h3 class="product-title">Inventor Pro Esp-Ing 2024 (Activado con Lmtools)</h3>
+                        <p class="product-description">Diseño mecánico 3D profesional. Activación LMTOOLS con soporte técnico incluido.</p>
+                        <div class="product-price">$5.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Inventor Pro 2024">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="autodesk">
+                    <div class="product-image">
+                        <img src="/productos/5.jpg" alt="NavisWorks Manage 2024">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Autodesk</div>
+                        <h3 class="product-title">NavisWorks Manage 2024 (Activado con Lmtools)</h3>
+                        <p class="product-description">Herramienta de revisión de modelos BIM. Licencia permanente LMTOOLS.</p>
+                        <div class="product-price">$5.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="NavisWorks 2024">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="autodesk">
+                    <div class="product-image">
+                        <img src="/productos/6.jpg" alt="Recap Pro 2024 Multilenguaje">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Autodesk</div>
+                        <h3 class="product-title">Recap Pro Multilingue 2024 (Activado con Lmtools)</h3>
+                        <p class="product-description">Software de realidad captura con activación LMTOOLS. Asistencia personalizada.</p>
+                        <div class="product-price">$5.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Recap Pro 2024">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="autodesk">
+                    <div class="product-image">
+                        <img src="/productos/7.jpg" alt="Revit 2024 Multilenguaje">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Autodesk</div>
+                        <h3 class="product-title">Revit Multilingue 2024 (Activado con Lmtools)</h3>
+                        <p class="product-description">Versión multilenguaje con licencia LMTOOLS permanente. Soporte técnico disponible.</p>
+                        <div class="product-price">$6.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Revit 2024">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="autodesk">
+                    <div class="product-image">
+                        <img src="/productos/8.jpg" alt="Robot Structural 2024">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Autodesk</div>
+                        <h3 class="product-title">Robot Structural Esp-Ing 2024 (Activado con Lmtools)</h3>
+                        <p class="product-description">Análisis estructural profesional. Licencia LMTOOLS con asistencia técnica opcional.</p>
+                        <div class="product-price">$5.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Robot Structural 2024">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="autodesk">
+                    <div class="product-image">
+                        <img src="/productos/1.jpg" alt="AutoCAD 2025 Español-Inglés">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Autodesk</div>
+                        <h3 class="product-title">AutoCAD Esp-Ing 2025 (Activado con Lmtools)</h3>
+                        <p class="product-description">Versión estable 2025 con activación LMTOOLS. Incluye soporte para instalación.</p>
+                        <div class="product-price">$5.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="AutoCAD 2025">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="autodesk">
+                    <div class="product-image">
+                        <img src="/productos/1.jpg" alt="AutoCAD 2026 Español-Inglés">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Autodesk</div>
+                        <h3 class="product-title">AutoCAD Esp-Ing 2026 (Activado con Lmtools)</h3>
+                        <p class="product-description">Versión más reciente con licencia LMTOOLS permanente. Asistencia técnica disponible.</p>
+                        <div class="product-price">$5.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="AutoCAD 2026">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="topografia">
+                    <div class="product-image">
+                        <img src="/productos/2.jpg" alt="Civil 3D 2025 Español-Inglés">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Topografía</div>
+                        <h3 class="product-title">Civil 3D Esp-Ing 2025 (Activado con Lmtools)</h3>
+                        <p class="product-description">Versión 2025 bilingüe para ingeniería civil. Licencia LMTOOLS profesional con soporte.</p>
+                        <div class="product-price">$5.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Civil 3D 2025">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Civil 3D 2026 -->
+                <div class="product-card" data-category="topografia">
+                    <div class="product-image">
+                        <img src="/productos/2.1.jpg" alt="Civil 3D 2026">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Topografía</div>
+                        <h3 class="product-title">Civil 3D Esp-Ing 2026</h3>
+                        <p class="product-description">Diseño para ingeniería civil con herramientas avanzadas.</p>
+                        <div class="product-price">$5.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Civil 3D 2026">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- InfraWorks 2025 -->
+                <div class="product-card" data-category="autodesk">
+                    <div class="product-image">
+                        <img src="/productos/3.jpg" alt="InfraWorks 2025">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Autodesk</div>
+                        <h3 class="product-title">InfraWorks Esp-Ing 2025</h3>
+                        <p class="product-description">Modelado de infraestructura y planificación urbana.</p>
+                        <div class="product-price">$5.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="InfraWorks 2025">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Inventor Pro 2025 -->
+                <div class="product-card" data-category="autodesk">
+                    <div class="product-image">
+                        <img src="/productos/4.jpg" alt="Inventor Pro 2025">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Autodesk</div>
+                        <h3 class="product-title">Inventor Pro Esp-Ing 2025</h3>
+                        <p class="product-description">Diseño mecánico 3D profesional con herramientas avanzadas.</p>
+                        <div class="product-price">$5.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Inventor Pro 2025">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- NavisWorks 2025 -->
+                <div class="product-card" data-category="autodesk">
+                    <div class="product-image">
+                        <img src="/productos/5.jpg" alt="NavisWorks Manage 2025">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Autodesk</div>
+                        <h3 class="product-title">NavisWorks Manage 2025</h3>
+                        <p class="product-description">Coordinación de modelos BIM y gestión de proyectos.</p>
+                        <div class="product-price">$5.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="NavisWorks 2025">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recap Pro 2025 -->
+                <div class="product-card" data-category="autodesk">
+                    <div class="product-image">
+                        <img src="/productos/6.jpg" alt="Recap Pro 2025">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Autodesk</div>
+                        <h3 class="product-title">Recap Pro Esp-Ing 2025</h3>
+                        <p class="product-description">Software de realidad captura y escaneo 3D profesional.</p>
+                        <div class="product-price">$5.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Recap Pro 2025">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Revit 2025 -->
+                <div class="product-card" data-category="autodesk">
+                    <div class="product-image">
+                        <img src="/productos/7.jpg" alt="Revit 2025 Multilingüe">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Autodesk</div>
+                        <h3 class="product-title">Revit Multilingue 2025</h3>
+                        <p class="product-description">BIM profesional con licencia permanente.</p>
+                        <div class="product-price">$6.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Revit 2025">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Robot Structural 2025 -->
+                <div class="product-card" data-category="autodesk">
+                    <div class="product-image">
+                        <img src="/productos/8.jpg" alt="Robot Structural 2025">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Autodesk</div>
+                        <h3 class="product-title">Robot Structural Esp-Ing 2025</h3>
+                        <p class="product-description">Análisis estructural avanzado con licencia permanente.</p>
+                        <div class="product-price">$5.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Robot Structural 2025">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 3DF Zephyr -->
+                <div class="product-card" data-category="otros">
+                    <div class="product-image">
+                        <img src="/productos/ED6.png" alt="3DF Zephyr 7.531 Multilingüe">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Fotogrametría</div>
+                        <h3 class="product-title">3DF Zephyr 7.531 Multilingüe</h3>
+                        <p class="product-description">Software profesional para reconstrucción 3D a partir de fotografías 2D.</p>
+                        <div class="product-price">$5.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="3DF Zephyr">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Adobe After Effects -->
+                <div class="product-card" data-category="otros">
+                    <div class="product-image">
+                        <img src="/productos/ED3.png" alt="Adobe After Effects 2024">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Efectos Visuales</div>
+                        <h3 class="product-title">Adobe After Effects 2024</h3>
+                        <p class="product-description">Software profesional para motion graphics y efectos visuales.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="After Effects">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Adobe Photoshop -->
+                <div class="product-card" data-category="otros">
+                    <div class="product-image">
+                        <img src="/productos/ED1.png" alt="Adobe Photoshop 2024">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Edición de Imágenes</div>
+                        <h3 class="product-title">Adobe Photoshop 2024</h3>
+                        <p class="product-description">Herramienta profesional para edición y creación de imágenes digitales.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Photoshop">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Adobe Premiere Pro -->
+                <div class="product-card" data-category="otros">
+                    <div class="product-image">
+                        <img src="/productos/ED2.png" alt="Adobe Premiere Pro 2023">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Edición de Video</div>
+                        <h3 class="product-title">Adobe Premiere Pro 2023</h3>
+                        <p class="product-description">Edición profesional de video con herramientas avanzadas e IA.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Premiere Pro">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Agisoft Metashape Pro -->
+                <div class="product-card" data-category="otros">
+                    <div class="product-image">
+                        <img src="/productos/A1.png" alt="Agisoft Metashape Pro">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Fotogrametría</div>
+                        <h3 class="product-title">Agisoft Metashape Pro v2.2.0</h3>
+                        <p class="product-description">Incluye curso intensivo + LISP exclusivo para Civil 3D.</p>
+                        <div class="product-price">$5.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Agisoft Metashape">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- ARCGIS 2021 -->
+                <div class="product-card" data-category="gis">
+                    <div class="product-image">
+                        <img src="/productos/A3.png" alt="ARCGIS 2021 V10.8">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">GIS</div>
+                        <h3 class="product-title">ARCGIS 2021 V10.8</h3>
+                        <p class="product-description">Sistema completo para gestión y análisis de información geográfica.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="ARCGIS 2021">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- ArcGIS Desktop 10.5 -->
+                <div class="product-card" data-category="gis">
+                    <div class="product-image">
+                        <img src="/productos/A3.png" alt="ArcGIS Desktop 10.5">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">GIS</div>
+                        <h3 class="product-title">ArcGIS Desktop 10.5</h3>
+                        <p class="product-description">Sistema completo para gestión y análisis de información geográfica.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="ArcGIS Desktop">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- ArcGIS Pro 3.0.1 -->
+                <div class="product-card" data-category="gis">
+                    <div class="product-image">
+                        <img src="/productos/A4.png" alt="ArcGIS Pro 3.0.1">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">GIS</div>
+                        <h3 class="product-title">ArcGIS Pro 3.0.1</h3>
+                        <p class="product-description">Herramienta geoespacial profesional para análisis y visualización de datos.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="ArcGIS Pro">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Archicad 26 English -->
+                <div class="product-card" data-category="arquitectura">
+                    <div class="product-image">
+                        <img src="/productos/A11.jpg" alt="Archicad 26 English">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Arquitectura</div>
+                        <h3 class="product-title">Archicad 26 English (Build 3001)</h3>
+                        <p class="product-description">Professional BIM software with automated workflows and advanced visualization tools.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Archicad 26 English">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Archicad 26 Spanish -->
+                <div class="product-card" data-category="arquitectura">
+                    <div class="product-image">
+                        <img src="/productos/A12.jpg" alt="Archicad 26 Español">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Arquitectura</div>
+                        <h3 class="product-title">Archicad 26 Español (Build 5002)</h3>
+                        <p class="product-description">Software BIM profesional con flujos de trabajo automatizados y visualización avanzada.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Archicad 26 Español">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- CHC Geomatics Office -->
+                <div class="product-card" data-category="topografia">
+                    <div class="product-image">
+                        <img src="/productos/A8.jpg" alt="CHC Geomatics Office">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Topografía</div>
+                        <h3 class="product-title">CHC Geomatics Office 2 v2.3.1</h3>
+                        <p class="product-description">Plataforma integrada para gestión de datos topográficos y flujos de trabajo de oficina-campo.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="CHC Geomatics">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Corel Draw 2023 -->
+                <div class="product-card" data-category="diseño">
+                    <div class="product-image">
+                        <img src="/productos/ED4.png" alt="Corel Draw 2023">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Diseño Gráfico</div>
+                        <h3 class="product-title">Corel Draw 2023</h3>
+                        <p class="product-description">Software líder para diseño gráfico profesional. Ideal para publicidad, textiles y gráficos a gran escala.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Corel Draw">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- DraftSight 2024 -->
+                <div class="product-card" data-category="diseño">
+                    <div class="product-image">
+                        <img src="/productos/ED5.png" alt="DraftSight 2024">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Diseño CAD</div>
+                        <h3 class="product-title">DraftSight Enterprise Plus 2024</h3>
+                        <p class="product-description">Potente solución CAD profesional con herramientas de productividad avanzadas.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="DraftSight">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- ETABS 21.1.0 -->
+                <div class="product-card" data-category="calculos">
+                    <div class="product-image">
+                        <img src="/productos/14 - copia.png" alt="ETABS 21.1.0">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Cálculos Estructurales</div>
+                        <h3 class="product-title">ETABS 21.1.0</h3>
+                        <p class="product-description">Herramienta avanzada para análisis estructural de edificaciones. Video tutorial incluido.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="ETABS">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- SAFE 21.1.0 -->
+                <div class="product-card" data-category="calculos">
+                    <div class="product-image">
+                        <img src="/productos/15.png" alt="SAFE 21.1.0">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Cálculos Estructurales</div>
+                        <h3 class="product-title">SAFE 21.1.0</h3>
+                        <p class="product-description">Software profesional para análisis y diseño de cimentaciones y losas. Incluye video tutorial de instalación.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="SAFE">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- SAP2000 -->
+                <div class="product-card" data-category="calculos">
+                    <div class="product-image">
+                        <img src="/productos/13 - copia.png" alt="SAP2000 v25">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Ingeniería Estructural</div>
+                        <h3 class="product-title">SAP2000 v25.0.0</h3>
+                        <p class="product-description">Herramienta profesional para análisis y diseño estructural. Video tutorial incluido.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="SAP2000">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- CS BRIDGE -->
+                <div class="product-card" data-category="calculos">
+                    <div class="product-image">
+                        <img src="/productos/16.png" alt="CSi Bridge">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Ingeniería Civil</div>
+                        <h3 class="product-title">CSi Bridge</h3>
+                        <p class="product-description">Software avanzado para análisis y diseño de puentes. Incluye video tutorial de instalación.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="CSi Bridge">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- GeoStudio 2022 -->
+                <div class="product-card" data-category="calculos">
+                    <div class="product-image">
+                        <img src="/productos/A5.png" alt="GeoStudio 2022">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Geotecnia</div>
+                        <h3 class="product-title">GeoStudio 2022 Multilenguaje</h3>
+                        <p class="product-description">Herramienta profesional para análisis de mecánica de suelos y estabilidad de taludes.</p>
+                        <div class="product-price">$5.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="GeoStudio">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Global Mapper Pro -->
+                <div class="product-card" data-category="gis">
+                    <div class="product-image">
+                        <img src="/productos/A6.jpg" alt="Global Mapper Pro v26">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">GIS</div>
+                        <h3 class="product-title">Global Mapper Pro v26 (Inglés)</h3>
+                        <p class="product-description">Solución completa de SIG con herramientas avanzadas de procesamiento de datos geoespaciales.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Global Mapper">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- INSTALADOR S10 -->
+                <div class="product-card" data-category="calculos">
+                    <div class="product-image">
+                        <img src="/productos/A10.jpg" alt="INSTALADOR S10 ILIMITADO">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Costos y Presupuestos</div>
+                        <h3 class="product-title">INSTALADOR S10 ILIMITADO 2023</h3>
+                        <p class="product-description">Software profesional para análisis de precios unitarios y costos de construcción (Perú).</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Instalador S10">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- INSTRAM ISPOL -->
+                <div class="product-card" data-category="calculos">
+                    <div class="product-image">
+                        <img src="/productos/ISTR.fw.png" alt="INSTRAM ISPOL 2023">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Ingeniería Civil</div>
+                        <h3 class="product-title">INSTRAM ISPOL 2023 Multilenguaje</h3>
+                        <p class="product-description">Software especializado en diseño de proyectos lineales y cálculos geométricos.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="INSTRAM ISPOL">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Adobe Acrobat -->
+                <div class="product-card" data-category="otros">
+                    <div class="product-image">
+                        <img src="/productos/ADO.jpg" alt="Adobe Acrobat Pro DC 2024">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">PDF</div>
+                        <h3 class="product-title">Adobe Acrobat Pro DC 2024</h3>
+                        <p class="product-description">La solución más completa para creación y edición de PDFs profesionales.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Acrobat Pro">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Abbyy FineReader -->
+                <div class="product-card" data-category="otros">
+                    <div class="product-image">
+                        <img src="/productos/abby.jpg" alt="Abbyy FineReader 14">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">PDF</div>
+                        <h3 class="product-title">Abbyy FineReader 14</h3>
+                        <p class="product-description">Herramienta avanzada de OCR y edición de PDFs. Licencia permanente.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Abbyy FineReader">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- PDF Readers Bundle -->
+                <div class="product-card" data-category="otros">
+                    <div class="product-image">
+                        <img src="/productos/nitr.jpg" alt="Nitro PDF Pro 13">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">PDF</div>
+                        <h3 class="product-title">Nitro PDF Pro 13</h3>
+                        <p class="product-description">Editor PDF profesional con todas las funciones habilitadas. Incluye video de instalación.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Nitro PDF">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- OBS Studio -->
+                <div class="product-card" data-category="otros">
+                    <div class="product-image">
+                        <img src="/productos/ED7.png" alt="OBS Studio 27.2.4">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Grabación</div>
+                        <h3 class="product-title">OBS Studio 27.2.4 (Español-Inglés)</h3>
+                        <p class="product-description">Software profesional de grabación y transmisión en vivo con configuración avanzada.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="OBS Studio">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pix4D Mapper -->
+                <div class="product-card" data-category="topografia">
+                    <div class="product-image">
+                        <img src="/productos/A2.jpg" alt="Pix4D Mapper v4.5.6">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Fotogrametría</div>
+                        <h3 class="product-title">Pix4D Mapper v4.5.6 + LISP Civil 3D</h3>
+                        <p class="product-description">Software profesional de mapeo con drones. Incluye LISP exclusivo para Civil 3D.</p>
+                        <div class="product-price">$5.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Pix4D">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- MathCad Prime -->
+                <div class="product-card" data-category="calculos">
+                    <div class="product-image">
+                        <img src="/productos/A9.jpg" alt="MathCad Prime v8">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Ingeniería</div>
+                        <h3 class="product-title">MathCad Prime v8 Multilenguaje</h3>
+                        <p class="product-description">Herramienta profesional para cálculos matemáticos y matriciales programables.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="MathCad">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- SketchUp Pro + VRAY -->
+                <div class="product-card" data-category="arquitectura">
+                    <div class="product-image">
+                        <img src="/productos/A13.jpg" alt="SketchUp Pro 2023 con VRAY">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Arquitectura</div>
+                        <h3 class="product-title">SketchUp Pro 2023 + VRAY 6</h3>
+                        <p class="product-description">Modelado 3D profesional con motor de renderizado VRAY incluido.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="SketchUp VRAY">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Wondershare Filmora -->
+                <div class="product-card" data-category="otros">
+                    <div class="product-image">
+                        <img src="/productos/ED8.png" alt="Wondershare Filmora 12">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Edición de Video</div>
+                        <h3 class="product-title">Wondershare Filmora 12 (Español-Inglés)</h3>
+                        <p class="product-description">Software profesional de edición de video con efectos avanzados y fácil de usar.</p>
+                        <div class="product-price">$4.00</div>
+                        <div class="product-actions">
+                            <button class="buy-button" data-product="Filmora 12">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Finalizar Compra</h3>
+                <button class="close-modal" onclick="closeCheckout()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h4 id="modalProductTitle">Producto</h4>
+                <p id="modalProductPrice">Precio: $0.00</p>
+                
+                <div class="form-group">
+                    <label for="customerName">Nombre Completo</label>
+                    <input type="text" id="customerName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customerEmail">Correo Electrónico</label>
+                    <input type="email" id="customerEmail" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customerPhone">Teléfono</label>
+                    <input type="tel" id="customerPhone" required>
+                </div>
+                
+                <h4>Método de Pago</h4>
+                <div class="payment-methods">
+                    <div class="payment-method" onclick="selectPaymentMethod(this)">
+                        <input type="radio" name="paymentMethod" id="paypal" checked>
+                        <div class="payment-method-icon">
+                            <i class="fab fa-paypal"></i>
+                        </div>
+                        <div class="payment-method-info">
+                            <h4>PayPal</h4>
+                            <p>Paga con tu cuenta PayPal o tarjeta de crédito/débito</p>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-method" onclick="selectPaymentMethod(this)">
+                        <input type="radio" name="paymentMethod" id="hotmart">
+                        <div class="payment-method-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="payment-method-info">
+                            <h4>Hotmart</h4>
+                            <p>Compra segura a través de la plataforma Hotmart</p>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-method" onclick="selectPaymentMethod(this)">
+                        <input type="radio" name="paymentMethod" id="transfer">
+                        <div class="payment-method-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="payment-method-info">
+                            <h4>Transferencia Bancaria</h4>
+                            <p>Paga directamente a nuestra cuenta bancaria</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="total-price" id="modalTotalPrice">Total: $0.00</div>
+                <button class="confirm-button" onclick="processPayment()">Confirmar Compra</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer" id="contacto">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>Servicios Profesionales</h4>
+                <p>Proveemos software profesional para ingenieros, arquitectos y diseñadores con licencias originales y soporte técnico especializado.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Cursos y plantillas</h4>
+                <ul class="footer-links">
+                    <li><a href="plant1.html">Diseño Geométrico de Carreteras</a></li>
+                    <li><a href="plant2.html">Diseño de Obras Hidraulicas (Canales)</a></li>
+                    <li><a href="plant3.html">Parcelas y Lotizaciones</a></li>
+                    <li><a href="Plant4.html">Fotogrametria</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Enlaces</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#destacados">Destacados</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Contacto</h4>
+                <div class="footer-contact">
+                    <p><i class="fas fa-map-marker-alt"></i> Doble Via La Paz-Oruro, Bolivia</p>
+                    <p><i class="fas fa-phone"></i> +51 987 654 321</p>
+                    <p><i class="fas fa-envelope"></i> tuacademiaprofesional@gmail.com/p>
+                    <p><i class="fas fa-clock"></i> Lunes a Viernes: 9am - 6pm</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sai Soluciones. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Datos de productos con enlaces
+        const products = {
+            "CivilCAD para AutoCAD": {
+                category: "topografia",
+                price: 5,
+                paypalLink: "https://paypal.me/invierteatuconocimie/5",
+                hotmartLink: "#", // Ajusta este link si es diferente
+                infoLink: "https://wa.link/kkoe4h" // Mantengo el mismo link de detalles de tu plantilla original
+            },
+            "AutoCAD 2019": {
+                category: "autodesk",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4", // Este enlace parece ser de Hotmart
+                hotmartLink: "https://pay.hotmart.com/R99320357U", // Mismo enlace ya que es el proporcionado
+                infoLink: "https://wa.link/kkoe4h" // Manteniendo tu formato estándar
+            },
+            "Civil 3D 2019": {
+                category: "topografia",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4", // Enlace Hotmart como PayPal
+                hotmartLink: "https://pay.hotmart.com/V99319974W", // Mismo enlace Hotmart
+                infoLink: "https://wa.link/kkoe4h" // Link estándar para detalles
+            },
+            "Revit 2019": {
+                category: "autodesk",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4",
+                hotmartLink: "#", // Link genérico (ajustar si es diferente)
+                infoLink: "https://wa.link/kkoe4h"
+            },
+            "AutoCAD 2020 Español": {
+                category: "autodesk",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4", // Link Hotmart como PayPal
+                hotmartLink: "https://pay.hotmart.com/R99320357U", // Mismo link Hotmart
+                infoLink: "https://wa.link/kkoe4h" // Link estándar para detalles
+            },
+            "Civil 3D 2023": {
+                category: "topografia",
+                price: 5,
+                paypalLink: "https://paypal.me/invierteatuconocimie/5",
+                hotmartLink: "https://pay.hotmart.com/V99319974W",
+                infoLink: "https://wa.link/kkoe4h"
+            },
+            "AutoCAD 2023": {
+                category: "autodesk",
+                price: 5,
+                paypalLink: "https://paypal.me/invierteatuconocimie/5",
+                hotmartLink: "https://pay.hotmart.com/R99320357U",
+                infoLink: "https://wa.link/kkoe4h"
+            },
+            "Revit 2020 Español": {
+                category: "autodesk",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4",
+                hotmartLink: "./Checkout/Revit2020.html",
+                infoLink: "https://wa.link/kkoe4h"
+            },
+            "Civil 3D 2020 Español": {
+                category: "topografia",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4",
+                hotmartLink: "https://pay.hotmart.com/V99319974W",
+                infoLink: "https://wa.link/kkoe4h"
+            },
+            "AutoCAD 2024": {
+                category: "autodesk",
+                price: 5,
+                paypalLink: "https://paypal.me/invierteatuconocimie/5",
+                hotmartLink: "https://pay.hotmart.com/M99297665J",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["lmtools", "asistencia"]
+            },
+            "Inventor Pro 2023": {
+                category: "autodesk",
+                price: 5,
+                paypalLink: "https://paypal.me/invierteatuconocimie/5",
+                hotmartLink: "https://pay.hotmart.com/B99320116J",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["lmtools", "instalacion-remota"]
+            },
+            "Revit 2023": {
+                category: "autodesk",
+                price: 5,
+                paypalLink: "https://paypal.me/invierteatuconocimie/5",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/5",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["lmtools", "soporte"]
+            },
+            "Civil 3D Español 2023": {
+                category: "topografia",
+                price: 5,
+                paypalLink: "https://paypal.me/invierteatuconocimie/5",
+                hotmartLink: "https://pay.hotmart.com/V99319974W",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["lmtools", "español", "instalacion-remota"]
+            },
+            "Revit 2024": {
+                category: "autodesk",
+                price: 6,
+                paypalLink: "https://paypal.me/invierteatuconocimie/6",
+                hotmartLink: "https://pay.hotmart.com/Y99321707X",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["lmtools", "multilenguaje", "bim"]
+            },
+            "Recap Pro 2024": {
+                category: "autodesk",
+                price: 5,
+                paypalLink: "https://paypal.me/invierteatuconocimie/5",
+                hotmartLink: "#",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["lmtools", "nube", "escaneo3d"]
+            },
+            "NavisWorks 2024": {
+                category: "autodesk",
+                price: 5,
+                paypalLink: "https://paypal.me/invierteatuconocimie/5",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/5",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["lmtools", "coordinacion", "bim"]
+            },
+            "Inventor Pro 2024": {
+                category: "autodesk",
+                price: 5,
+                paypalLink: "https://paypal.me/invierteatuconocimie/5",
+                hotmartLink: "https://pay.hotmart.com/B99320116J",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["lmtools", "mecanico", "diseño3d"]
+            },
+            "Civil 3D 2024": {
+                category: "topografia",
+                price: 5,
+                paypalLink: "https://paypal.me/invierteatuconocimie/5",
+                hotmartLink: "https://pay.hotmart.com/I99318682U",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["lmtools", "civil", "ingenieria"]
+            },
+            "Civil 3D 2025": {
+                category: "topografia",
+                price: 5,
+                paypalLink: "https://paypal.me/invierteatuconocimie/5",
+                hotmartLink: "https://pay.hotmart.com/I99318682U",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["lmtools", "civil", "2025"]
+            },
+            "AutoCAD 2026": {
+                category: "autodesk",
+                price: 5,
+                paypalLink: "https://paypal.me/invierteatuconocimie/5",
+                hotmartLink: "https://pay.hotmart.com/M99297665J",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["lmtools", "nuevo", "2026"]
+            },
+            "AutoCAD 2025": {
+                category: "autodesk",
+                price: 5,
+                paypalLink: "https://paypal.me/invierteatuconocimie/5",
+                hotmartLink: "https://pay.hotmart.com/M99297665J",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["lmtools", "2025"]
+            },
+            "Robot Structural 2024": {
+                category: "autodesk",
+                price: 5,
+                paypalLink: "https://paypal.me/invierteatuconocimie/5",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/5",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["lmtools", "estructuras", "ingenieria"]
+            },
+            "3DF Zephyr": {
+                category: "otros",
+                price: 5,
+                paypalLink: "https://paypal.me/invierteatuconocimie/5",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/5",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["fotogrametria", "3d"]
+            },
+            "Robot Structural 2025": {
+                category: "autodesk",
+                price: 5,
+                paypalLink: "https://paypal.me/invierteatuconocimie/5",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/5",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["estructuras", "2025"]
+            },
+            "Revit 2025": {
+                category: "autodesk",
+                price: 6,
+                paypalLink: "https://paypal.me/invierteatuconocimie/6",
+                hotmartLink: "https://pay.hotmart.com/Y99321707X",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["bim", "multilenguaje", "2025"]
+            },
+            "Recap Pro 2025": {
+                category: "autodesk",
+                price: 5,
+                paypalLink: "https://paypal.me/invierteatuconocimie/5",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/5",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["nube", "2025"]
+            },
+            "NavisWorks 2025": {
+                category: "autodesk",
+                price: 5,
+                paypalLink: "https://paypal.me/invierteatuconocimie/5",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/5",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["coordinacion", "2025"]
+            },
+            "Inventor Pro 2025": {
+                category: "autodesk",
+                price: 5,
+                paypalLink: "https://paypal.me/invierteatuconocimie/5",
+                hotmartLink: "https://pay.hotmart.com/B99320116J",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["mecanico", "2025"]
+            },
+            "InfraWorks 2025": {
+                category: "autodesk",
+                price: 5,
+                paypalLink: "https://paypal.me/invierteatuconocimie/5",
+                hotmartLink: "https://pay.hotmart.com/J99319314M",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["infraestructura", "2025"]
+            },
+            "Civil 3D 2026": {
+                category: "topografia",
+                price: 5,
+                paypalLink: "https://paypal.me/invierteatuconocimie/5",
+                hotmartLink: "https://pay.hotmart.com/I99318682U",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["civil", "2026", "nuevo"]
+            },
+            "ARCGIS 2021": {
+                category: "gis",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/4",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["arcgis", "sistema-informacion-geografica"]
+            },
+            "Agisoft Metashape": {
+                category: "otros",
+                price: 5,
+                paypalLink: "https://paypal.me/invierteatuconocimie/5",
+                hotmartLink: "https://pay.hotmart.com/C99145785J",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["fotogrametria", "curso-incluido", "lisp-exclusivo"]
+            },
+            "Premiere Pro": {
+                category: "otros",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/4",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["edicion-video", "adobe", "ia"]
+            },
+            "Photoshop": {
+                category: "otros",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/4",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["edicion-imagenes", "adobe", "diseño-grafico"]
+            },
+            "After Effects": {
+                category: "otros",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/4",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["motion-graphics", "efectos-visuales", "adobe"]
+            },
+            "Archicad 26 Español": {
+                category: "arquitectura",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/4",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["bim", "arquitectura", "español"]
+            },
+            "Archicad 26 English": {
+                category: "arquitectura",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/4",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["bim", "architecture", "english"]
+            },
+            "ArcGIS Pro": {
+                category: "gis",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4",
+                hotmartLink: "https://pay.hotmart.com/V99386393L",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["arcgis", "geoespacial", "analisis"]
+            },
+            "ArcGIS Desktop": {
+                category: "gis",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/4",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["arcgis", "sistema-informacion", "geografica"]
+            },
+            "SAFE": {
+                category: "calculos",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/4",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["estructuras", "cimentaciones", "ingenieria"]
+            },
+            "ETABS": {
+                category: "calculos",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/4",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["analisis-estructural", "edificaciones", "ingenieria"]
+            },
+            "DraftSight": {
+                category: "diseño",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/4",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["cad", "dibujo-tecnico", "dassault"]
+            },
+            "Corel Draw": {
+                category: "diseño",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/4",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["diseno-grafico", "publicidad", "corel"]
+            },
+            "CHC Geomatics": {
+                category: "topografia",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/4",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["topografia", "geomatica", "levantamientos"]
+            },
+            "Instalador S10": {
+                category: "calculos",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/4",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["costos", "presupuestos", "peru"]
+            },
+            "Global Mapper": {
+                category: "gis",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4",
+                hotmartLink: "https://pay.hotmart.com/L99386132P",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["sig", "geoespacial", "procesamiento"]
+            },
+            "GeoStudio": {
+                category: "calculos",
+                price: 5,
+                paypalLink: "https://paypal.me/invierteatuconocimie/5",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/5",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["geotecnia", "suelos", "taludes"]
+            },
+            "CSi Bridge": {
+                category: "calculos",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/4",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["puentes", "ingenieria-civil", "estructuras"]
+            },
+            "SAP2000": {
+                category: "calculos",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/4",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["analisis-estructural", "diseño", "ingenieria"]
+            },
+            "Filmora 12": {
+                category: "otros",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/4",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["edicion-video", "wondershare"]
+            },
+            "SketchUp VRAY": {
+                category: "arquitectura",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/4",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["modelado-3d", "render", "vray"]
+            },
+            "MathCad": {
+                category: "calculos",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/4",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["matematicas", "ingenieria", "calculos"]
+            },
+            "Pix4D": {
+                category: "topografia",
+                price: 5,
+                paypalLink: "https://paypal.me/invierteatuconocimie/5",
+                hotmartLink: "https://pay.hotmart.com/P99145976X",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["fotogrametria", "drones", "civil3d"]
+            },
+            "OBS Studio": {
+                category: "otros",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/4",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["grabacion", "streaming"]
+            },
+            "Nitro PDF": {
+                category: "otros",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/4",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["pdf", "editor"]
+            },
+            "Abbyy FineReader": {
+                category: "otros",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/4",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["pdf", "ocr"]
+            },
+            "Acrobat Pro": {
+                category: "otros",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/4",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["pdf", "adobe"]
+            },
+            "INSTRAM ISPOL": {
+                category: "calculos",
+                price: 4,
+                paypalLink: "https://paypal.me/invierteatuconocimie/4",
+                hotmartLink: "https://paypal.me/invierteatuconocimie/4",
+                infoLink: "https://wa.link/kkoe4h",
+                tags: ["ingenieria-civil", "proyectos-lineales"]
+            }       
+        };
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Category Tabs
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        const productCards = document.querySelectorAll('.product-card');
+        
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                categoryTabs.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                const category = tab.dataset.category;
+                
+                // Show/hide products based on category
+                productCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Checkout Modal
+        let currentProduct = {};
+        
+        // Configurar eventos para los botones de compra
+        document.querySelectorAll('.buy-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.dataset.product;
+                openCheckout(productName);
+            });
+        });
+        
+        // Configurar eventos para los botones de información
+        document.querySelectorAll('.info-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const infoLink = this.dataset.infoLink;
+                if (infoLink) {
+                    window.open(infoLink, '_blank');
+                }
+            });
+        });
+        
+        function openCheckout(productName) {
+            const product = products[productName];
+            if (!product) return;
+            
+            currentProduct = {
+                name: productName,
+                price: product.price,
+                paypalLink: product.paypalLink,
+                hotmartLink: product.hotmartLink
+            };
+            
+            document.getElementById('modalProductTitle').textContent = productName;
+            document.getElementById('modalProductPrice').textContent = `Precio: $${product.price.toFixed(2)}`;
+            document.getElementById('modalTotalPrice').textContent = `Total: $${product.price.toFixed(2)}`;
+            
+            document.getElementById('checkoutModal').style.display = 'block';
+        }
+        
+        function closeCheckout() {
+            document.getElementById('checkoutModal').style.display = 'none';
+        }
+        
+        function selectPaymentMethod(element) {
+            document.querySelectorAll('.payment-method').forEach(method => {
+                method.classList.remove('selected');
+            });
+            element.classList.add('selected');
+            element.querySelector('input').checked = true;
+        }
+        
+        function processPayment() {
+            const name = document.getElementById('customerName').value;
+            const email = document.getElementById('customerEmail').value;
+            const phone = document.getElementById('customerPhone').value;
+            const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').id;
+            
+            if (!name || !email || !phone) {
+                alert('Por favor complete todos los campos requeridos.');
+                return;
+            }
+            
+            // Redirección según método de pago seleccionado
+            if (paymentMethod === 'paypal' && currentProduct.paypalLink) {
+                window.location.href = currentProduct.paypalLink;
+            } else if (paymentMethod === 'hotmart' && currentProduct.hotmartLink) {
+                window.location.href = currentProduct.hotmartLink;
+            } else if (paymentMethod === 'transfer') {
+                // Aquí puedes mostrar los datos para transferencia bancaria
+                alert(`Por favor realice una transferencia a:\n\nBanco: TuBanco\nCuenta: 123456789\nTitular: TuEmpresa\nMonto: $${currentProduct.price.toFixed(2)}\n\nEnviar comprobante a: ventas@ingenieriadigital.com`);
+            } else {
+                alert('Método de pago no disponible para este producto');
+            }
+            
+            closeCheckout();
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target === document.getElementById('checkoutModal')) {
+                closeCheckout();
+            }
+        }
+    </script>
+</body>
+</html>
