@@ -307,6 +307,7 @@
         
         .product-card {
             background-color: var(--blanco);
+            min-height: 450px; /* Altura mínima para todas */
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -343,8 +344,8 @@
         }
         
         .product-image img {
-            max-width: 80%;
-            max-height: 80%;
+            max-width: 100%;
+            max-height: 100%;
             object-fit: contain;
             transition: transform 0.5s;
         }
@@ -372,11 +373,19 @@
         }
         
         .product-description {
-            font-size: 12px;
+            font-size: 11px;
             color: var(--gris-oscuro);
             margin-bottom: 15px;
             height: 60px;
             overflow: hidden;
+            height: auto; /* Descripción flexible */
+            min-height: 80px; /* O altura mínima */
+        }
+        .product-description span {
+            display: block;          /* Cada span en una nueva línea */
+            margin-bottom: 8px;      /* Espacio entre pasos */
+            font-weight: 600;        /* Negrita */
+            color: var(--azul-oscuro); /* Color personalizado */
         }
         
         .product-price {
@@ -762,7 +771,7 @@
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="#productos">Productos</a></li>
                 <li><a href="#destacados">Destacados</a></li>
-                <li><a href="https://wa.link/syysji">Soporte</a></li>
+                <li><a href="terminos.html">Términos y Condiciones</a></li>
                 <li><a href="#"><i class="fas fa-shopping-cart"></i> (0)</a></li>
             </ul>
         </div>
@@ -801,8 +810,8 @@
                     <div class="product-info">
                         <div class="product-category">Autodesk 2025</div>
                         <h3 class="product-title">AutoCAD (Inglés - Español)</h3>
-                        <p class="product-description">La compra del producto incluye un video tutorial de instalación. Sin embargo, tambien ofrecemos servicio de instalación remota.</p>
-                        <div class="product-price">$5.00</div>
+                        <p class="product-description">Al adquirir AutoCAD 2025, recibirás un Excel con todos los enlaces de descarga e instrucciones claras. Incluimos video obligatorio para la activación de licencia. El servicio de instalación remota tiene un costo de <strong>$10 USD</strong>, que incluye softaware y soporte. Para más información o métodos de compra, contáctanos.</p>
+                        <div class="product-price">$5.00 USD</div>
                         <div class="product-rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -831,8 +840,8 @@
                     <div class="product-info">
                         <div class="product-category">Autodesk 2025</div>
                         <h3 class="product-title">Revit (Multilingual)</h3>
-                        <p class="product-description">La compra del producto incluye un video tutorial de instalación. Sin embargo, tambien ofrecemos servicio de instalación remota.</p>
-                        <div class="product-price">$6.00</div>
+                        <p class="product-description">Al adquirir Revit 2025 recibirás un Excel con enlaces e instrucciones. El video de activación es obligatorio para garantizar el éxito. Si prefieres dejar todo en manos de expertos, el servicio de instalación remota tiene un costo de <strong>$13 USD</strong>, este incluye Software mas Soporte. Contáctanos para más información, soporte o para conocer formas de pago alternativas.</p>
+                        <div class="product-price">$6.00 USD</div>
                         <div class="product-rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -860,8 +869,8 @@
                     <div class="product-info">
                         <div class="product-category">Autodesk 2025</div>
                         <h3 class="product-title">Civil 3D (Inglés - Español)</h3>
-                        <p class="product-description">La compra del producto incluye un video tutorial de instalación. Sin embargo, tambien ofrecemos servicio de instalación remota.</p>
-                        <div class="product-price">$5.00</div>
+                        <p class="product-description">Al adquirir Civil 3D 2025, recibirás un Excel con enlaces de descarga e instrucciones. Incluye guía escrita para instalación y video obligatorio para activar la licencia. También se proporcionan videos para resolver errores comunes. Tambien ofrecemos servicio de Instalación remota disponible bajo solicitud, tiene un costo de <strong>$10 USD</strong>.</p>
+                        <div class="product-price">$5.00 USD</div>
                         <div class="product-rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -904,7 +913,7 @@
                         <div class="product-category">Topografía</div>
                         <h3 class="product-title">Módulos CivilCAD para AutoCAD (2017-2025)</h3>
                         <p class="product-description">Este módulo se puede instalar como un complemento para AUTOCAD, desde las versiones 2017 hasta 2025, y tambien viene para arquitecturas x32 y x64. y no solo se puede intalar a los programas de Autocad, Sino que tambien a CIVIL 3D de las mismas versiones y funciona bien. El programa viene con videos tutoriales de intalación.</p>
-                        <div class="product-price">$5.00</div>
+                        <div class="product-price">$5.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="CivilCAD para AutoCAD">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -923,8 +932,8 @@
                     <div class="product-info">
                         <div class="product-category">Autodesk</div>
                         <h3 class="product-title">AutoCAD Inglés 2019 (Activado por xforce)</h3>
-                        <p class="product-description">Versión estable con activación segura mediante xforce. Incluye solución para error de licencia y video tutorial.</p>
-                        <div class="product-price">$4.00</div>
+                        <p class="product-description">Es una de las versiones que aún mantiene la activación segura mediante Xforce, por lo que se puede decir que es más seguro que no te va mostrar errores de licencias. Lo único que sí te podría mostrar es error de genuinidad de la licencia. Sin embargo, ya lo tenemos solucionado ese problema, son tan solo asignar unas líneas de host es suficiente y también el producto viene con video para solucionar.</p>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="AutoCAD 2019">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -935,15 +944,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="product-card" data-category="topografia">
+                <div class="product-card" data-category="autodesk">
                     <div class="product-image">
                         <img src="productos/4.png" alt="Civil 3D 2019 Inglés">
                     </div>
                     <div class="product-info">
                         <div class="product-category">Topografía</div>
                         <h3 class="product-title">Civil 3D Inglés 2019 (Activado por xforce)</h3>
-                        <p class="product-description">Versión con activación xforce que permite iniciar sesión en Autodesk y cargar imágenes satelitales para proyectos.</p>
-                        <div class="product-price">$4.00</div>
+                        <p class="product-description">Es una de las versiones que aún mantiene la activación segura mediante Xforce. Y con este tipo de activadores puedes tranquilamente iniciar sesión con tu cuenta Autodesk y cargar imágenes satelitales. En muchos casos es necesario cargar imágenes satelitales para verificar nuestra ubicación del proyecto.</p>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Civil 3D 2019">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -961,8 +970,8 @@
                     <div class="product-info">
                         <div class="product-category">Autodesk</div>
                         <h3 class="product-title">Revit Inglés 2019 (Activado por xforce)</h3>
-                        <p class="product-description">Versión estable con activación segura mediante xforce, sin errores de licencia.</p>
-                        <div class="product-price">$4.00</div>
+                        <p class="product-description">Es una de las versiones que aún mantiene la activación segura mediante Xforce, por lo que no verás mensajes de error de licencia</p>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Revit 2019">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -981,7 +990,7 @@
                         <div class="product-category">Autodesk</div>
                         <h3 class="product-title">AutoCAD Español 2020 (Activado por xforce)</h3>
                         <p class="product-description">Versión en español con activación segura mediante xforce.</p>
-                        <div class="product-price">$4.00</div>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="AutoCAD 2020 Español">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -992,15 +1001,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="product-card" data-category="topografia">
+                <div class="product-card" data-category="autodesk">
                     <div class="product-image">
                         <img src="productos/7.png" alt="Civil 3D 2020 Español">
                     </div>
                     <div class="product-info">
                         <div class="product-category">Topografía</div>
                         <h3 class="product-title">Civil 3D Español 2020 (Activado por xforce)</h3>
-                        <p class="product-description">Versión en español con activación segura mediante xforce.</p>
-                        <div class="product-price">$4.00</div>
+                        <p class="product-description">Es una de las versiones que aún mantiene la activación segura mediante Xforce. Y con este tipo de activadores puedes tranquilamente iniciar sesión con tu cuenta Autodesk y cargar imágenes satelitales. En muchos casos es necesario cargar imágenes satelitales para verificar nuestra ubicación del proyecto.</p>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Civil 3D 2020 Español">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1018,8 +1027,8 @@
                     <div class="product-info">
                         <div class="product-category">Autodesk</div>
                         <h3 class="product-title">Revit Español 2020 (Activado por xforce)</h3>
-                        <p class="product-description">Versión en español con activación segura mediante xforce.</p>
-                        <div class="product-price">$4.00</div>
+                        <p class="product-description">Es una de las versiones que aún mantiene la activación segura mediante Xforce, por lo que no verás mensajes de error de licencia.</p>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Revit 2020 Español">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1037,8 +1046,8 @@
                     <div class="product-info">
                         <div class="product-category">Autodesk</div>
                         <h3 class="product-title">AutoCAD Esp-Ing 2023 (Activado con Parche)</h3>
-                        <p class="product-description">Instalación simple con activación permanente. Sin errores de licencia ni actualizaciones.</p>
-                        <div class="product-price">$5.00</div>
+                        <p class="product-description">Es uno de los programas que tenemos con la Instalación más Simple y licencia Segura, Usa parche de ejecutable crackeado para activar el programa y te olvidas de las actualizaciones o errores de licencias.</p>
+                        <div class="product-price">$5.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="AutoCAD 2023">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1049,15 +1058,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="product-card" data-category="topografia">
+                <div class="product-card" data-category="autodesk">
                     <div class="product-image">
                         <img src="productos/9.png" alt="Civil 3D 2023 Inglés">
                     </div>
                     <div class="product-info">
                         <div class="product-category">Topografía</div>
                         <h3 class="product-title">Civil 3D Inglés 2023 (Activado con Parche)</h3>
-                        <p class="product-description">Activación permanente con parche crackeado o licencia LMTOOLs. Incluye video tutorial de instalación.</p>
-                        <div class="product-price">$5.00</div>
+                        <p class="product-description">En esta versión del programa en inglés, la Instalación es muy Simple y con licencia Segura, Usa parche de ejecutable crackeado para activar el programa y que sea permanente. sin embargo, siempre hay una desventaja y podemos mencionar que al llevar ejecutable crackeado no te permite iniciar sesión con tu cuenta Autodesk, ya que esto sucede por cuidar la licencia y no tenga acceso a la red. Sin embargo, puedes decidir al momento de instalar el programa si deseas activar con el parche o usar la licencia LMTOOLs que también es permanente, cabe decir que para ambos métodos hay un video estándar de instalación.</p>
+                        <div class="product-price">$5.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Civil 3D 2023">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1068,15 +1077,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="product-card" data-category="topografia">
+                <div class="product-card" data-category="autodesk">
                     <div class="product-image">
                         <img src="productos/9.png" alt="Civil 3D 2023 Español">
                     </div>
                     <div class="product-info">
                         <div class="product-category">Topografía</div>
                         <h3 class="product-title">Civil 3D Español 2023 (Activado con Lmtools)</h3>
-                        <p class="product-description">Versión en español con licencia comercial permanente. Soporte de instalación remota disponible.</p>
-                        <div class="product-price">$5.00</div>
+                        <p class="product-description">Tenemos la versión española de Civil 3D que se activa la licencia usando Lmtools, esta licencia es comercial permanente. El proceso de la instalación de la licencia podría ser un poco complicado para quienes no tienen mucho conocimiento sobre la instalación de programas. Para ello te brindamos un video estándar bien explicado. Y si acaso eso no fuera suficiente, la empresa también ofrece servicios de Instalación Remota con un costo adicional, Escríbenos a nuestros contactos y te responderemos al instante.</p>
+                        <div class="product-price">$5.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Civil 3D Español 2023">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1094,8 +1103,8 @@
                     <div class="product-info">
                         <div class="product-category">Autodesk</div>
                         <h3 class="product-title">Revit Esp-Ing 2023 (Activado con Lmtools)</h3>
-                        <p class="product-description">Licencia profesional con soporte de instalación remota disponible (servicio adicional).</p>
-                        <div class="product-price">$5.00</div>
+                        <p class="product-description">Aunque la instalación de la licencia puede ser complicado, a pesar que viene con video de instalación, puede solicitar Servicio de Asistencia Remota y nuestro personal hará el trabajo para que el programa fucnione correctamente desde el primer momento.</p>
+                        <div class="product-price">$5.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Revit 2023">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1113,8 +1122,8 @@
                     <div class="product-info">
                         <div class="product-category">Autodesk</div>
                         <h3 class="product-title">Inventor Pro Esp-Ing 2023 (Activado con Lmtools)</h3>
-                        <p class="product-description">Incluye video tutorial y opción de instalación remota asistida (servicio adicional).</p>
-                        <div class="product-price">$5.00</div>
+                        <p class="product-description">Aunque la instalación de la licencia puede ser complicado, a pesar que viene con video de instalación, puede solicitar Servicio de Asistencia Remota y nuestro personal hará el trabajo, y de esta manera podemos garantizar que el programa funciones correctamente y sin errores.</p>
+                        <div class="product-price">$5.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Inventor Pro 2023">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1132,8 +1141,12 @@
                     <div class="product-info">
                         <div class="product-category">Autodesk</div>
                         <h3 class="product-title">AutoCAD Esp-Ing 2024 (Activado con Lmtools)</h3>
-                        <p class="product-description">Licencia permanente con LMTOOLs (instalación avanzada). Contactanos para asistencia.</p>
-                        <div class="product-price">$5.00</div>
+                        <p class="product-description">
+                            Este producto se puede activar de dos maneras: 
+                            <span>1.- Para la versión en inglés viene con ejecutable crackeado. Para esto, solo se copia y reemplaza el archivo acad.exe y listo, de esta manera es mas seguro que no te presenta error de Licencia.</span>
+                            <span>2.- Para la versión en Español se tiene instalar necesariamente el administrador de licencias LMTOOLs</span>
+                        </p>
+                        <div class="product-price">$5.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="AutoCAD 2024">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1144,15 +1157,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="product-card" data-category="topografia">
+                <div class="product-card" data-category="autodesk">
                     <div class="product-image">
                         <img src="productos/2.jpg" alt="Civil 3D 2024 Español-Inglés">
                     </div>
                     <div class="product-info">
                         <div class="product-category">Topografía</div>
                         <h3 class="product-title">Civil 3D Esp-Ing 2024 (Activado con Lmtools)</h3>
-                        <p class="product-description">Versión bilingüe para ingeniería civil. Licencia LMTOOLS permanente con asistencia.</p>
-                        <div class="product-price">$5.00</div>
+                        <p class="product-description">El programa viene con un video completo de como instalar, la misma que esta en nuestro canal de YouTube. Desde como descomprimir hasta la activación del programa. En muchos casos este video nos ha sido útil para instalar otros programas de Autodesk, ya que la activación es la misma para cada programa, pero este video es la mas completa.</p>
+                        <div class="product-price">$5.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Civil 3D 2024">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1170,8 +1183,8 @@
                     <div class="product-info">
                         <div class="product-category">Autodesk</div>
                         <h3 class="product-title">Inventor Pro Esp-Ing 2024 (Activado con Lmtools)</h3>
-                        <p class="product-description">Diseño mecánico 3D profesional. Activación LMTOOLS con soporte técnico incluido.</p>
-                        <div class="product-price">$5.00</div>
+                        <p class="product-description">La instalación de la licencia podría ser compleja, ya que se activa con LMTOOLs, a la vez tiene muchas ventajas de instalar este tipo de licencia. Escribenos para más detalles.</p>
+                        <div class="product-price">$5.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Inventor Pro 2024">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1189,8 +1202,8 @@
                     <div class="product-info">
                         <div class="product-category">Autodesk</div>
                         <h3 class="product-title">NavisWorks Manage 2024 (Activado con Lmtools)</h3>
-                        <p class="product-description">Herramienta de revisión de modelos BIM. Licencia permanente LMTOOLS.</p>
-                        <div class="product-price">$5.00</div>
+                        <p class="product-description">La instalación de la licencia podría ser compleja, ya que se activa con LMTOOLs, a la vez tiene muchas ventajas de instalar este tipo de licencias. Ahora si tiene instalado la licencia y esta funcionando correctamente, el programa se activará sin problema. solo es seleccionar usar redesd de licencias y listo.. Escribenos para más detalles.</p>
+                        <div class="product-price">$5.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="NavisWorks 2024">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1208,8 +1221,8 @@
                     <div class="product-info">
                         <div class="product-category">Autodesk</div>
                         <h3 class="product-title">Recap Pro Multilingue 2024 (Activado con Lmtools)</h3>
-                        <p class="product-description">Software de realidad captura con activación LMTOOLS. Asistencia personalizada.</p>
-                        <div class="product-price">$5.00</div>
+                        <p class="product-description">Tras tu compra, recibirás un archivo Excel con los enlaces de descarga del programa. Este incluye videos detallados de instalación y activación permanente de la licencia, además de guías exclusivas (no disponibles en YouTube) para resolver problemas comunes. Recomendamos: 1) Usar siempre WinRAR para descomprimir los archivos, 2) Seguir cuidadosamente los pasos de los videos, y 3) Si no tienes experiencia, solicitar nuestro servicio de instalación remota para garantizar el correcto funcionamiento del software. Todo está diseñado para que tu instalación sea exitosa desde el primer intento.</p>
+                        <div class="product-price">$5.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Recap Pro 2024">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1227,8 +1240,8 @@
                     <div class="product-info">
                         <div class="product-category">Autodesk</div>
                         <h3 class="product-title">Revit Multilingue 2024 (Activado con Lmtools)</h3>
-                        <p class="product-description">Versión multilenguaje con licencia LMTOOLS permanente. Soporte técnico disponible.</p>
-                        <div class="product-price">$6.00</div>
+                        <p class="product-description">Como todos los programas de Autodesk u otros, después de la compra se envía a su correo un archivo Excel con los links de descarga y videos de instalación, tanto del programa como de la licencia. adicionalmente en el Excel se encuentran varios videos más que podría ser útil para resolver algunos problemas. Pero si los videos no fueran suficientes, puedes solicitar el servicio de instalación remota, escríbenos para mas detalles.</p>
+                        <div class="product-price">$6.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Revit 2024">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1246,8 +1259,8 @@
                     <div class="product-info">
                         <div class="product-category">Autodesk</div>
                         <h3 class="product-title">Robot Structural Esp-Ing 2024 (Activado con Lmtools)</h3>
-                        <p class="product-description">Análisis estructural profesional. Licencia LMTOOLS con asistencia técnica opcional.</p>
-                        <div class="product-price">$5.00</div>
+                        <p class="product-description">Tras tu compra, recibirás un archivo Excel con los enlaces de descarga del programa. Este incluye videos detallados de instalación y activación permanente de la licencia, además de guías exclusivas (no disponibles en YouTube) para resolver problemas comunes. Recomendamos: 1) Usar siempre WinRAR para descomprimir los archivos, 2) Seguir cuidadosamente los pasos de los videos, y 3) Si no tienes experiencia, solicitar nuestro servicio de instalación remota para garantizar el correcto funcionamiento del software. Todo está diseñado para que tu instalación sea exitosa desde el primer intento.</p>
+                        <div class="product-price">$5.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Robot Structural 2024">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1265,8 +1278,8 @@
                     <div class="product-info">
                         <div class="product-category">Autodesk</div>
                         <h3 class="product-title">AutoCAD Esp-Ing 2025 (Activado con Lmtools)</h3>
-                        <p class="product-description">Versión estable 2025 con activación LMTOOLS. Incluye soporte para instalación.</p>
-                        <div class="product-price">$5.00</div>
+                        <p class="product-description">Tras tu compra recibirás un archivo Excel con todos los enlaces de descarga e instrucciones. Para programas complejos, incluimos videos detallados de instalación (desde descompresión hasta configuración), mientras que para software sencillo (que solo requiere ejecutar como administrador) encontrarás guías escritas. La activación de licencia SIEMPRE incluye video tutorial obligatorio, ya que es el paso más importante para garantizar el funcionamiento permanente. Si prefieres asistencia profesional, ofrecemos instalación remota sin costo adicional - solo contáctanos. Recomendamos: 1) Usar siempre WinRAR para descomprimir, 2) No saltarse el video de activación, y 3) Seguir cada paso al pie de la letra para evitar errores</p>
+                        <div class="product-price">$5.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="AutoCAD 2025">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1284,8 +1297,8 @@
                     <div class="product-info">
                         <div class="product-category">Autodesk</div>
                         <h3 class="product-title">AutoCAD Esp-Ing 2026 (Activado con Lmtools)</h3>
-                        <p class="product-description">Versión más reciente con licencia LMTOOLS permanente. Asistencia técnica disponible.</p>
-                        <div class="product-price">$5.00</div>
+                        <p class="product-description">Tras tu compra recibirás un archivo Excel con todos los enlaces de descarga e instrucciones. Para programas complejos, incluimos videos detallados de instalación (desde descompresión hasta configuración), mientras que para software sencillo (que solo requiere ejecutar como administrador) encontrarás guías escritas. La activación de licencia SIEMPRE incluye video tutorial obligatorio, ya que es el paso más importante para garantizar el funcionamiento permanente. Si prefieres asistencia profesional, ofrecemos instalación remota sin costo adicional - solo contáctanos. Recomendamos: 1) Usar siempre WinRAR para descomprimir, 2) No saltarse el video de activación, y 3) Seguir cada paso al pie de la letra para evitar errores</p>
+                        <div class="product-price">$5.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="AutoCAD 2026">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1296,15 +1309,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="product-card" data-category="topografia">
+                <div class="product-card" data-category="autodesk">
                     <div class="product-image">
                         <img src="productos/2.jpg" alt="Civil 3D 2025 Español-Inglés">
                     </div>
                     <div class="product-info">
                         <div class="product-category">Topografía</div>
                         <h3 class="product-title">Civil 3D Esp-Ing 2025 (Activado con Lmtools)</h3>
-                        <p class="product-description">Versión 2025 bilingüe para ingeniería civil. Licencia LMTOOLS profesional con soporte.</p>
-                        <div class="product-price">$5.00</div>
+                        <p class="product-description">Tras tu compra recibirás un archivo Excel con todos los enlaces de descarga e instrucciones. Para programas complejos, incluimos videos detallados de instalación (desde descompresión hasta configuración), mientras que para software sencillo (que solo requiere ejecutar como administrador) encontrarás guías escritas. La activación de licencia SIEMPRE incluye video tutorial obligatorio, ya que es el paso más importante para garantizar el funcionamiento permanente. Si prefieres asistencia profesional, ofrecemos instalación remota sin costo adicional - solo contáctanos. Recomendamos: 1) Usar siempre WinRAR para descomprimir, 2) No saltarse el video de activación, y 3) Seguir cada paso al pie de la letra para evitar errores</p>
+                        <div class="product-price">$5.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Civil 3D 2025">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1316,15 +1329,15 @@
                     </div>
                 </div>
                 <!-- Civil 3D 2026 -->
-                <div class="product-card" data-category="topografia">
+                <div class="product-card" data-category="autodesk">
                     <div class="product-image">
                         <img src="productos/2.1.jpg" alt="Civil 3D 2026">
                     </div>
                     <div class="product-info">
                         <div class="product-category">Topografía</div>
                         <h3 class="product-title">Civil 3D Esp-Ing 2026</h3>
-                        <p class="product-description">Diseño para ingeniería civil con herramientas avanzadas.</p>
-                        <div class="product-price">$5.00</div>
+                        <p class="product-description">Producto aun en actualización, estará disponible mas adelante</p>
+                        <div class="product-price">$5.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Civil 3D 2026">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1343,8 +1356,8 @@
                     <div class="product-info">
                         <div class="product-category">Autodesk</div>
                         <h3 class="product-title">InfraWorks Esp-Ing 2025</h3>
-                        <p class="product-description">Modelado de infraestructura y planificación urbana.</p>
-                        <div class="product-price">$5.00</div>
+                        <p class="product-description">Tras tu compra recibirás un archivo Excel con todos los enlaces de descarga e instrucciones. Para programas complejos, incluimos videos detallados de instalación (desde descompresión hasta configuración), mientras que para software sencillo (que solo requiere ejecutar como administrador) encontrarás guías escritas. La activación de licencia SIEMPRE incluye video tutorial obligatorio, ya que es el paso más importante para garantizar el funcionamiento permanente. Si prefieres asistencia profesional, ofrecemos instalación remota sin costo adicional - solo contáctanos. Recomendamos: 1) Usar siempre WinRAR para descomprimir, 2) No saltarse el video de activación, y 3) Seguir cada paso al pie de la letra para evitar errores</p>
+                        <div class="product-price">$5.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="InfraWorks 2025">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1363,8 +1376,8 @@
                     <div class="product-info">
                         <div class="product-category">Autodesk</div>
                         <h3 class="product-title">Inventor Pro Esp-Ing 2025</h3>
-                        <p class="product-description">Diseño mecánico 3D profesional con herramientas avanzadas.</p>
-                        <div class="product-price">$5.00</div>
+                        <p class="product-description">Tras tu compra recibirás un archivo Excel con todos los enlaces de descarga e instrucciones. Para programas complejos, incluimos videos detallados de instalación (desde descompresión hasta configuración), mientras que para software sencillo (que solo requiere ejecutar como administrador) encontrarás guías escritas. La activación de licencia SIEMPRE incluye video tutorial obligatorio, ya que es el paso más importante para garantizar el funcionamiento permanente. Si prefieres asistencia profesional, ofrecemos instalación remota sin costo adicional - solo contáctanos. Recomendamos: 1) Usar siempre WinRAR para descomprimir, 2) No saltarse el video de activación, y 3) Seguir cada paso al pie de la letra para evitar errores</p>
+                        <div class="product-price">$5.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Inventor Pro 2025">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1383,8 +1396,8 @@
                     <div class="product-info">
                         <div class="product-category">Autodesk</div>
                         <h3 class="product-title">NavisWorks Manage 2025</h3>
-                        <p class="product-description">Coordinación de modelos BIM y gestión de proyectos.</p>
-                        <div class="product-price">$5.00</div>
+                        <p class="product-description">Tras tu compra recibirás un archivo Excel con todos los enlaces de descarga e instrucciones. Para programas complejos, incluimos videos detallados de instalación (desde descompresión hasta configuración), mientras que para software sencillo (que solo requiere ejecutar como administrador) encontrarás guías escritas. La activación de licencia SIEMPRE incluye video tutorial obligatorio, ya que es el paso más importante para garantizar el funcionamiento permanente. Si prefieres asistencia profesional, ofrecemos instalación remota sin costo adicional - solo contáctanos. Recomendamos: 1) Usar siempre WinRAR para descomprimir, 2) No saltarse el video de activación, y 3) Seguir cada paso al pie de la letra para evitar errores</p>
+                        <div class="product-price">$5.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="NavisWorks 2025">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1403,8 +1416,8 @@
                     <div class="product-info">
                         <div class="product-category">Autodesk</div>
                         <h3 class="product-title">Recap Pro Esp-Ing 2025</h3>
-                        <p class="product-description">Software de realidad captura y escaneo 3D profesional.</p>
-                        <div class="product-price">$5.00</div>
+                        <p class="product-description">Tras tu compra recibirás un archivo Excel con todos los enlaces de descarga e instrucciones. Para programas complejos, incluimos videos detallados de instalación (desde descompresión hasta configuración), mientras que para software sencillo (que solo requiere ejecutar como administrador) encontrarás guías escritas. La activación de licencia SIEMPRE incluye video tutorial obligatorio, ya que es el paso más importante para garantizar el funcionamiento permanente. Si prefieres asistencia profesional, ofrecemos instalación remota sin costo adicional - solo contáctanos. Recomendamos: 1) Usar siempre WinRAR para descomprimir, 2) No saltarse el video de activación, y 3) Seguir cada paso al pie de la letra para evitar errores</p>
+                        <div class="product-price">$5.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Recap Pro 2025">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1423,8 +1436,8 @@
                     <div class="product-info">
                         <div class="product-category">Autodesk</div>
                         <h3 class="product-title">Revit Multilingue 2025</h3>
-                        <p class="product-description">BIM profesional con licencia permanente.</p>
-                        <div class="product-price">$6.00</div>
+                        <p class="product-description">Tras tu compra recibirás un archivo Excel con todos los enlaces de descarga e instrucciones. Para programas complejos, incluimos videos detallados de instalación (desde descompresión hasta configuración), mientras que para software sencillo (que solo requiere ejecutar como administrador) encontrarás guías escritas. La activación de licencia SIEMPRE incluye video tutorial obligatorio, ya que es el paso más importante para garantizar el funcionamiento permanente. Si prefieres asistencia profesional, ofrecemos instalación remota sin costo adicional - solo contáctanos. Recomendamos: 1) Usar siempre WinRAR para descomprimir, 2) No saltarse el video de activación, y 3) Seguir cada paso al pie de la letra para evitar errores</p>
+                        <div class="product-price">$6.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Revit 2025">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1443,8 +1456,8 @@
                     <div class="product-info">
                         <div class="product-category">Autodesk</div>
                         <h3 class="product-title">Robot Structural Esp-Ing 2025</h3>
-                        <p class="product-description">Análisis estructural avanzado con licencia permanente.</p>
-                        <div class="product-price">$5.00</div>
+                        <p class="product-description">Tras tu compra recibirás un archivo Excel con todos los enlaces de descarga e instrucciones. Para programas complejos, incluimos videos detallados de instalación (desde descompresión hasta configuración), mientras que para software sencillo (que solo requiere ejecutar como administrador) encontrarás guías escritas. La activación de licencia SIEMPRE incluye video tutorial obligatorio, ya que es el paso más importante para garantizar el funcionamiento permanente. Si prefieres asistencia profesional, ofrecemos instalación remota sin costo adicional - solo contáctanos. Recomendamos: 1) Usar siempre WinRAR para descomprimir, 2) No saltarse el video de activación, y 3) Seguir cada paso al pie de la letra para evitar errores</p>
+                        <div class="product-price">$5.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Robot Structural 2025">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1464,7 +1477,7 @@
                         <div class="product-category">Fotogrametría</div>
                         <h3 class="product-title">3DF Zephyr 7.531 Multilingüe</h3>
                         <p class="product-description">Software profesional para reconstrucción 3D a partir de fotografías 2D.</p>
-                        <div class="product-price">$5.00</div>
+                        <div class="product-price">$5.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="3DF Zephyr">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1484,7 +1497,7 @@
                         <div class="product-category">Efectos Visuales</div>
                         <h3 class="product-title">Adobe After Effects 2024</h3>
                         <p class="product-description">Software profesional para motion graphics y efectos visuales.</p>
-                        <div class="product-price">$4.00</div>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="After Effects">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1504,7 +1517,7 @@
                         <div class="product-category">Edición de Imágenes</div>
                         <h3 class="product-title">Adobe Photoshop 2024</h3>
                         <p class="product-description">Herramienta profesional para edición y creación de imágenes digitales.</p>
-                        <div class="product-price">$4.00</div>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Photoshop">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1524,7 +1537,7 @@
                         <div class="product-category">Edición de Video</div>
                         <h3 class="product-title">Adobe Premiere Pro 2023</h3>
                         <p class="product-description">Edición profesional de video con herramientas avanzadas e IA.</p>
-                        <div class="product-price">$4.00</div>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Premiere Pro">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1536,20 +1549,20 @@
                     </div>
                 </div>
                 <!-- Agisoft Metashape Pro -->
-                <div class="product-card" data-category="otros">
+                <div class="product-card" data-category="topografia">
                     <div class="product-image">
                         <img src="productos/A1.png" alt="Agisoft Metashape Pro">
                     </div>
                     <div class="product-info">
                         <div class="product-category">Fotogrametría</div>
                         <h3 class="product-title">Agisoft Metashape Pro v2.2.0</h3>
-                        <p class="product-description">Incluye curso intensivo + LISP exclusivo para Civil 3D.</p>
-                        <div class="product-price">$5.00</div>
+                        <p class="product-description">Como empresa dedicada a realizar estudios de topografia, te recomendamos este software para trabajos de fotogrametria, tenemos mucha experiencia y somos capaz de decir que este producto es mejor que Pix4D. Ademas por la compra Incluye curso intensivo de procesamiento de imagenes hasta llevar los resultados a Civil 3D, Tambien te compartimos un  LISP exclusivo para Civil 3D.</p>
+                        <div class="product-price">$5.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Agisoft Metashape">
                                 <i class="fas fa-shopping-cart"></i> Comprar
                             </button>
-                            <button class="info-button" data-info-link="https://wa.link/kkoe4h">
+                            <button class="info-button" data-info-link="Plant4.html">
                                 <i class="fas fa-info-circle"></i> Detalles
                             </button>
                         </div>
@@ -1563,8 +1576,8 @@
                     <div class="product-info">
                         <div class="product-category">GIS</div>
                         <h3 class="product-title">ARCGIS 2021 V10.8</h3>
-                        <p class="product-description">Sistema completo para gestión y análisis de información geográfica.</p>
-                        <div class="product-price">$4.00</div>
+                        <p class="product-description">Sistema completo para gestión y análisis de información geográfica. Para la instalción hemos incluido un video completo</p>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="ARCGIS 2021">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1584,7 +1597,7 @@
                         <div class="product-category">GIS</div>
                         <h3 class="product-title">ArcGIS Desktop 10.5</h3>
                         <p class="product-description">Sistema completo para gestión y análisis de información geográfica.</p>
-                        <div class="product-price">$4.00</div>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="ArcGIS Desktop">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1604,7 +1617,7 @@
                         <div class="product-category">GIS</div>
                         <h3 class="product-title">ArcGIS Pro 3.0.1</h3>
                         <p class="product-description">Herramienta geoespacial profesional para análisis y visualización de datos.</p>
-                        <div class="product-price">$4.00</div>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="ArcGIS Pro">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1616,7 +1629,7 @@
                     </div>
                 </div>
                 <!-- Archicad 26 English -->
-                <div class="product-card" data-category="arquitectura">
+                <div class="product-card" data-category="otros">
                     <div class="product-image">
                         <img src="productos/A11.jpg" alt="Archicad 26 English">
                     </div>
@@ -1624,7 +1637,7 @@
                         <div class="product-category">Arquitectura</div>
                         <h3 class="product-title">Archicad 26 English (Build 3001)</h3>
                         <p class="product-description">Professional BIM software with automated workflows and advanced visualization tools.</p>
-                        <div class="product-price">$4.00</div>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Archicad 26 English">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1636,7 +1649,7 @@
                     </div>
                 </div>
                 <!-- Archicad 26 Spanish -->
-                <div class="product-card" data-category="arquitectura">
+                <div class="product-card" data-category="otros">
                     <div class="product-image">
                         <img src="productos/A12.jpg" alt="Archicad 26 Español">
                     </div>
@@ -1644,7 +1657,7 @@
                         <div class="product-category">Arquitectura</div>
                         <h3 class="product-title">Archicad 26 Español (Build 5002)</h3>
                         <p class="product-description">Software BIM profesional con flujos de trabajo automatizados y visualización avanzada.</p>
-                        <div class="product-price">$4.00</div>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Archicad 26 Español">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1664,7 +1677,7 @@
                         <div class="product-category">Topografía</div>
                         <h3 class="product-title">CHC Geomatics Office 2 v2.3.1</h3>
                         <p class="product-description">Plataforma integrada para gestión de datos topográficos y flujos de trabajo de oficina-campo.</p>
-                        <div class="product-price">$4.00</div>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="CHC Geomatics">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1676,7 +1689,7 @@
                     </div>
                 </div>
                 <!-- Corel Draw 2023 -->
-                <div class="product-card" data-category="diseño">
+                <div class="product-card" data-category="otros">
                     <div class="product-image">
                         <img src="productos/ED4.png" alt="Corel Draw 2023">
                     </div>
@@ -1684,7 +1697,7 @@
                         <div class="product-category">Diseño Gráfico</div>
                         <h3 class="product-title">Corel Draw 2023</h3>
                         <p class="product-description">Software líder para diseño gráfico profesional. Ideal para publicidad, textiles y gráficos a gran escala.</p>
-                        <div class="product-price">$4.00</div>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Corel Draw">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1696,7 +1709,7 @@
                     </div>
                 </div>
                 <!-- DraftSight 2024 -->
-                <div class="product-card" data-category="diseño">
+                <div class="product-card" data-category="otros">
                     <div class="product-image">
                         <img src="productos/ED5.png" alt="DraftSight 2024">
                     </div>
@@ -1704,7 +1717,7 @@
                         <div class="product-category">Diseño CAD</div>
                         <h3 class="product-title">DraftSight Enterprise Plus 2024</h3>
                         <p class="product-description">Potente solución CAD profesional con herramientas de productividad avanzadas.</p>
-                        <div class="product-price">$4.00</div>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="DraftSight">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1724,7 +1737,7 @@
                         <div class="product-category">Cálculos Estructurales</div>
                         <h3 class="product-title">ETABS 21.1.0</h3>
                         <p class="product-description">Herramienta avanzada para análisis estructural de edificaciones. Video tutorial incluido.</p>
-                        <div class="product-price">$4.00</div>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="ETABS">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1744,7 +1757,7 @@
                         <div class="product-category">Cálculos Estructurales</div>
                         <h3 class="product-title">SAFE 21.1.0</h3>
                         <p class="product-description">Software profesional para análisis y diseño de cimentaciones y losas. Incluye video tutorial de instalación.</p>
-                        <div class="product-price">$4.00</div>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="SAFE">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1764,7 +1777,7 @@
                         <div class="product-category">Ingeniería Estructural</div>
                         <h3 class="product-title">SAP2000 v25.0.0</h3>
                         <p class="product-description">Herramienta profesional para análisis y diseño estructural. Video tutorial incluido.</p>
-                        <div class="product-price">$4.00</div>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="SAP2000">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1784,7 +1797,7 @@
                         <div class="product-category">Ingeniería Civil</div>
                         <h3 class="product-title">CSi Bridge</h3>
                         <p class="product-description">Software avanzado para análisis y diseño de puentes. Incluye video tutorial de instalación.</p>
-                        <div class="product-price">$4.00</div>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="CSi Bridge">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1804,7 +1817,7 @@
                         <div class="product-category">Geotecnia</div>
                         <h3 class="product-title">GeoStudio 2022 Multilenguaje</h3>
                         <p class="product-description">Herramienta profesional para análisis de mecánica de suelos y estabilidad de taludes.</p>
-                        <div class="product-price">$5.00</div>
+                        <div class="product-price">$5.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="GeoStudio">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1824,7 +1837,7 @@
                         <div class="product-category">GIS</div>
                         <h3 class="product-title">Global Mapper Pro v26 (Inglés)</h3>
                         <p class="product-description">Solución completa de SIG con herramientas avanzadas de procesamiento de datos geoespaciales.</p>
-                        <div class="product-price">$4.00</div>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Global Mapper">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1844,7 +1857,7 @@
                         <div class="product-category">Costos y Presupuestos</div>
                         <h3 class="product-title">INSTALADOR S10 ILIMITADO 2023</h3>
                         <p class="product-description">Software profesional para análisis de precios unitarios y costos de construcción (Perú).</p>
-                        <div class="product-price">$4.00</div>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Instalador S10">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1864,7 +1877,7 @@
                         <div class="product-category">Ingeniería Civil</div>
                         <h3 class="product-title">INSTRAM ISPOL 2023 Multilenguaje</h3>
                         <p class="product-description">Software especializado en diseño de proyectos lineales y cálculos geométricos.</p>
-                        <div class="product-price">$4.00</div>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="INSTRAM ISPOL">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1884,7 +1897,7 @@
                         <div class="product-category">PDF</div>
                         <h3 class="product-title">Adobe Acrobat Pro DC 2024</h3>
                         <p class="product-description">La solución más completa para creación y edición de PDFs profesionales.</p>
-                        <div class="product-price">$4.00</div>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Acrobat Pro">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1904,7 +1917,7 @@
                         <div class="product-category">PDF</div>
                         <h3 class="product-title">Abbyy FineReader 14</h3>
                         <p class="product-description">Herramienta avanzada de OCR y edición de PDFs. Licencia permanente.</p>
-                        <div class="product-price">$4.00</div>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Abbyy FineReader">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1924,7 +1937,7 @@
                         <div class="product-category">PDF</div>
                         <h3 class="product-title">Nitro PDF Pro 13</h3>
                         <p class="product-description">Editor PDF profesional con todas las funciones habilitadas. Incluye video de instalación.</p>
-                        <div class="product-price">$4.00</div>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Nitro PDF">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1944,7 +1957,7 @@
                         <div class="product-category">Grabación</div>
                         <h3 class="product-title">OBS Studio 27.2.4 (Español-Inglés)</h3>
                         <p class="product-description">Software profesional de grabación y transmisión en vivo con configuración avanzada.</p>
-                        <div class="product-price">$4.00</div>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="OBS Studio">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1964,7 +1977,7 @@
                         <div class="product-category">Fotogrametría</div>
                         <h3 class="product-title">Pix4D Mapper v4.5.6 + LISP Civil 3D</h3>
                         <p class="product-description">Software profesional de mapeo con drones. Incluye LISP exclusivo para Civil 3D.</p>
-                        <div class="product-price">$5.00</div>
+                        <div class="product-price">$5.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Pix4D">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1984,7 +1997,7 @@
                         <div class="product-category">Ingeniería</div>
                         <h3 class="product-title">MathCad Prime v8 Multilenguaje</h3>
                         <p class="product-description">Herramienta profesional para cálculos matemáticos y matriciales programables.</p>
-                        <div class="product-price">$4.00</div>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="MathCad">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -1996,7 +2009,7 @@
                     </div>
                 </div>
                 <!-- SketchUp Pro + VRAY -->
-                <div class="product-card" data-category="arquitectura">
+                <div class="product-card" data-category="otros">
                     <div class="product-image">
                         <img src="productos/A13.jpg" alt="SketchUp Pro 2023 con VRAY">
                     </div>
@@ -2004,7 +2017,7 @@
                         <div class="product-category">Arquitectura</div>
                         <h3 class="product-title">SketchUp Pro 2023 + VRAY 6</h3>
                         <p class="product-description">Modelado 3D profesional con motor de renderizado VRAY incluido.</p>
-                        <div class="product-price">$4.00</div>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="SketchUp VRAY">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -2024,7 +2037,7 @@
                         <div class="product-category">Edición de Video</div>
                         <h3 class="product-title">Wondershare Filmora 12 (Español-Inglés)</h3>
                         <p class="product-description">Software profesional de edición de video con efectos avanzados y fácil de usar.</p>
-                        <div class="product-price">$4.00</div>
+                        <div class="product-price">$4.00 USD</div>
                         <div class="product-actions">
                             <button class="buy-button" data-product="Filmora 12">
                                 <i class="fas fa-shopping-cart"></i> Comprar
@@ -2095,8 +2108,8 @@
                             <i class="fas fa-university"></i>
                         </div>
                         <div class="payment-method-info">
-                            <h4>Transferencia Bancaria</h4>
-                            <p>Paga directamente a nuestra cuenta bancaria</p>
+                            <h4>Transferencia Bancaria Banco de Bolivia</h4>
+                            <p>Paga directamente a nuestra cuenta bancaria, escribenos para generar un QR y para fijar nuevo precio</p>
                         </div>
                     </div>
                 </div>
@@ -2132,8 +2145,7 @@
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="#productos">Productos</a></li>
                     <li><a href="#destacados">Destacados</a></li>
-                    <li><a href="#">Términos y Condiciones</a></li>
-                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="terminos.html">Términos y Condiciones</a></li>
                 </ul>
             </div>
             
@@ -2141,8 +2153,8 @@
                 <h4>Contacto</h4>
                 <div class="footer-contact">
                     <p><i class="fas fa-map-marker-alt"></i> Doble Via La Paz-Oruro, Bolivia</p>
-                    <p><i class="fas fa-phone"></i> +51 987 654 321</p>
-                    <p><i class="fas fa-envelope"></i> tuacademiaprofesional@gmail.com/p>
+                    <p><i class="fas fa-phone"></i> +591 73324084</p>
+                    <p><i class="fas fa-envelope"></i> tuacademiaprofesional@gmail.com</p>
                     <p><i class="fas fa-clock"></i> Lunes a Viernes: 9am - 6pm</p>
                 </div>
             </div>
@@ -2714,7 +2726,7 @@
                 window.location.href = currentProduct.hotmartLink;
             } else if (paymentMethod === 'transfer') {
                 // Aquí puedes mostrar los datos para transferencia bancaria
-                alert(`Transferencia Bancaria a:\n\nBanco: Banco Sol\nCuenta: 1565910000001\nTitular: Edwin Franz Saico\nMonto: $${currentProduct.price.toFixed(2)}\n\nEnviar comprobante a: tuacademiaprofesional@gmail.com`);
+                alert(`Dátos del Beneficiario:\n\nBanco: Banco Sol\nCuenta: 1565910000001\nTitular: Edwin Franz Saico\nMonto: $${currentProduct.price.toFixed(2)}\n\nEnviar comprobante a: tuacademiaprofesional@gmail.com`);
             } else {
                 alert('Método de pago no disponible para este producto');
             }
