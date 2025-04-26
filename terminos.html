@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos y Condiciones | SaiSoluciones</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --azul-oscuro: #0a2463;
+            --azul-lila: #3e5c76;
+            --celeste: #a2d6f9;
+            --blanco: #ffffff;
+            --naranja: #fb8500;
+            --gris-claro: #f8f9fa;
+            --gris-medio: #e9ecef;
+            --gris-oscuro: #495057;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--gris-oscuro);
+            margin: 0;
+            padding: 0;
+            background-color: var(--gris-claro);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-lila) 100%);
+            color: var(--blanco);
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .terms-card {
+            background-color: var(--blanco);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            color: var(--azul-oscuro);
+            border-bottom: 2px solid var(--celeste);
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        
+        h3 {
+            color: var(--azul-lila);
+            margin-top: 30px;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        .highlight {
+            background-color: rgba(10, 36, 99, 0.05);
+            padding: 15px;
+            border-left: 4px solid var(--naranja);
+            margin: 20px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 10px 5px;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background-color: var(--naranja);
+            color: var(--blanco);
+            border: 2px solid var(--naranja);
+        }
+        
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--naranja);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--azul-oscuro);
+            border: 2px solid var(--azul-oscuro);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--azul-oscuro);
+            color: var(--blanco);
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.7);
+        }
+        
+        .modal-content {
+            background-color: var(--blanco);
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            right: 25px;
+            top: 15px;
+            color: var(--gris-oscuro);
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close-modal:hover {
+            color: var(--naranja);
+        }
+        
+        .terms-content {
+            margin: 20px 0;
+            padding: 10px;
+        }
+        
+        .terms-section {
+            margin-bottom: 25px;
+        }
+        
+        .modal-actions {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                margin: 20px auto;
+            }
+            
+            .terms-card {
+                padding: 20px;
+            }
+            
+            .modal-content {
+                width: 90%;
+                margin: 10% auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1><i class="fas fa-file-contract"></i> Términos y Condiciones</h1>
+    </div>
+    
+    <div class="container">
+        <div class="terms-card">
+            <h2>Términos del Servicio</h2>
+            <p>Última actualización: <strong id="current-date"></strong></p>
+            
+            <div class="highlight">
+                <p>Al utilizar nuestros servicios, usted acepta cumplir con estos términos y condiciones. Por favor léalos cuidadosamente.</p>
+            </div>
+            
+            <h3>1. Servicio ofrecido</h3>
+            <p>Nos especializamos en la instalación remota y activación de software técnico para ingeniería, arquitectura y topografía, incluyendo toda la gama de productos de Autodesk. Nuestro servicio garantiza la entrega de licencias 100% funcionales en equipos con sistemas operativos nuevos o recientemente reinstalados.</p>
+            
+            <h3>2. Garantía de funcionamiento</h3>
+            <p>Garantizamos que todas las licencias proporcionadas son plenamente funcionales y operativas, siempre que se instalen en sistemas que no hayan sido alterados o modificados con configuraciones anteriores de licencias, especialmente aquellas gestionadas mediante terminales de Windows.</p>
+            
+            <h3>3. Política de reembolsos</h3>
+            <p>La realización del reembolso se aprueba únicamente cuando:</p>
+            <ul>
+                <li>No se pudo lograr activar la licencia en un equipo nuevo o con sistema operativo recién instalado</li>
+                <li>El reclamo se realiza dentro de los 7 días posteriores a la compra del servicio o producto</li>
+                <li>Se proporciona evidencia del problema mediante el registro del equipo que realizamos durante la instalación</li>
+            </ul>
+            <div class="highlight">
+                <p>No se aceptarán reembolsos por intentos de instalación en equipos diferentes al registrado inicialmente. Tampoco procederán reembolsos por modificaciones realizadas por el cliente a las licencias proporcionadas.</p>
+            </div>
+            
+            <h3>4. Limitación de responsabilidad</h3>
+            <p>No nos hacemos responsables por:</p>
+            <ul>
+                <li>Errores de activación o funcionamiento incorrecto en equipos con instalaciones previas de productos Autodesk</li>
+                <li>Archivos residuales de licencias anteriores (originales, modificadas o vencidas)</li>
+                <li>Configuraciones del sistema alteradas, claves de registro corruptas, servicios detenidos o bloqueos en el sistema operativo</li>
+                <li>Modificaciones realizadas por el cliente a las licencias proporcionadas</li>
+                <li>Problemas derivados de intentar instalar las licencias en equipos no registrados</li>
+            </ul>
+            
+            <h3>5. Acceso a descargas</h3>
+            <p>Los accesos a las descargas de nuestros productos tienen las siguientes condiciones:</p>
+            <ul>
+                <li>Vigencia de 30 días desde el momento de la compra</li>
+                <li>Acceso limitado a un solo correo electrónico registrado</li>
+                <li>No se permiten transferencias ni compartir credenciales de acceso</li>
+            </ul>
+            
+            <h3>6. Recomendaciones previas a la instalación</h3>
+            <p>Para garantizar el correcto funcionamiento de los productos Autodesk:</p>
+            <ul>
+                <li>Se recomienda realizar la instalación en equipos con sistema operativo limpio o recientemente reinstalado</li>
+                <li>En caso de instalaciones fallidas anteriores, se sugiere desinstalar todos los productos Autodesk, eliminar archivos residuales y limpiar entradas de registro relacionadas</li>
+                <li>Evitar realizar modificaciones a los archivos de licencia proporcionados</li>
+            </ul>
+            
+            <h3>7. Sobre problemas recurrentes</h3>
+            <p>Algunos de los errores más comunes que pueden surgir en equipos con antecedentes de instalaciones incluyen:</p>
+            <ul>
+                <li>Fallos al abrir programas por conflictos de licencia</li>
+                <li>Instalaciones que no se inician o que se cancelan automáticamente</li>
+                <li>Mensajes de reinicio continuo durante la instalación</li>
+                <li>Persistencia de archivos de licencias corruptas que interfieren con nuevas activaciones</li>
+            </ul>
+            <p>Nuestro equipo está capacitado para identificar estos problemas y aplicar las soluciones necesarias, incluyendo limpieza profunda del sistema, eliminación de registros, y en casos extremos, la reinstalación del sistema operativo.</p>
+            
+            <h3>8. Aceptación de términos</h3>
+            <p>Al solicitar nuestro servicio, el cliente declara estar informado de las condiciones aquí descritas y acepta que:</p>
+            <ul>
+                <li>El correcto funcionamiento del software depende en gran medida del estado del sistema operativo del equipo</li>
+                <li>Conoce y acepta la política de reembolsos descrita</li>
+                <li>Reconoce las limitaciones de acceso a las descargas</li>
+                <li>Acepta que no compartirá ni transferirá las credenciales de acceso</li>
+                <li>Entiende que cualquier modificación a las licencias anula la garantía</li>
+            </ul>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <button id="openTermsModal" class="btn btn-primary">
+                    <i class="fas fa-check-circle"></i> Aceptar Términos
+                </button>
+                <a href="catalogo.html" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Volver al Inicio
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de aceptación de términos -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3><i class="fas fa-file-contract"></i> Confirmación de Términos</h3>
+            <div class="terms-content">
+                <p>Al hacer clic en "Acepto los términos y condiciones", usted reconoce que ha leído, entendido y aceptado todos los términos y condiciones establecidos anteriormente.</p>
+                <div class="highlight">
+                    <p><i class="fas fa-exclamation-triangle"></i> <strong>Importante:</strong> Si no está de acuerdo con alguno de estos términos, no podremos proporcionarle nuestros servicios.</p>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button id="acceptTerms" class="btn btn-primary">
+                    <i class="fas fa-check-circle"></i> Acepto los términos y condiciones
+                </button>
+                <button id="declineTerms" class="btn btn-secondary">
+                    <i class="fas fa-times-circle"></i> No acepto
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mostrar fecha actual
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('es-ES', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        
+        // Modal functionality
+        const modal = document.getElementById("termsModal");
+        const btn = document.getElementById("openTermsModal");
+        const span = document.getElementsByClassName("close-modal")[0];
+        const acceptBtn = document.getElementById("acceptTerms");
+        const declineBtn = document.getElementById("declineTerms");
+        
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+        
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        
+        acceptBtn.onclick = function() {
+            alert("¡Gracias por aceptar nuestros términos y condiciones!");
+            modal.style.display = "none";
+            // Aquí podrías redirigir o guardar la aceptación en localStorage
+        }
+        
+        declineBtn.onclick = function() {
+            window.location.href = "index.html";
+        }
+        
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
