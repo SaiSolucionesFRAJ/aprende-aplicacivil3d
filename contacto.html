@@ -2,30 +2,24 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto | SAI Soluciones a la Ingeniería</title>
-    <script src="https://kit.fontawesome.com/b408879b64.js" crossorigin="anonymous"></script>
+    <title>Contacto | SAI Soluciones</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
         :root {
             --primary: #1a1a2e;
-            --secondary: #16213e;
+            --secondary: #0f3460;
             --accent: #e94560;
-            --text-light: #ffffff;
-            --text-dark: #0f3460;
+            --text-light: #f1f1f1;
             --text-muted: #a3a3a3;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            --input-bg: rgba(255, 255, 255, 0.08);
-            --transition: all 0.3s ease;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Poppins', system-ui, -apple-system, sans-serif;
         }
 
         body {
@@ -33,334 +27,364 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, rgba(26, 26, 46, 0.97), rgba(22, 33, 62, 0.95)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            padding: 30px 15px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 2rem;
+            color: var(--text-light);
         }
 
-        .container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+        .contact-card {
             width: 100%;
             max-width: 1200px;
-            background: rgba(22, 33, 62, 0.3);
-            backdrop-filter: blur(10px);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: var(--shadow);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeIn 0.8s 0.2s forwards;
         }
 
-        .box-info {
-            padding: 60px 40px;
-            color: var(--text-light);
+        @keyframes fadeIn {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .contact-info {
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-            z-index: 1;
         }
 
-        .box-info::before {
+        .contact-info::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(233, 69, 96, 0.03);
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(233,69,96,0.1) 0%, transparent 70%);
             z-index: -1;
+            animation: pulse 15s infinite alternate;
         }
 
-        .box-info h1 {
+        @keyframes pulse {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(30px, 30px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        h1 {
             font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 30px;
+            margin-bottom: 2rem;
             position: relative;
-            letter-spacing: 1px;
+            font-weight: 700;
         }
 
-        .box-info h1::after {
+        h1::after {
             content: '';
             position: absolute;
             left: 0;
             bottom: -10px;
-            width: 70px;
+            width: 60px;
             height: 3px;
             background: var(--accent);
+            border-radius: 3px;
         }
 
-        .data {
-            margin: 40px 0;
+        .contact-details {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 1.5rem;
+            margin: 2.5rem 0;
         }
 
-        .data p {
+        .contact-item {
             display: flex;
             align-items: center;
-            font-size: 1rem;
+            gap: 1rem;
             transition: var(--transition);
         }
 
-        .data p:hover {
-            transform: translateX(5px);
+        .contact-item:hover {
+            transform: translateX(8px);
         }
 
-        .data p i {
+        .contact-item i {
             color: var(--accent);
-            margin-right: 15px;
-            font-size: 22px;
-            width: 30px;
-            text-align: center;
+            font-size: 1.2rem;
+            min-width: 30px;
         }
 
-        .links {
-            display: flex;
-            gap: 15px;
+        .social-container {
             margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
         }
 
-        .links a {
-            text-decoration: none;
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
             width: 45px;
             height: 45px;
-            background: var(--accent);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
             transition: var(--transition);
-            box-shadow: 0 5px 15px rgba(233, 69, 96, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
-        .links a i {
-            color: var(--text-light);
-            font-size: 18px;
+        .social-link:hover {
+            background: var(--accent);
+            transform: translateY(-5px) scale(1.1);
         }
 
-        .links a:hover {
-            transform: translateY(-5px);
-            background: #d63c55;
+        .company-logo {
+            max-width: 150px;
+            height: auto;
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+            transition: var(--transition);
         }
 
-        form {
-            background: rgba(26, 26, 46, 0.5);
-            padding: 60px 40px;
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-            backdrop-filter: blur(5px);
-            height: 100%;
+        .company-logo:hover {
+            opacity: 1;
+            transform: scale(1.05);
         }
 
-        .form-title {
-            color: var(--text-light);
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 10px;
+        /* Resto de tus estilos... */
+        .contact-form {
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.03);
         }
 
-        .input-box {
+        .form-group {
+            margin-bottom: 1.5rem;
             position: relative;
         }
 
-        .input-box input,
-        .input-box textarea {
+        .form-group input,
+        .form-group textarea {
             width: 100%;
-            padding: 15px 20px;
-            background: var(--input-bg);
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.08);
             border: 2px solid transparent;
-            border-radius: 8px;
-            font-size: 16px;
+            border-radius: 10px;
             color: var(--text-light);
+            font-size: 1rem;
             transition: var(--transition);
             outline: none;
         }
 
-        .input-box textarea {
-            height: 150px;
-            resize: none;
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
         }
 
-        .input-box input::placeholder,
-        .input-box textarea::placeholder {
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.2);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
             color: var(--text-muted);
         }
 
-        .input-box input:focus,
-        .input-box textarea:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 4px rgba(233, 69, 96, 0.1);
-        }
-
-        .input-box input:focus::placeholder,
-        .input-box textarea:focus::placeholder {
-            opacity: 0.5;
-        }
-
-        .input-box i {
+        .form-group i {
             position: absolute;
+            right: 1.5rem;
             top: 50%;
             transform: translateY(-50%);
-            right: 20px;
             color: var(--text-muted);
             transition: var(--transition);
-            pointer-events: none;
         }
 
-        .input-box input:focus ~ i {
+        .form-group input:focus ~ i {
             color: var(--accent);
         }
 
-        button {
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
             background: var(--accent);
             color: white;
             border: none;
-            padding: 15px 25px;
-            font-size: 16px;
+            border-radius: 10px;
+            font-size: 1rem;
             font-weight: 600;
-            border-radius: 8px;
             cursor: pointer;
             transition: var(--transition);
-            letter-spacing: 1px;
-            box-shadow: 0 5px 15px rgba(233, 69, 96, 0.3);
-            margin-top: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 0.5rem;
+            box-shadow: 0 5px 15px rgba(233, 69, 96, 0.3);
         }
 
-        button:hover {
+        .submit-btn:hover {
             background: #d63c55;
             transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(233, 69, 96, 0.4);
         }
 
-        button:active {
-            transform: translateY(0);
-        }
-
-        button i {
-            font-size: 18px;
-        }
-
-        .decoration {
-            position: absolute;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent), #ff8a9d);
-            opacity: 0.1;
-        }
-
-        .decoration-1 {
-            width: 300px;
-            height: 300px;
-            top: -150px;
-            left: -150px;
-            filter: blur(30px);
-        }
-
-        .decoration-2 {
-            width: 200px;
-            height: 200px;
-            bottom: -100px;
-            right: -50px;
-            filter: blur(20px);
-        }
-
-        @media screen and (max-width: 992px) {
-            .container {
+        @media (max-width: 768px) {
+            .contact-card {
                 grid-template-columns: 1fr;
-                width: 90%;
             }
-
-            .box-info, form {
-                padding: 40px 30px;
+            
+            .contact-info, .contact-form {
+                padding: 2rem;
             }
-
-            .box-info h1 {
+            
+            h1 {
                 font-size: 1.8rem;
             }
+            
+            .social-container {
+                align-items: center;
+            }
         }
 
-        @media screen and (max-width: 576px) {
-            .container {
-                width: 100%;
-                border-radius: 0;
+        @media (max-width: 480px) {
+            body {
+                padding: 1rem;
             }
-
-            .box-info, form {
-                padding: 30px 20px;
+            
+            .contact-info, .contact-form {
+                padding: 1.5rem;
             }
-
-            .box-info h1 {
-                font-size: 1.5rem;
+            
+            .contact-details {
+                margin: 1.5rem 0;
             }
-
-            .data p i {
-                font-size: 18px;
-            }
-
-            .links {
+            
+            .social-links {
                 justify-content: center;
+            }
+            
+            .company-logo {
+                max-width: 120px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="decoration decoration-1"></div>
-        <div class="decoration decoration-2"></div>
-        
-        <div class="box-info">
-            <div>
-                <h1>CONTÁCTATE CON NOSOTROS</h1>
-                <div class="data">
-                    <p><i class="fa-solid fa-phone"></i> +591 73324084</p>
-                    <p><i class="fa-solid fa-phone"></i> +591 67337412</p>
-                    <p><i class="fa-solid fa-envelope"></i> saicomamani60@gmail.com</p>
-                    <p><i class="fa-solid fa-location-dot"></i> Av. Prados de Ventilla - La Paz, Bolivia</p>
+    <div class="contact-card">
+        <div class="contact-info">
+            <h1>CONTÁCTANOS</h1>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+591 73324084</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+591 67337412</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>saicomamani60@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Av. Prados de Ventilla - La Paz, Bolivia</span>
                 </div>
             </div>
-            <div class="links">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-                <a href="https://youtube.com/@aprendeyaplicacivil3d?si=J8nkiZhZy2qnnbtv"><i class="fa-brands fa-youtube"></i></a>
-                <a href="https://wa.link/zl92gg"><i class="fa-brands fa-whatsapp"></i></a>
+            
+            <div class="social-container">
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://youtube.com/@aprendeyaplicacivil3d?si=J8nkiZhZy2qnnbtv" class="social-link" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://wa.link/zl92gg" class="social-link" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+                <!-- Reemplaza "logo-sai.png" con la ruta de tu propio logo -->
+                <img src="img/LOGO2.png" alt="Logo SAI Soluciones" class="company-logo">
             </div>
         </div>
         
-        <form action="https://formsubmit.co/saicomamani60@gmail.com" method="POST">
-            <div class="form-title">Envíanos un mensaje</div>
+        <form class="contact-form" action="https://formsubmit.co/saicomamani60@gmail.com" method="POST">
+            <h2 class="form-title">Envíanos un mensaje</h2>
             
-            <div class="input-box">
-                <input type="text" name="name" id="name" placeholder="Nombre y apellido" required>
-                <i class="fa-solid fa-user"></i>
+            <div class="form-group">
+                <input type="text" name="name" id="name" placeholder="Nombre completo" required>
+                <i class="fas fa-user"></i>
             </div>
             
-            <div class="input-box">
-                <input type="email" name="email" id="email" required placeholder="Correo electrónico">
-                <i class="fa-solid fa-envelope"></i>
+            <div class="form-group">
+                <input type="email" name="email" id="email" placeholder="Correo electrónico" required>
+                <i class="fas fa-envelope"></i>
             </div>
             
-            <div class="input-box">
-                <input type="text" name="phone" id="phone" placeholder="Celular">
-                <i class="fa-solid fa-phone"></i>
+            <div class="form-group">
+                <input type="tel" name="phone" id="phone" placeholder="Número de teléfono">
+                <i class="fas fa-phone"></i>
             </div>
             
-            <div class="input-box">
-                <textarea name="message" id="message" placeholder="Escribe tu mensaje..."></textarea>
+            <div class="form-group">
+                <textarea name="message" id="message" placeholder="Tu mensaje..."></textarea>
             </div>
             
-            <button type="submit">
+            <button type="submit" class="submit-btn">
                 Enviar mensaje
-                <i class="fa-solid fa-paper-plane"></i>
+                <i class="fas fa-paper-plane"></i>
             </button>
         </form>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const animateElements = (elements, delay = 0.1) => {
+                elements.forEach((el, index) => {
+                    setTimeout(() => {
+                        el.style.opacity = '1';
+                        el.style.transform = 'translateY(0)';
+                    }, index * 100 * delay);
+                });
+            };
+            
+            const contactItems = document.querySelectorAll('.contact-item');
+            const socialLinks = document.querySelectorAll('.social-link');
+            const formGroups = document.querySelectorAll('.form-group');
+            const logo = document.querySelector('.company-logo');
+            
+            animateElements(contactItems, 0.2);
+            animateElements(socialLinks, 0.15);
+            animateElements(formGroups, 0.1);
+            
+            // Animación especial para el logo
+            if(logo) {
+                setTimeout(() => {
+                    logo.style.opacity = '1';
+                    logo.style.transform = 'scale(1)';
+                }, 800);
+            }
+        });
+    </script>
 </body>
 </html>
